@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export function PedidosPendente({pedido}){
     return(
         <>
@@ -25,3 +26,15 @@ export function PedidosPendente({pedido}){
         </>
     )
 }
+PedidosPendente.propTypes = {
+    pedido: PropTypes.shape({
+      name_cliente: PropTypes.string,
+      telefone_cliente: PropTypes.string,
+      endereco_cliente: PropTypes.string,
+      descricao_pedido: PropTypes.string,
+      valor_pedido: PropTypes.number,
+      forma_pagamento: PropTypes.string,
+      taxa_entrega: PropTypes.number,
+      codigo_pedido: PropTypes.string,
+    }).isRequired,
+  };

@@ -6,9 +6,8 @@ export default function Home(){
     return (
         <>
         <Navbar />
-        {pedido.map((item,index) =>{
-            return <PedidosPendente key={index} pedido={item}/> 
-        })}
+        {pedido.map((item,index) => <PedidosPendente key={index} pedido={item}/> 
+        )}
         </>
     );
 }
