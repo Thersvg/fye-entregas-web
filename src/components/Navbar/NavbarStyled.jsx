@@ -21,6 +21,11 @@ export const ImagePerfilUser = styled.img`
     height: 70px;
     cursor: pointer;
     border: 2px solid #fff;
+
+    &:hover{
+        transition: 0.4s;
+        border: 2px solid #d3d3d3;
+    }
 `
 export const ContainerNav = styled.div`
     display: flex;

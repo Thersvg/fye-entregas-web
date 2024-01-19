@@ -1,45 +1,57 @@
-import PropTypes from 'prop-types';
-import { ButtonDeleteBox, ContainerPedido } from './PedidosPendenteStyled';
-export function PedidosPendente({pedido}){
+import PropTypes from 'prop-types'; 
+import { ButtonDeleteBox, ContainerPedido, InfPessoais, InfRodape, InfoDescricaoPedido } from './PedidosPendenteStyled';
+export function PedidosPendente(props){
     return(
         <>
         <ContainerPedido>
-                <article>
-                        <label htmlFor="">Nome Cliente:</label>
-                        <p>{pedido.name_cliente}</p>
-                        <label htmlFor="">Endereço Cliente:</label>
-                        <p>{pedido.endereco_cliente}</p>
-                        <label htmlFor="">Descrição Pedido:</label>
-                        <p>{pedido.descricao_pedido}</p>
-                </article>
-                <article>
-                        <label htmlFor="">Telefone Cliente:</label>
-                        <p>{pedido.telefone_cliente}</p>
-                        <label htmlFor="">Forma de Pagamento:</label>
-                        <p>{pedido.forma_pagamento}</p>
-                        <label htmlFor="">Valor do Pedido:</label>
-                        <p>{pedido.valor_pedido}</p>
-                </article>
-                <article>
-                    <label htmlFor="">Taxa de Entrega:</label>
-                    <p>{pedido.taxa_entrega}</p>
-                    <label htmlFor="">Código do Pedido:</label>
-                    <p>{pedido.codigo_pedido}</p>
-                    <ButtonDeleteBox>Excluir</ButtonDeleteBox>
-                </article>
+                <InfPessoais>
+                    <div>
+                        <div>
+                            <label htmlFor="">Nome: {props.name}</label>
+                        </div>
+                        <div>
+                            <label htmlFor="">Endereço: {props.endereco}</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label htmlFor="">Telefone: {props.telefone}</label>
+                        </div>
+                        <div>
+                            <label htmlFor="">Forma de Pagamento: {props.forma_p}</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label htmlFor="">Valor do Pedido: {props.valor}</label>
+                        </div>
+                        <div>
+                            <label htmlFor="">Taxa de Entrega: {props.taxa_ent}</label>
+                        </div>
+                    </div>
+
+                </InfPessoais>
+
+                <InfoDescricaoPedido>
+                        <label htmlFor="">Descrição Pedido: {props.descricao}</label>
+                </InfoDescricaoPedido>
+
+                <InfRodape>
+                        <label htmlFor="">Empresa: DONA HIRENA PIZZARIA</label>
+                        <label htmlFor="">Código do Pedido: {props.codigo}</label>
+                        <ButtonDeleteBox>Excluir</ButtonDeleteBox>
+                </InfRodape>
         </ContainerPedido>
         </>
     )
 }
 PedidosPendente.propTypes = {
-    pedido: PropTypes.shape({
-      name_cliente: PropTypes.string,
-      telefone_cliente: PropTypes.string,
-      endereco_cliente: PropTypes.string,
-      descricao_pedido: PropTypes.string,
-      valor_pedido: PropTypes.number,
-      forma_pagamento: PropTypes.string,
-      taxa_entrega: PropTypes.number,
-      codigo_pedido: PropTypes.string,
-    }).isRequired,
-  };
+      name: PropTypes.string.isRequired,
+      telefone: PropTypes.string.isRequired,
+      endereco: PropTypes.string.isRequired,
+      descricao: PropTypes.string.isRequired,
+      valor: PropTypes.string.isRequired,
+      forma_p: PropTypes.string.isRequired,
+      taxa_ent: PropTypes.string.isRequired,
+      codigo: PropTypes.string.isRequired,
+}; 
