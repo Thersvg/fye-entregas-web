@@ -41,6 +41,17 @@ export const ImagePerfilUser = styled.img`
 
     &:hover{
         transition: 0.4s;
-        border: 2px solid #d3d3d3;
+        border: 2px solid #00ccff;
+    }
+`
+
+export const BoasVindasLocalizacao = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    img{
+        width: 20px;
+        height: 19px;
+        margin-right: 5px;
     }
 `

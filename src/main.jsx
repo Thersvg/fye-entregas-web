@@ -1,10 +1,34 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './GlobalStyle.jsx'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import Navbar from './components/Navbar/Navbar.jsx'
+import Home from './Pages/Home/Home.jsx'
+import { Profile } from './Pages/Profile/Profile.jsx'
+import { GlobalStyled } from './GlobalStyle.jsx'
+import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navbar/>,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/profile",
+        element: <Profile />
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <GlobalStyled/>
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )
