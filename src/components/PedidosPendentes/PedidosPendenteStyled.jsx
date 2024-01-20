@@ -1,62 +1,65 @@
 import styled from "styled-components";
 
 export const ContainerPedido = styled.section`
-    display: flex;
-    background-color: #fff;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: stretch;
-
-    align-self: center;
-    
-    width: 650px;
-    height: 200px;
-
-    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 70px 40px 30px;
+    color: #000;
+    width: 600px;
+    height: 150px;
     margin-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-
     overflow: hidden;
 
+    border-radius: 5px 5px 0 0;
     label{
-        font-weight: 500;
+        font-weight: 600;
     }
 `
 export const ButtonDeleteBox = styled.button`
     width: 100px;
-    height: 25px;
+    height: 30px;
+
     font-weight: 800;
-    border-radius: 10px;
-    cursor: pointer;
     font-size: 14px;
-    color: #ff0000;
-    background-color: #fff;
-    margin-top: 5px;
-    overflow: hidden;
+
+    cursor: pointer;
+
+    color: #000000;
+    background-color: #ffffff;
 
     &:hover{
         transition: 0.4s;
-        background-color: #ff0000;
-        color: #fff;
+        background-color: #fff;
+        color: #ff0000;
     }
 `
 export const InfPessoais = styled.article`
     display: flex;
-    gap: 15px;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 10px;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
 `
 
-export const InfoDescricaoPedido = styled.article`
+export const InfoDescricaoEndereco = styled.article`
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
 `
 
 export const InfRodape = styled.article`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    overflow: hidden;
-    margin-top: 20px;
+    padding-left: 5px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: #0f0f0f;
 `

@@ -6,9 +6,26 @@ export const Nav = styled.nav`
     width: 100%;
     height: 90px;
     justify-content: center;
-    position: relative;
-    z-index: 1;
 `
+export const ContainerNav = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+    height: 100%;
+
+    div{
+        display: flex;
+        flex-direction: wrap;
+        align-items: center;
+
+        p{
+            margin-right: 10px;
+            color: #fff;
+        }
+    }
+`
+
 export const ImageLogo = styled.img`
     width: 180px;
     height: 80%;
@@ -26,11 +43,4 @@ export const ImagePerfilUser = styled.img`
         transition: 0.4s;
         border: 2px solid #d3d3d3;
     }
-`
-export const ContainerNav = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 98%;
-    height: 90px;
 `

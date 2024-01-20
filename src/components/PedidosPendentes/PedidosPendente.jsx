@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'; 
-import { ButtonDeleteBox, ContainerPedido, InfPessoais, InfRodape, InfoDescricaoPedido } from './PedidosPendenteStyled';
+import { ButtonDeleteBox, ContainerPedido, InfPessoais, InfRodape, InfoDescricaoEndereco } from './PedidosPendenteStyled';
 export function PedidosPendente(props){
     return(
         <>
@@ -10,7 +10,7 @@ export function PedidosPendente(props){
                             <label htmlFor="">Nome: {props.name}</label>
                         </div>
                         <div>
-                            <label htmlFor="">Endereço: {props.endereco}</label>
+                            <label htmlFor="">Descrição: {props.descricao}</label>   
                         </div>
                     </div>
                     <div>
@@ -18,28 +18,33 @@ export function PedidosPendente(props){
                             <label htmlFor="">Telefone: {props.telefone}</label>
                         </div>
                         <div>
-                            <label htmlFor="">Forma de Pagamento: {props.forma_p}</label>
+                            <label htmlFor="">Pagamento: {props.forma_p}</label>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <label htmlFor="">Valor do Pedido: {props.valor}</label>
+                            <label htmlFor="">Valor R$: {props.valor}</label>
                         </div>
                         <div>
-                            <label htmlFor="">Taxa de Entrega: {props.taxa_ent}</label>
+                            <label htmlFor="">Delivery R$: {props.taxa_ent}</label>
                         </div>
                     </div>
-
                 </InfPessoais>
 
-                <InfoDescricaoPedido>
-                        <label htmlFor="">Descrição Pedido: {props.descricao}</label>
-                </InfoDescricaoPedido>
+                <InfoDescricaoEndereco>
+                    <label htmlFor="">Endereço: {props.endereco}</label>                   
+                </InfoDescricaoEndereco> 
 
                 <InfRodape>
-                        <label htmlFor="">Empresa: DONA HIRENA PIZZARIA</label>
-                        <label htmlFor="">Código do Pedido: {props.codigo}</label>
-                        <ButtonDeleteBox>Excluir</ButtonDeleteBox>
+                        <div>
+                            <label htmlFor="">DONA HIRENA PIZZARIA</label>
+                        </div>
+                        <div>
+                            <label htmlFor="">Código: {props.codigo}</label>
+                        </div>
+                        <div>
+                            <ButtonDeleteBox>Excluir</ButtonDeleteBox>
+                        </div>
                 </InfRodape>
         </ContainerPedido>
         </>

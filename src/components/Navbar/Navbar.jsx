@@ -8,7 +8,11 @@ export default function Navbar(){
             <Nav> 
                 <ContainerNav>
                     <ImageLogo src={logo} alt="logo-for-you-entregas" />
+                    <div>
+                    <i></i>
+                    <p>Pontes e Lacerda MT</p>
                     <ImagePerfilUser src={Logoempresa} alt="perfil-usuário" />
+                    </div>
                 </ContainerNav>
             </Nav>
         </>

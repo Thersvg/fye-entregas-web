@@ -11,7 +11,8 @@ export const ContainerFooter = styled.footer`
     height: 50px;
     align-items: center;
     color: #fff;
-    position: absolute;
+
+    position: fixed;
     bottom: 0;
     z-index: 1;
 

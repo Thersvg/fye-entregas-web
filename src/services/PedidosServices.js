@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3000";
+const baseURL = "https://api-for-you-entregas.onrender.com";
 
 export function GetAllPedidos() {
   const response = axios.get(`${baseURL}/pedido`);
