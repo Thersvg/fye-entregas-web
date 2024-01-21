@@ -9,6 +9,7 @@ import { GlobalStyled } from './GlobalStyle.jsx'
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'
 import {AuthenticateLogin } from './Pages/Authentication/AuthLogin.jsx'
 import { AuthenticateCadastrar } from './Pages/Authentication/AuthCadastrar.jsx'
+import EmpresaProvider from './Context/EmpresaContext.jsx'
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GlobalStyled/>
+    <EmpresaProvider>
     <RouterProvider router={router}/>
+    </EmpresaProvider>
   </React.StrictMode>,
 )

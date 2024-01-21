@@ -31,11 +31,14 @@ export const ImageLogo = styled.img`
     height: 80%;
     cursor: pointer;
 `
+export const ProfileLogoSair = styled.div`
+`
+
 export const ImagePerfilUser = styled.img`
     color: #Fff;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     border: 2px solid #fff;
 
@@ -54,4 +57,19 @@ export const BoasVindasLocalizacao = styled.div`
         height: 19px;
         margin-right: 5px;
     }
+`
+
+export const Exit = styled.div`
+    display: flex;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+    margin-left: 10px;
+
+    img{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
 `

@@ -1,15 +1,17 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 import logo from '../../images/foryou.png'
 import Logoempresa from '../../images/HIRENA.png'
+import logoexit from "../../images/exit.png"
 import IconLocation from "../../images/local.png"
-import { ContainerNav, Nav, ImageLogo, ImagePerfilUser, BoasVindasLocalizacao} from './NavbarStyled'
+import { ContainerNav, Nav, ImageLogo, ImagePerfilUser, BoasVindasLocalizacao, ProfileLogoSair, Exit} from './NavbarStyled'
 import { EmpresaLogged } from '../../services/EmpresaServices'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect} from 'react'
 import Cookies from 'js-cookie'
+import { EmpresaContext } from '../../Context/EmpresaContext'
 
 export default function Navbar(){
 
-    const [empresa, setEmpresa] = useState({});
+    const {empresa, setEmpresa} = useContext(EmpresaContext);
 
     async function findEmpresaLogged(){
         try{
@@ -19,9 +21,19 @@ export default function Navbar(){
             console.log(error);
         }
     }
+
+    const navigate = useNavigate();
+
+    function exit(){
+        Cookies.remove("token");
+        setEmpresa(undefined);
+        navigate("/login");
+    }
+
     useEffect(() => {
        if (Cookies.get("token")) findEmpresaLogged();
     }, [])
+
 
     return(
         <>
@@ -33,17 +45,33 @@ export default function Navbar(){
                     
                     <div>
                         <div>
-                            <BoasVindasLocalizacao>
-                            <p>Olá, {empresa.name_empresa}</p>
-                            <div>
-                                <img src={IconLocation} alt="Localização" />
-                                <p>Pontes e Lacerda MT</p>
-                            </div>
-                            </BoasVindasLocalizacao>
-                        <Link to={"/Profile"}>
-                            <ImagePerfilUser src={Logoempresa} alt="perfil-usuário" />
-                        </Link>
+                            {empresa ? (
+                                <BoasVindasLocalizacao>
+                                <p>Olá, {empresa.name_empresa}</p>
+                                <div>
+                                    <img src={IconLocation} alt="Localização" />
+                                    <p>Pontes e Lacerda MT</p>
+                                </div>
+                                </BoasVindasLocalizacao>                                
+                            ) : (
+                                <BoasVindasLocalizacao>
+                                <p>Olá</p>
+                                <div>
+                                    <img src={IconLocation} alt="Localização" />
+                                    <p>Pontes e Lacerda MT</p>
+                                </div>
+                                </BoasVindasLocalizacao>   
+                            )}
+
+                        <ProfileLogoSair>
+                            <Link to={"/Profile"}>
+                                <ImagePerfilUser src={Logoempresa} alt="perfil-usuário" />
+                            </Link>
+                        </ProfileLogoSair>
                         </div>
+                        <Exit>
+                            <img src={logoexit} alt="sair" onClick={exit}/>
+                        </Exit>
                     </div>
                 </ContainerNav>
             </Nav>

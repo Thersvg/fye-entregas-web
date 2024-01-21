@@ -1,3 +1,7 @@
+import { useContext } from "react";
+import { EmpresaContext } from "../../Context/EmpresaContext";
+
 export function Profile(){
-    return <h1>Perfil</h1>
+    const {empresa} = useContext(EmpresaContext);
+    return <h1>{empresa.name_empresa}</h1>
 }

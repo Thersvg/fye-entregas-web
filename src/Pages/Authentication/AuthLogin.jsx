@@ -62,7 +62,7 @@ export function AuthenticateLogin(){
                         type= "submit"
                         text= "Entrar"
                     />
-                    <Link to="/cadastrar" >Criar conta</Link>
+                    <Link to="/cadastrar"  style={{textDecoration: 'none'}} >Criar conta</Link>
                 </form>
             </Section>
         </AuthContainer>
