@@ -5,6 +5,8 @@ import { Input } from "../../components/Input/Input";
 import { AuthContainer, ErrorSpan, Section } from "./AuthCadastrarStyled";
 import { cadastrarSchema } from "../../Schemas/cadastrarSchema";
 import { CriarContaEmpresa } from "../../services/EmpresaServices";
+import Cookies from "js-cookie";
+import { useNavigate} from "react-router-dom";
 
 export function AuthenticateCadastrar(){
 
@@ -14,11 +16,13 @@ export function AuthenticateCadastrar(){
         formState: {errors},
     } = useForm({resolver: zodResolver(cadastrarSchema)});
 
+    const navigate = useNavigate();
+
     async function inHandleSubmit(data){
         try{
-            console.log('oi');
             const response = await CriarContaEmpresa(data);
-            console.log(response);
+            Cookies.set("token", response.data.token, {expires: 1});
+            navigate("/");
         }catch(error){
             console.log(error);
         }

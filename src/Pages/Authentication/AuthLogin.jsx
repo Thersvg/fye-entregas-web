@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 import { Input } from "../../components/Input/Input";
 import { AuthContainer, ErrorSpan, Section } from "./AuthLoginStyled";
 import { useForm } from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import { loginSchema } from "../../Schemas/loginSchema";
+import { LoginContaEmpresa } from "../../services/EmpresaServices";
+import Cookies from "js-cookie";
 
 export function AuthenticateLogin(){
 
@@ -14,8 +16,17 @@ export function AuthenticateLogin(){
         formState: {errors},
     } = useForm({resolver: zodResolver(loginSchema)});
 
-    function inHandleSubmit(data){
-        console.log(data)
+    const navigate = useNavigate();
+    
+    async function inHandleSubmit(data){
+        try{
+            const response = await LoginContaEmpresa(data);
+            console.log(response);
+            Cookies.set("token", response.data.token, {expires: 1});
+            navigate("/");
+        }catch(error){
+            console.log(error);
+        }
     }
 
      return(
@@ -26,7 +37,7 @@ export function AuthenticateLogin(){
                     <Input 
                         type= "email"
                         placeholder= "Email"
-                        name= "email"   
+                        name= "email_empresa"   
                         register = {register}                          
                     />
 
@@ -37,7 +48,7 @@ export function AuthenticateLogin(){
                     <Input 
                         type= "password"
                         placeholder= "Password"
-                        name= "password"   
+                        name= "password_empresa"   
                         register = {register}                          
                     />
 
