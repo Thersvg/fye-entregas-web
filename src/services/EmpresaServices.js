@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 /* const baseURL = "https://api-for-you-entregas.onrender.com"; */
 const baseURL = "http://localhost:3000";
@@ -15,6 +16,20 @@ export function CriarContaEmpresa(data) {
     return response;
   } catch (error) {
     console.error("Erro ao criar conta da empresa:", error);
+    throw error;
+  }
+}
+
+export function EmpresaLogged() {
+  try {
+    const response = axios.get(`${baseURL}/empresa/`, {
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    });
+    return response;
+  } catch (error) {
+    console.error("Erro ao Logar na conta da empresa:", error);
     throw error;
   }
 }
