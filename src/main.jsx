@@ -7,6 +7,8 @@ import Home from './Pages/Home/Home.jsx'
 import { Profile } from './Pages/Profile/Profile.jsx'
 import { GlobalStyled } from './GlobalStyle.jsx'
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'
+import {AuthenticateLogin } from './Pages/Authentication/AuthLogin.jsx'
+import { AuthenticateCadastrar } from './Pages/Authentication/AuthCadastrar.jsx'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/login",
+    element: <AuthenticateLogin />
+  },
+  {
+    path: "/cadastrar",
+    element: <AuthenticateCadastrar />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
