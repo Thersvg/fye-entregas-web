@@ -1,22 +1,24 @@
 import { z } from "zod";
 
 export const cadastrarSchema = z.object({
-  empresa: z
+  name_empresa: z
     .string()
     .min(2, { message: "Digite o nome da sua empresa" })
     .toUpperCase(),
 
-  cnpj: z.string().min(8, { message: "Digite o CNPJ ou CPF" }),
+  cnpj_empresa: z.string().min(3, { message: "Digite o CNPJ ou CPF" }),
 
-  Endereço: z.string().min(3, { message: "Digite seu endereço completo" }),
+  endereco_empresa: z
+    .string()
+    .min(3, { message: "Digite seu endereço completo" }),
 
-  Telefone: z.string().min(3, { message: "Telefone inválido" }),
+  telefone_empresa: z.string().min(3, { message: "Telefone inválido" }),
 
-  email: z.string().email({ message: "E-mail inválido" }).toLowerCase(),
+  email_empresa: z.string().email({ message: "E-mail inválido" }).toLowerCase(),
 
-  password: z.string().min(6, { message: "Mínimo 6 caracteres " }),
+  password_empresa: z.string().min(4, { message: "Mínimo 6 caracteres " }),
 
-  taxaentrega: z
+  taxa_entrega_empresa: z
     .string()
     .min(0, { message: "Digite o valor da taxa de entrega " }),
 });
