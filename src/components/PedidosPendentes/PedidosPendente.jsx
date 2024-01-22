@@ -5,9 +5,10 @@ import { useState } from 'react';
 
 
 export function PedidosPendente(props){
-    function RefreshPage(){
+
+/*     function RefreshPage(){
         location.reload();
-    }
+    } */
 
     const [deletando, setDeletando] = useState(false);
 
@@ -18,7 +19,6 @@ export function PedidosPendente(props){
   
         await DeletePedido(props.id); 
         setDeletando(false);
-        RefreshPage();
 
     }catch(error){
         console.error("Erro ao deletar pedido:", error);

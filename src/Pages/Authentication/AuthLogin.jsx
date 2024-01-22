@@ -24,8 +24,6 @@ export function AuthenticateLogin(){
             console.log(response.data);
             Cookies.set("token", response.data, { secure: true, sameSite: 'Strict', expires: 1 });
             navigate("/");
-            console.log("Resultado do cookie:");
-            console.log(Cookies.get("token"));
         }catch(error){
             console.log(error);
         }
