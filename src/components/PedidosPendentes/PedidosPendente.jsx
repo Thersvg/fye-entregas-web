@@ -37,7 +37,7 @@ export function PedidosPendente(props){
 
                 <InfRodape>
                         <div>
-                            <label htmlFor="">DONA HIRENA PIZZARIA</label>
+                            <label htmlFor="">{props.name_emp.name_empresa}</label>
                         </div>
                         <div>
                             <label htmlFor="">Código: {props.codigo}</label>
@@ -59,4 +59,5 @@ PedidosPendente.propTypes = {
       forma_p: PropTypes.string.isRequired,
       taxa_ent: PropTypes.string.isRequired,
       codigo: PropTypes.string.isRequired,
+      name_emp: PropTypes.string.isRequired,
 }; 

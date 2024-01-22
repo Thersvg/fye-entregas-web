@@ -10,10 +10,9 @@ export default function Home(){
 
     async function findAllPedidos(){
         const response = await GetAllPedidos();
-        setNews(response.data.pedidos);
+        setNews(response.data);
     }
  
-
     useEffect(() => {
         findAllPedidos();
     }, [])

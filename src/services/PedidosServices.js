@@ -1,10 +1,21 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
-const baseURL = "https://api-for-you-entregas.onrender.com";
+/* const baseURL = "https://api-for-you-entregas.onrender.com"; */
+const baseURL = "http://localhost:3000";
 
 export function GetAllPedidos() {
-  const response = axios.get(`${baseURL}/pedido`);
-  return response;
+  try {
+    const response = axios.get(`${baseURL}/pedido`, {
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    });
+    return response;
+  } catch (error) {
+    console.error("Erro ao buscar pedidos da empresa:", error);
+    throw error;
+  }
 }
 
 /* export function GetPedidosAceitos() {
