@@ -18,6 +18,17 @@ export function GetAllPedidos() {
   }
 }
 
+export function DeletePedido(id) {
+  try {
+    console.log(`${baseURL}/pedido/`, id);
+    const response = axios.delete(`${baseURL}/pedido/${id}`);
+    return response;
+  } catch (error) {
+    console.error("Erro ao deletar pedido da empresa:", error);
+    throw error;
+  }
+}
+
 /* export function GetPedidosAceitos() {
   const response = axios.get(`${baseURL}/pedidos-aceitos-empresa/${id}`);
   return response;

@@ -6,16 +6,20 @@ import { useEffect, useState } from "react";
 
 
 export default function Home(){
-    const [pedidos, setNews] = useState([]);
+    const [pedidos, setPedidos] = useState([]);
 
     async function findAllPedidos(){
         const response = await GetAllPedidos();
-        setNews(response.data);
+        setPedidos(response.data);
+        console.log(response.data);
     }
  
     useEffect(() => {
         findAllPedidos();
     }, [])
+
+    console.log("pedidos");
+    console.log(pedidos);
 
     return (
         <>
@@ -26,6 +30,7 @@ export default function Home(){
                     {pedidos.map((item) => 
                     <PedidosPendente 
                     key={item.id} 
+                    id={item._id} 
                     codigo = {item.codigo_pedido}
                     name = {item.name_cliente}
                     valor = {item.valor_pedido}

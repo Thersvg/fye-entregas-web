@@ -1,6 +1,31 @@
 import PropTypes from 'prop-types'; 
 import { ButtonDeleteBox, ContainerPedido, InfPessoais, InfRodape, InfoDescricaoEndereco } from './PedidosPendenteStyled';
+import { DeletePedido } from '../../services/PedidosServices';
+import { useState } from 'react';
+
+
 export function PedidosPendente(props){
+    function RefreshPage(){
+        location.reload();
+    }
+
+    const [deletando, setDeletando] = useState(false);
+
+    async function handleDeletePedido(){
+    try{ 
+        console.log(props.id);
+        setDeletando(true);
+  
+        await DeletePedido(props.id); 
+        setDeletando(false);
+        RefreshPage();
+
+    }catch(error){
+        console.error("Erro ao deletar pedido:", error);
+        setDeletando(false);    
+    }      
+    }
+
     return(
         <>
         <ContainerPedido>
@@ -43,7 +68,7 @@ export function PedidosPendente(props){
                             <label htmlFor="">Código: {props.codigo}</label>
                         </div>
                         <div>
-                            <ButtonDeleteBox>Excluir</ButtonDeleteBox>
+                            <ButtonDeleteBox onClick={handleDeletePedido} disabled={deletando}>Excluir</ButtonDeleteBox>
                         </div>
                 </InfRodape>
         </ContainerPedido>
@@ -60,4 +85,5 @@ PedidosPendente.propTypes = {
       taxa_ent: PropTypes.string.isRequired,
       codigo: PropTypes.string.isRequired,
       name_emp: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
 }; 
