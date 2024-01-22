@@ -68,7 +68,7 @@ export const Exit = styled.div`
 
     img{
         width: 30px;
-        height: 30px;
+        height: 25px;
         cursor: pointer;
     }
 
