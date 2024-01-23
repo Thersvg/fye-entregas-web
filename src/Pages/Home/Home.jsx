@@ -1,5 +1,6 @@
 import { EmpresaContext } from "../../Context/EmpresaContext";
 import Footer from "../../components/Footer/Footer";
+import { PedidosAceitos } from "../../components/PedidosAceitos/PedidosAceitos";
 import { PedidosPendente } from "../../components/PedidosPendentes/PedidosPendente";
 import { GetAllPedidos, GetAllPedidosAceitos } from "../../services/PedidosServices";
 import { HomeBody, HomePedidosAceitos, HomePedidosPendentes} from "./HomeStyled";
@@ -21,7 +22,8 @@ export default function Home(){
 
         console.log(empresa._id);
         const response = await GetAllPedidosAceitos(empresa._id);
-        setPedidosAceitos(response);
+        setPedidosAceitos(response.data);
+        console.log(response);
     }
 
     useEffect(() => {
@@ -60,17 +62,17 @@ export default function Home(){
                 <div>
                     <>
                     {pedidosAceitos.map((item) => 
-                    <PedidosPendente 
+                    <PedidosAceitos 
                     key={item.id} 
                     id={item._id} 
-                    codigo = {item.codigo_pedido}
-                    name = {item.name_cliente}
-                    valor = {item.valor_pedido}
-                    endereco = {item.endereco_cliente}
-                    telefone  = {item.telefone_cliente}
-                    descricao  = {item.descricao_pedido}
-                    forma_p  = {item.forma_pagamento}
-                    taxa_ent = {item.taxa_entrega}
+                    codigo = {item.detalhes_pedido.codigo_pedido}
+                    name = {item.detalhes_pedido.name_cliente}
+                    valor = {item.detalhes_pedido.valor_pedido}
+                    endereco = {item.detalhes_pedido.endereco_cliente}
+                    telefone  = {item.detalhes_pedido.telefone_cliente}
+                    descricao  = {item.detalhes_pedido.descricao_pedido}
+                    forma_p  = {item.detalhes_pedido.forma_pagamento}
+                    taxa_ent = {item.detalhes_pedido.taxa_entrega}
                     name_emp = {item.name_empresa}
                     entregador_name = {item.name_entregador.name_entregador}
                     entregador_cpf = {item.name_entregador.cpf_entregador}
@@ -79,7 +81,7 @@ export default function Home(){
                     /> 
                     )}
                     </>
-                </div>
+                </div> 
             </HomePedidosAceitos>
         </HomeBody>
         <Footer />

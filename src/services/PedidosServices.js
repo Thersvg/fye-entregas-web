@@ -21,7 +21,7 @@ export function GetAllPedidos() {
 export function GetAllPedidosAceitos(id) {
   try {
     console.log(id);
-    const response = axios.get(`${baseURL}/pedidos-aceito-empresa/${id}`, {
+    const response = axios.get(`${baseURL}/pedidos-aceito/empresa/${id}`, {
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`,
       },
