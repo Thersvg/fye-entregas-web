@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
 import { AllPedidosEntregues, ContainerProfile, DadosEmpresaProfile, DadosHistoricoPedidosProfile, DadosPessoais, PictureLogo} from "./ProfileStyled";
-import Logoempresa from '../../images/HIRENA.png'
+import Logoempresa from '../../images/user.jpg'
 import iconupload from '../../images/upload.png'
 
 export function Profile(){
