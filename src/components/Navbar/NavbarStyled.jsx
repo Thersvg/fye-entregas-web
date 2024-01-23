@@ -4,7 +4,7 @@ export const Nav = styled.nav`
     display: flex;
     background-color: #4b0082;
     width: 100%;
-    height: 90px;
+    height: 50px;
     justify-content: center;
 `
 export const ContainerNav = styled.div`
@@ -18,6 +18,7 @@ export const ContainerNav = styled.div`
         display: flex;
         flex-direction: wrap;
         align-items: center;
+        height: 100%;
 
         p{
             margin-right: 10px;
@@ -25,50 +26,51 @@ export const ContainerNav = styled.div`
         }
     }
 `
-
 export const ImageLogo = styled.img`
     width: 180px;
     height: 80%;
     cursor: pointer;
 `
-export const ProfileLogoSair = styled.div`
-`
-
-export const ImagePerfilUser = styled.img`
-    color: #Fff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    border: 2px solid #fff;
-
-    &:hover{
-        transition: 0.4s;
-        border: 2px solid #00ccff;
-    }
-`
 
 export const BoasVindasLocalizacao = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: wrap;
+    align-items: center;
+    height: 100%;
+    margin-right: 10px;
 
-    img{
-        width: 20px;
-        height: 19px;
-        margin-right: 5px;
+    h4{
+        color: #fff;
+        
     }
+`
+
+export const ProfileLogoEmpresa = styled.div`
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+
+    a{
+        height: 30px;
+    }
+
+`
+export const ImagePerfilUser = styled.img`
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 `
 
 export const Exit = styled.div`
     display: flex;
-    color: #fff;
-    align-items: center;
-    text-align: center;
     margin-left: 10px;
+    height: 100%;
 
     img{
         width: 30px;
-        height: 25px;
+        height: 23px;
         cursor: pointer;
     }
 

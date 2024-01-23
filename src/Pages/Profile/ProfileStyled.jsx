@@ -5,8 +5,9 @@ export const ContainerProfile = styled.div`
     display: flex;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: 88vh;
+    height:  93.3vh;
     overflow: hidden;
+    background-color: #272727;
 `
 
 export const DadosEmpresaProfile = styled.div`
@@ -55,8 +56,6 @@ export const DadosPessoais = styled.div`
         flex-direction: column;
     }
 `
-
-
 export const ProfileDadosHistoricoPedidosProfile = styled.div`
     display: flex;
     width: 100%;
@@ -69,16 +68,12 @@ export const ProfileAllPedidosEntregues = styled.div`
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: #212121;
-    overflow: hidden;
+    align-items: center;
+    background-color: #161616;
 
-    div{
-        overflow-y: scroll;
-        display: flex;
-        justify-content: center;
-
-        &::-webkit-scrollbar{
-        background-color: #212121;
-    }
-    }
+    /*     
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+    background-color: #a5a5a5;
+    } */
 `

@@ -2,8 +2,7 @@ import { Link, Outlet, useNavigate } from 'react-router-dom'
 import logo from '../../images/empresa.png'
 import Logoempresa from '../../images/user.jpg'
 import logoexit from "../../images/exit.png"
-import IconLocation from "../../images/local.png"
-import { ContainerNav, Nav, ImageLogo, ImagePerfilUser, BoasVindasLocalizacao, ProfileLogoSair, Exit} from './NavbarStyled'
+import { ContainerNav, Nav, ImageLogo, ImagePerfilUser, BoasVindasLocalizacao, Exit, ProfileLogoEmpresa} from './NavbarStyled'
 import { EmpresaLogged } from '../../services/EmpresaServices'
 import { useContext, useEffect} from 'react'
 import Cookies from 'js-cookie'
@@ -41,37 +40,27 @@ export default function Navbar(){
                 <ContainerNav>
                     <Link to={"/"}>
                         <ImageLogo src={logo} alt="logo-for-you-entregas" />
-                    </Link>
-                    
+                    </Link>              
                     <div>
                         <div>
                             {empresa ? (
                                 <BoasVindasLocalizacao>
-                                <p>Olá, {empresa.name_empresa}</p>
-                                <div>
-                                    <img src={IconLocation} alt="Localização" />
-                                    <p>Pontes e Lacerda MT</p>
-                                </div>
+                                <h4>OLÁ, {empresa.name_empresa}</h4>
                                 </BoasVindasLocalizacao>                                
                             ) : (
                                 <BoasVindasLocalizacao>
-                                <p>Olá</p>
-                                <div>
-                                    <img src={IconLocation} alt="Localização" />
-                                    <p>Pontes e Lacerda MT</p>
-                                </div>
+                                <h4>OLÁ</h4>
                                 </BoasVindasLocalizacao>   
                             )}
-
-                        <ProfileLogoSair>
-                            <Link to={"/Profile"}>
-                                <ImagePerfilUser src={Logoempresa} alt="perfil-usuário" />
-                            </Link>
-                        </ProfileLogoSair>
+                            <ProfileLogoEmpresa>
+                                <Link to={"/Profile"}>
+                                    <ImagePerfilUser src={Logoempresa} alt="perfil-usuário" />
+                                </Link>
+                            </ProfileLogoEmpresa>                       
+                            <Exit>
+                                <img src={logoexit} alt="sair" onClick={exit}/>
+                            </Exit>
                         </div>
-                        <Exit>
-                            <img src={logoexit} alt="sair" onClick={exit}/>
-                        </Exit>
                     </div>
                 </ContainerNav>
             </Nav>

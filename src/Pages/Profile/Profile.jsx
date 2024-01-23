@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
-import { ContainerProfile, DadosEmpresaProfile, DadosPessoais, PictureLogo, ProfileAllPedidosEntregues, ProfileDadosHistoricoPedidosProfile} from "./ProfileStyled";
+import { ContainerProfile, DadosEmpresaProfile, DadosPessoais, PictureLogo, ProfileAllPedidosEntregues} from "./ProfileStyled";
 import Logoempresa from '../../images/user.jpg'
 import { FindPedidosHistorico } from "../../services/PedidosServices";
 import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPedidos";
+import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedidosStyled";
 
 export function Profile(){
 
@@ -29,7 +30,6 @@ export function Profile(){
     return (
         <>
             <ContainerProfile>
-
                 <DadosEmpresaProfile>
                     <PictureLogo>
                         <img src={Logoempresa} alt="logo" />
@@ -53,13 +53,10 @@ export function Profile(){
                             </div>
                     </DadosPessoais>
                 </DadosEmpresaProfile>
-
-                <ProfileDadosHistoricoPedidosProfile>
-                    <ProfileAllPedidosEntregues>
-                        <div>
-                            <>
-                                {pedidosHistorico.map((item) => 
-                                <HistoricoPedidos
+                <ProfileAllPedidosEntregues>
+                    <CardHistorico>
+                        {pedidosHistorico.map((item) => 
+                            <HistoricoPedidos
                                 key={item.id} 
                                 id={item._id} 
                                 codigo = {item.detalhes_pedido.codigo_pedido}
@@ -75,13 +72,10 @@ export function Profile(){
                                 entregador_cpf = {item.name_entregador}
                                 entregador_email = {item.name_entregador}
                                 form_pagamento_entr = {item.name_entregador}
-                                /> 
-                                )} 
-                            </>
-                        </div> 
-                    </ProfileAllPedidosEntregues>
-                </ProfileDadosHistoricoPedidosProfile>
-
+                            /> 
+                        )} 
+                    </CardHistorico> 
+                </ProfileAllPedidosEntregues>
             </ContainerProfile>
         </>
     )
