@@ -56,13 +56,14 @@ export const DadosPessoais = styled.div`
     }
 `
 
-export const DadosHistoricoPedidosProfile = styled.div`
+
+export const ProfileDadosHistoricoPedidosProfile = styled.div`
     display: flex;
     width: 100%;
     height: 100%;
 `
 
-export const AllPedidosEntregues = styled.div`
+export const ProfileAllPedidosEntregues = styled.div`
     display: flex;
     position: relative;
     flex-direction: column;

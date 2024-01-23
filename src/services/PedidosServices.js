@@ -20,7 +20,6 @@ export function GetAllPedidos() {
 
 export function GetAllPedidosAceitos(id) {
   try {
-    console.log(id);
     const response = axios.get(`${baseURL}/pedidos-aceito/empresa/${id}`, {
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`,
@@ -40,6 +39,21 @@ export function DeletePedido(id) {
     return response;
   } catch (error) {
     console.error("Erro ao deletar pedido da empresa:", error);
+    throw error;
+  }
+}
+
+export function FindPedidosHistorico(id) {
+  try {
+    console.log(id);
+    const response = axios.get(`${baseURL}/historico-pedido/empresa/${id}`, {
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    });
+    return response;
+  } catch (error) {
+    console.error("Erro ao buscar pedidos Aceitos para Historico:", error);
     throw error;
   }
 }
