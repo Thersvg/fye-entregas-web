@@ -30,7 +30,7 @@ export default function Home(){
         const intervalId = setInterval(() => {
         findAllPedidos();
         FindAllPedidosAceitos();
-        }, 2000);
+        }, 4000);
         return () => clearInterval(intervalId);
     }, [])
 
