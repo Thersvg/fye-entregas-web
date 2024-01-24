@@ -89,6 +89,7 @@ export const FooterCard = styled.div`
     background-color: #eeeeee;
     color: #000;
     border-radius: 15px;
+    margin-top: 10px;
 
     label{
         margin-left: 5px;

@@ -40,3 +40,9 @@ export const HomePedidosAceitos = styled.div`
         background-color: #fff;
     }
 `
+
+export const MsgRetorno = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`

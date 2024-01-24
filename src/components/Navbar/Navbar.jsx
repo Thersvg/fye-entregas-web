@@ -43,7 +43,7 @@ export default function Navbar(){
                     </Link>              
                     <div>
                         <div>
-                            {empresa ? (
+                            {empresa? (
                                 <BoasVindasLocalizacao>
                                 <h4>OLÁ, {empresa.name_empresa}</h4>
                                 </BoasVindasLocalizacao>                                

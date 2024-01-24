@@ -8,6 +8,7 @@ export const ContainerProfile = styled.div`
     height:  93.3vh;
     overflow: hidden;
     background-color: #fff;
+
 `
 
 export const DadosEmpresaProfile = styled.div`
@@ -76,4 +77,11 @@ export const ProfileAllPedidosEntregues = styled.div`
     &::-webkit-scrollbar{
     background-color: #a5a5a5;
     } */
+`
+export const MsgRetorno = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 `

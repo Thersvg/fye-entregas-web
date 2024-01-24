@@ -7,13 +7,13 @@ export default function Footer(){
             <footer>
                 <ContainerFooter>
                     <div>
-                        <h3>Pedidos Pendentes</h3>
+                        <h3>Entregas pendentes</h3>
                     </div>
                     <div>
-                        <button>Criar Pedidos</button>
+                        <button>Criar</button>
                     </div>
                     <div>
-                        <h3>Pedidos Aceitos</h3>
+                        <h3>Entregas aceitas</h3>
                     </div>
                 </ContainerFooter>
             </footer>
