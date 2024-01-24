@@ -1,8 +1,26 @@
 import PropTypes from 'prop-types'; 
 import { ContainerCard, ContainerTop, DivBody, FooterCard,HeaderCard,RodapeCard } from './PedidosAceitosStyled';
+import { useState } from 'react';
+import { PedidoEntregue } from '../../services/PedidosServices';
 
 
 export function PedidosAceitos(props){
+
+    const [statePedidoEntregue, setCompleted] = useState(false);
+
+    async function handlePedidoEntregue(){
+    try{ 
+        console.log(props.id);
+        setCompleted(true);
+  
+        await PedidoEntregue(props.id); 
+        setCompleted(false);
+
+    }catch(error){
+        console.error("Erro marcar pedido como pago", error);
+        setCompleted(false);    
+    }      
+    }
 
     return(
 /*             <ContainerPedidoAceito>
@@ -81,7 +99,7 @@ export function PedidosAceitos(props){
                     </ContainerCard>
                     <RodapeCard>
                             <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
-                            <button>PAGO</button>
+                            <button onClick={handlePedidoEntregue} disabled={statePedidoEntregue}>PAGO</button>
                     </RodapeCard>  
             </ContainerTop> 
             <FooterCard>

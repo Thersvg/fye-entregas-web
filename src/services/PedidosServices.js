@@ -58,6 +58,20 @@ export function FindPedidosHistorico(id) {
   }
 }
 
+export function PedidoEntregue(id) {
+  try {
+    const response = axios.post(`${baseURL}/historico-pedido/${id}`, {
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    });
+    return response;
+  } catch (error) {
+    console.error("Erro ao buscar concluir pedido", error);
+    throw error;
+  }
+}
+
 /* export function GetPedidosAceitos() {
   const response = axios.get(`${baseURL}/pedidos-aceitos-empresa/${id}`);
   return response;
