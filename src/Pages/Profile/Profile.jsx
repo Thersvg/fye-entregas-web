@@ -13,10 +13,10 @@ export function Profile(){
     const [pedidosHistorico, setPedidosHistorico] = useState([]);
 
     async function FindAllPedidosHistorico(){
-        console.log(empresa._id);
+
         const response = await FindPedidosHistorico(empresa._id);
         setPedidosHistorico(response.data);
-        console.log(response);
+
     }
 
     useEffect(() => {

@@ -21,7 +21,6 @@ export function AuthenticateLogin(){
     async function inHandleSubmit(data){
         try{
             const response = await LoginContaEmpresa(data);
-            console.log(response.data);
             Cookies.set("token", response.data, { secure: true, sameSite: 'Strict', expires: 1 });
             navigate("/");
         }catch(error){

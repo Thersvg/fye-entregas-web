@@ -1,7 +1,24 @@
+import { useState } from "react";
 import { ContainerCard, ContainerTop, DivBody, FooterCard, HeaderCard, RodapeCard } from "./HistoricoPedidosStyled";
 import PropTypes from 'prop-types'; 
+import { PedidoFinalizadoFunc } from "../../services/PedidosServices";
 
 export function HistoricoPedidos(props){
+
+    const [statePedidoFinalizado, setFinalized] = useState(false);
+
+    async function handlePedidoFinalizado(){
+    try{ 
+        setFinalized(true);
+        await PedidoFinalizadoFunc(props.id); 
+        setFinalized(false);
+
+    }catch(error){
+        console.error("Erro ao finalizar pedido", error);
+        setFinalized(false);    
+    }      
+    }
+
     return(
         <DivBody>
         <ContainerTop>
@@ -18,7 +35,7 @@ export function HistoricoPedidos(props){
                 </ContainerCard>
                 <RodapeCard>
                         <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
-                        <button>FINALIZAR</button>
+                        <button onClick={handlePedidoFinalizado} disabled={statePedidoFinalizado}>FINALIZAR</button>
                 </RodapeCard>  
         </ContainerTop> 
         <FooterCard>

@@ -72,8 +72,16 @@ export function PedidoEntregue(id) {
   }
 }
 
-/* export function GetPedidosAceitos() {
-  const response = axios.get(`${baseURL}/pedidos-aceitos-empresa/${id}`);
-  return response;
+export async function PedidoFinalizadoFunc(id) {
+  try {
+    const response = axios.delete(`${baseURL}/historico-pedido/${id}`, {
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    });
+    return response;
+  } catch (error) {
+    console.error("Erro ao finalizar pedido", error);
+    throw error;
+  }
 }
- */

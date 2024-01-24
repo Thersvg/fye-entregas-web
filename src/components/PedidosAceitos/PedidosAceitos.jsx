@@ -10,7 +10,6 @@ export function PedidosAceitos(props){
 
     async function handlePedidoEntregue(){
     try{ 
-        console.log(props.id);
         setCompleted(true);
   
         await PedidoEntregue(props.id); 

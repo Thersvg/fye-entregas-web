@@ -14,7 +14,6 @@ export function PedidosPendente(props){
 
     async function handleDeletePedido(){
     try{ 
-        console.log(props.id);
         setDeletando(true);
   
         await DeletePedido(props.id); 

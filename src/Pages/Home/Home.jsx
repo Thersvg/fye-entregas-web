@@ -20,10 +20,8 @@ export default function Home(){
     const [pedidosAceitos, setPedidosAceitos] = useState([]);
     async function FindAllPedidosAceitos(){
 
-        console.log(empresa._id);
         const response = await GetAllPedidosAceitos(empresa._id);
         setPedidosAceitos(response.data);
-        console.log(response);
     }
 
     useEffect(() => {
