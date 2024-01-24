@@ -7,7 +7,7 @@ export const ContainerProfile = styled.div`
     width: 100%;
     height:  93.3vh;
     overflow: hidden;
-    background-color: #272727;
+    background-color: #fff;
 `
 
 export const DadosEmpresaProfile = styled.div`
@@ -27,7 +27,6 @@ export const PictureLogo = styled.div`
         width: 180px;
         height: 180px;
         border-radius: 50%;
-        border: 2px solid #fff;
         cursor: pointer;
     }
 `
@@ -39,20 +38,21 @@ export const DadosPessoais = styled.div`
     height: 200px;
 
     label{
-        font-size: 18px;
-        font-weight: 800;
-        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        color: #000;
     }
 
     p{
-        color: #fff; 
+        color: #000; 
     }
 
     div{
         justify-content: center;
         padding: 20px;
         display: flex;
-        background-color: #212121;
+        background-color: #eeeeee;
+        border-radius: 15px;
         flex-direction: column;
     }
 `
@@ -69,7 +69,7 @@ export const ProfileAllPedidosEntregues = styled.div`
     width: 100%;
     height: 100%;
     align-items: center;
-    background-color: #161616;
+    background-color: #fff;
 
     /*     
     overflow-y: scroll;

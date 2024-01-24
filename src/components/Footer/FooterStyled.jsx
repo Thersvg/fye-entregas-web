@@ -1,16 +1,15 @@
 import styled from "styled-components"
 
 export const ContainerFooter = styled.footer`
-    background-color: #141414;
+    background-color: #eeeeee;
     align-items: center;
-    /* display: flex; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     width: 100%;
-    height: 50px;
+    height: 40px;
     align-items: center;
-    color: #fff;
+    color: #000;
 
     position: fixed;
     bottom: 0;
@@ -18,7 +17,7 @@ export const ContainerFooter = styled.footer`
 
     button{
         width: 130px;
-        height: 50px;
+        height: 40px;
         font-weight: 800;
         font-size: 16px;
         color: #fff;

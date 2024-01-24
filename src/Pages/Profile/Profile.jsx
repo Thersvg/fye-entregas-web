@@ -69,9 +69,9 @@ export function Profile(){
                                 taxa_ent = {item.detalhes_pedido.taxa_entrega}
                                 name_emp = {item.name_empresa}
                                 entregador_name = {item.name_entregador}
-                                entregador_cpf = {item.name_entregador}
-                                entregador_email = {item.name_entregador}
-                                form_pagamento_entr = {item.name_entregador}
+                                entregador_cpf = {item.name_entregador?.cpf_entregador}
+                                entregador_telefone = {item.name_entregador?.telefone_entregador}
+                                form_pagamento_entr = {item.name_entregador?.formaDepagamento_entregador}
                             /> 
                         )} 
                     </CardHistorico> 

@@ -9,23 +9,23 @@ export function HistoricoPedidos(props){
                         <label>{props.codigo}</label>
                 </HeaderCard>
                 <ContainerCard>
-                        <label>CLIENTE: {props.name}</label>
-                        <label>TELEFONE: {props.telefone}</label>
-                        <label>ENDEREÇO: {props.endereco}</label>
-                        <label>DESCRIÇÃO: {props.descricao}</label>
-                        <label>VALOR DO PEDIDO: {props.valor}</label>
-                        <label>FORMA DE PAGAMENTO: {props.forma_p}</label>
+                        <label>CLIENTE: <p>{props.name}</p></label>
+                        <label>TELEFONE: <p>{props.telefone}</p></label>
+                        <label>ENDEREÇO: <p>{props.endereco}</p></label>
+                        <label>DESCRIÇÃO: <p>{props.descricao}</p></label>
+                        <label>VALOR DO PEDIDO: <p>R$ {props.valor}</p></label>
+                        <label>FORMA DE PAGAMENTO: <p>{props.forma_p}</p></label>
                 </ContainerCard>
                 <RodapeCard>
-                        <label>ENTREGA: R${props.taxa_ent}</label>
-                        <button>PAGO</button>
+                        <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
+                        <button>FINALIZAR</button>
                 </RodapeCard>  
         </ContainerTop> 
         <FooterCard>
-            <label>ENTREGADOR: {props.entregador_n}</label>
-            <label>CPF: {props.entregador_cp}</label>
-            <label>EMAIL: {props.entregador_em}</label>
-            <label>FORMA DE PAGAMENTO: {props.form_pagamento_en}</label>
+            <label>ENTREGADOR: <p>{props.entregador_name.name_entregador}</p></label>
+            <label>CPF: <p>{props.entregador_name.cpf_entregador}</p></label>
+            <label>TELEFONE: <p>{props.entregador_name.telefone_entregador}</p></label>
+            <label>FORMA DE PAGAMENTO: <p>{props.entregador_name.formaDepagamento_entregador}</p></label>
         </FooterCard>
         </DivBody>
     )
@@ -42,8 +42,5 @@ HistoricoPedidos.propTypes = {
     codigo: PropTypes.string.isRequired,
     name_emp: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    entregador_n: PropTypes.string.isRequired,
-    entregador_cp: PropTypes.string.isRequired,
-    entregador_em: PropTypes.string.isRequired,
-    form_pagamento_en: PropTypes.string.isRequired,
+    entregador_name: PropTypes.string.isRequired,
 }; 

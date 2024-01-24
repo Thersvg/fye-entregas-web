@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'; 
-import { ButtonConcluidoBox, ContainerPedidoAceito, InfPessoaisPedidoAceito, InfPessoaisPedidoAceitoEntregador, InfRodapePedidoAceito, InfoDescricaoEnderecoPedidoAceito } from './PedidosAceitosStyled';
+import { ContainerCard, ContainerTop, DivBody, FooterCard,HeaderCard,RodapeCard } from './PedidosAceitosStyled';
 
 
 export function PedidosAceitos(props){
 
     return(
-            <ContainerPedidoAceito>
+/*             <ContainerPedidoAceito>
                 <InfPessoaisPedidoAceito>
                     <div>
                         <div>
@@ -65,7 +65,32 @@ export function PedidosAceitos(props){
                         </div>
                     </div>
                 </InfPessoaisPedidoAceitoEntregador>
-        </ContainerPedidoAceito>
+        </ContainerPedidoAceito> */
+            <DivBody>
+            <ContainerTop>
+                <HeaderCard>
+                            <label>{props.codigo}</label>
+                    </HeaderCard>
+                    <ContainerCard>
+                            <label>CLIENTE: <p>{props.name}</p></label>
+                            <label>TELEFONE: <p>{props.telefone}</p></label>
+                            <label>ENDEREÇO: <p>{props.endereco}</p></label>
+                            <label>DESCRIÇÃO: <p>{props.descricao}</p></label>
+                            <label>VALOR DO PEDIDO: <p>R$ {props.valor}</p></label>
+                            <label>FORMA DE PAGAMENTO: <p>{props.forma_p}</p></label>
+                    </ContainerCard>
+                    <RodapeCard>
+                            <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
+                            <button>PAGO</button>
+                    </RodapeCard>  
+            </ContainerTop> 
+            <FooterCard>
+                <label>ENTREGADOR: <p>{props.entregador_name.name_entregador}</p></label>
+                <label>CPF: <p>{props.entregador_name.cpf_entregador}</p></label>
+                <label>TELEFONE: <p>{props.entregador_name.telefone_entregador}</p></label>
+                <label>FORMA DE PAGAMENTO: <p>{props.entregador_name.formaDepagamento_entregador}</p></label>
+            </FooterCard>
+            </DivBody>
     )
 }
 

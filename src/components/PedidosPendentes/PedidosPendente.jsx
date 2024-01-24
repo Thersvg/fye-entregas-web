@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'; 
-import { ButtonDeleteBox, ContainerPedido, InfPessoais, InfRodape, InfoDescricaoEndereco } from './PedidosPendenteStyled';
+import { ContainerCard, ContainerTop, DivBody, FooterCard, HeaderCard, RodapeCard } from './PedidosPendenteStyled';
 import { DeletePedido } from '../../services/PedidosServices';
 import { useState } from 'react';
 
@@ -28,7 +28,7 @@ export function PedidosPendente(props){
 
     return(
         <>
-        <ContainerPedido>
+{/*         <ContainerPedido>
                 <InfPessoais>
                     <div>
                         <div>
@@ -72,6 +72,32 @@ export function PedidosPendente(props){
                         </div>
                 </InfRodape>
         </ContainerPedido>
+        </> */}
+
+        <DivBody>
+        <ContainerTop>
+            <HeaderCard>
+                        <label>{props.codigo}</label>
+                </HeaderCard>
+                <ContainerCard>
+                        <label>CLIENTE: <p>{props.name}</p></label>
+                        <label>TELEFONE: <p>{props.telefone}</p></label>
+                        <label>ENDEREÇO: <p>{props.endereco}</p></label>
+                        <label>DESCRIÇÃO: <p>{props.descricao}</p></label>
+                        <label>VALOR DO PEDIDO: <p>R$ {props.valor}</p></label>
+                        <label>FORMA DE PAGAMENTO: <p>{props.forma_p}</p></label>
+                </ContainerCard>
+                <RodapeCard>
+                        <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
+                        <button onClick={handleDeletePedido} disabled={deletando}>EXCLUIR</button>
+                </RodapeCard>  
+        </ContainerTop> 
+        <FooterCard>
+            <label>EMPRESA: <p>{props.name_emp.name_empresa}</p></label>
+            <label>ENDEREÇO: <p>{props.name_emp.endereco_empresa}</p></label>
+            <label>TELEFONE: <p>{props.name_emp.telefone_empresa}</p></label>
+        </FooterCard>
+        </DivBody>
         </>
     )
 }
