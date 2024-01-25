@@ -1,0 +1,42 @@
+import styled from "styled-components";
+
+export const FormOrder = styled.form`
+    display: flex;
+    width: 500px;
+    height: 400px;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(223, 223, 223, 1);
+    padding: 20px;
+    z-index: 1;
+    border-radius: 15px;
+    gap: 3px;
+    align-items: flex-start;
+
+    input{
+        height: 60px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    section{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    footer{
+
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+
+        button{
+        margin-top: 10px;
+        height: 30px;
+    }
+    }
+`

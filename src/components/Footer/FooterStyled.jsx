@@ -15,8 +15,12 @@ export const ContainerFooter = styled.footer`
     bottom: 0;
     z-index: 1;
 
+    h3{
+        font-size: 14px;
+    }
+
     button{
-        width: 130px;
+        width: 90px;
         height: 40px;
         font-weight: 800;
         font-size: 16px;
@@ -24,10 +28,17 @@ export const ContainerFooter = styled.footer`
         background-color: #4b0082;
         cursor: pointer;
         transition: 0.4s;
+        border-radius: 5px;
+
+        img{
+            margin-top: 3px;
+            width: 30px;
+            height: 35px;
+        }
 
         &:hover{
             color: #4b0082;
-            background-color: #fff; 
+            background-color: #8445b1; 
         }
     }
 

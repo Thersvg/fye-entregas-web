@@ -1,6 +1,6 @@
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import logo from '../../images/empresa.png'
-import Logoempresa from '../../images/user.jpg'
+import Logoempresa from '../../images/user.png'
 import logoexit from "../../images/exit.png"
 import { ContainerNav, Nav, ImageLogo, ImagePerfilUser, BoasVindasLocalizacao, Exit, ProfileLogoEmpresa} from './NavbarStyled'
 import { EmpresaLogged } from '../../services/EmpresaServices'

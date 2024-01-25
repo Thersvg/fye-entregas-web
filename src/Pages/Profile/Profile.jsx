@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
 import { ContainerProfile, DadosEmpresaProfile, DadosPessoais, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues} from "./ProfileStyled";
-import Logoempresa from '../../images/user.jpg'
+import Logoempresa from '../../images/user.png'
 import { FindPedidosHistorico } from "../../services/PedidosServices";
 import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPedidos";
 import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedidosStyled";
