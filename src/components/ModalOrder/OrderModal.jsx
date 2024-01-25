@@ -1,15 +1,33 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FormOrder } from "./OrderModalStyled";
 import { CreateNewOrder } from "../../services/PedidosServices";
 import LogoDelete from '../../images/delete.png'
 import LogoSend from '../../images/send.png'
+import { EmpresaContext } from "../../Context/EmpresaContext";
 
 export default function HandleModalOrder({ isOpen, onClose}){
     if (!isOpen) {
         return null;
       }
 
+      function gerarCaracteresAleatorios(tamanho) {
+        const caracteresPermitidos =
+          "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        let resultado = "";
+    
+        for (let i = 0; i < tamanho; i++) {
+          const indiceAleatorio = Math.floor(
+            Math.random() * caracteresPermitidos.length
+          );
+          resultado += caracteresPermitidos.charAt(indiceAleatorio);
+        }
+    
+        return resultado;
+      }
+
       const [dadosFormulario, setDadosFormulario] = useState({});  
+
+      const { empresa } = useContext(EmpresaContext);
 
       const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -21,8 +39,11 @@ export default function HandleModalOrder({ isOpen, onClose}){
         CreateOrder(dadosFormulario)
       };
 
-      async function CreateOrder(dadosFormulario){
+      async function CreateOrder(dadosFormulario){  
+        let codigo = gerarCaracteresAleatorios(8);
+        let taxa = empresa.taxa_entrega;
         await CreateNewOrder(dadosFormulario);
+
         onClose();
       }
 

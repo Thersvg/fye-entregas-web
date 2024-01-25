@@ -27,7 +27,6 @@ export const Section = styled.section`
     gap: 1rem;
     border-radius: 10px;
     background-color: #fff;
-    /* background-color: #4b0082; */
 
     h2{
         font-size: 2rem;

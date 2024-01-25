@@ -1,5 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useContext } from "react";
+import { EmpresaContext } from "../Context/EmpresaContext";
 
 /* const baseURL = "https://api-for-you-entregas.onrender.com"; */
 const baseURL = "http://localhost:3000";
@@ -89,8 +91,8 @@ export async function PedidoFinalizadoFunc(id) {
 export async function CreateNewOrder(DadosEntrega) {
   const body = {
     ...DadosEntrega,
-    codigo_pedido: "FRG4TG4",
-    taxa_entrega: "6",
+    codigo_pedido: "codigo",
+    taxa_entrega: "taxa",
   };
   console.log(body);
   try {
