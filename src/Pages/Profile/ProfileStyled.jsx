@@ -16,6 +16,7 @@ export const DadosEmpresaProfile = styled.div`
     flex-direction: column;
     width: 100%;
     height: 100%;
+    align-items: center;
 `
 export const PictureLogo = styled.div`
     display: flex;
@@ -35,8 +36,10 @@ export const DadosPessoais = styled.div`
     display: flex;
     justify-content: center;
     grid-template-columns: 1fr 1fr;
-    width: 100%;
+    width: 50%;
     height: 200px;
+    background-color: #eeeeee;
+    border-radius: 15px;
 
     label{
         font-size: 14px;
@@ -52,8 +55,6 @@ export const DadosPessoais = styled.div`
         justify-content: center;
         padding: 20px;
         display: flex;
-        background-color: #eeeeee;
-        border-radius: 15px;
         flex-direction: column;
     }
 `
@@ -84,4 +85,28 @@ export const MsgRetorno = styled.div`
     justify-content: center;
     height: 100%;
     width: 100%;
+`
+export const AltDados = styled.div`
+    display: flex;
+    width: 50%;
+
+    div{
+        display: flex;
+        position: relative;
+        top: -100%;
+        justify-content: flex-end;
+        width: 100%;
+
+        button{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    }
 `

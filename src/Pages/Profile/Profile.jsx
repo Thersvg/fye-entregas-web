@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
-import { ContainerProfile, DadosEmpresaProfile, DadosPessoais, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues} from "./ProfileStyled";
+import { AltDados, ContainerProfile, DadosEmpresaProfile, DadosPessoais, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues} from "./ProfileStyled";
 import Logoempresa from '../../images/user.png'
 import { FindPedidosHistorico } from "../../services/PedidosServices";
 import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPedidos";
 import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedidosStyled";
+import LogoModificar from '../../images/modified.png'
 
 export function Profile(){
 
@@ -52,6 +53,11 @@ export function Profile(){
                                             <p>{empresa.taxa_entrega_empresa}</p>
                                         </div>
                             </DadosPessoais>
+                            <AltDados>
+                                <div>
+                                    <button><img src={LogoModificar} alt="Alterar"/></button>
+                                </div>
+                            </AltDados>
                     </DadosEmpresaProfile>
                 <ProfileAllPedidosEntregues>
                 {pedidosHistorico.length > 0 ? (
