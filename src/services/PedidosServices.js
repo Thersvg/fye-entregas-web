@@ -85,3 +85,23 @@ export async function PedidoFinalizadoFunc(id) {
     throw error;
   }
 }
+
+export async function CreateNewOrder(DadosEntrega) {
+  const body = {
+    ...DadosEntrega,
+    codigo_pedido: "FRG4TG4",
+    taxa_entrega: "6",
+  };
+  console.log(body);
+  try {
+    const response = axios.post(`${baseURL}/pedido/`, body, {
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    });
+    return response;
+  } catch (error) {
+    console.error("Erro ao criar entrega", error);
+    throw error;
+  }
+}

@@ -32,7 +32,7 @@ export const FormOrder = styled.form`
 
         display: flex;
         width: 100%;
-        justify-content: flex-end;
+        justify-content: space-between;
 
         button{
         margin-top: 10px;
