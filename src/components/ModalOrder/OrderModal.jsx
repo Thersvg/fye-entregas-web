@@ -1,20 +1,15 @@
 import { useState } from "react";
 import { FormOrder } from "./OrderModalStyled";
 import { CreateNewOrder } from "../../services/PedidosServices";
+import LogoDelete from '../../images/delete.png'
+import LogoSend from '../../images/send.png'
 
-export default function HandleModalOrder({ isOpen, onClose, children }){
+export default function HandleModalOrder({ isOpen, onClose}){
     if (!isOpen) {
         return null;
       }
 
-      const [dadosFormulario, setDadosFormulario] = useState({
-        name_cliente: '',
-        endereco_cliente: '',
-        descricao_pedido: '',
-        telefone_cliente: '',
-        valor_pedido: '',
-        forma_pagamento: '',
-      });  
+      const [dadosFormulario, setDadosFormulario] = useState({});  
 
       const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -25,7 +20,6 @@ export default function HandleModalOrder({ isOpen, onClose, children }){
         event.preventDefault();
         CreateOrder(dadosFormulario)
       };
-
 
       async function CreateOrder(dadosFormulario){
         await CreateNewOrder(dadosFormulario);
@@ -44,6 +38,7 @@ export default function HandleModalOrder({ isOpen, onClose, children }){
             id="nameCliente"
             name="name_cliente"
             onChange={handleInputChange}
+            required
           />
           <label htmlFor="endereco">Endereço:</label>
           <input
@@ -51,6 +46,7 @@ export default function HandleModalOrder({ isOpen, onClose, children }){
             id="endereco"
             name="endereco_cliente"
             onChange={handleInputChange}
+            required
           />
           <label htmlFor="descricaoPedido">Descrição:</label>
           <input
@@ -58,6 +54,7 @@ export default function HandleModalOrder({ isOpen, onClose, children }){
             id="descricaoPedido"
             name="descricao_pedido"
             onChange={handleInputChange}
+            required
           />
           <label htmlFor="telefoneCliente">Telefone:</label>
           <input
@@ -65,6 +62,7 @@ export default function HandleModalOrder({ isOpen, onClose, children }){
             id="telefoneCliente"
             name="telefone_cliente"
             onChange={handleInputChange}
+            required
           />
           <label htmlFor="valorPedido">Valor pedido:</label>
           <input
@@ -72,6 +70,7 @@ export default function HandleModalOrder({ isOpen, onClose, children }){
             id="valorPedido"
             name="valor_pedido"
             onChange={handleInputChange}
+            required
           />
           <label htmlFor="formaPagamento">Forma de pagamento:</label>
           <input
@@ -79,10 +78,11 @@ export default function HandleModalOrder({ isOpen, onClose, children }){
             id="formaPagamento"
             name="forma_pagamento"
             onChange={handleInputChange}
+            required
           />
           <footer>
-            <button onClick={onClose}>Fechar</button>
-            <button type="submit">Enviar</button>
+            <button onClick={onClose}><img src={LogoDelete} alt="" /></button>
+            <button type="submit"><img src={LogoSend} alt="" /></button>
           </footer>
         </FormOrder>
         </>

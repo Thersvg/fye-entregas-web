@@ -62,14 +62,21 @@ export const RodapeCard = styled.div`
     }
 
     button{
-        width: 90px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         font-size: 14px;
         font-weight: 700;
         background-color: transparent;
         cursor: pointer;
         color: #000;
         transition: 0.4s;
+        margin-right: 10px;
+        margin-top: 10px;
+
+        img{
+        width: 100%;
+        height: 100%;
+        }
 
         &:hover{
             color: #00610d;
@@ -84,7 +91,7 @@ export const FooterCard = styled.div`
     justify-content: center;
     width: 100%;
     gap: 3px;
-    height: 12rem;
+    height: 10rem;
     overflow: hidden;
     background-color: #eeeeee;
     color: #000;

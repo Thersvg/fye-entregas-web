@@ -1,14 +1,11 @@
 import PropTypes from 'prop-types'; 
 import { ContainerCard, ContainerTop, DivBody, FooterCard, HeaderCard, RodapeCard } from './PedidosPendenteStyled';
 import { DeletePedido } from '../../services/PedidosServices';
+import LogoDelete from '../../images/delete.png'
 import { useState } from 'react';
 
 
 export function PedidosPendente(props){
-
-/*     function RefreshPage(){
-        location.reload();
-    } */
 
     const [deletando, setDeletando] = useState(false);
 
@@ -27,52 +24,6 @@ export function PedidosPendente(props){
 
     return(
         <>
-{/*         <ContainerPedido>
-                <InfPessoais>
-                    <div>
-                        <div>
-                            <label htmlFor="">Nome: {props.name}</label>
-                        </div>
-                        <div>
-                            <label htmlFor="">Descrição: {props.descricao}</label>   
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <label htmlFor="">Telefone: {props.telefone}</label>
-                        </div>
-                        <div>
-                            <label htmlFor="">Pagamento: {props.forma_p}</label>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <label htmlFor="">Valor R$: {props.valor}</label>
-                        </div>
-                        <div>
-                            <label htmlFor="">Delivery R$: {props.taxa_ent}</label>
-                        </div>
-                    </div>
-                </InfPessoais>
-
-                <InfoDescricaoEndereco>
-                    <label htmlFor="">Endereço: {props.endereco}</label>                   
-                </InfoDescricaoEndereco> 
-
-                <InfRodape>
-                        <div>
-                            <label htmlFor="">{props.name_emp.name_empresa}</label>
-                        </div>
-                        <div>
-                            <label htmlFor="">Código: {props.codigo}</label>
-                        </div>
-                        <div>
-                            <ButtonDeleteBox onClick={handleDeletePedido} disabled={deletando}>Excluir</ButtonDeleteBox>
-                        </div>
-                </InfRodape>
-        </ContainerPedido>
-        </> */}
-
         <DivBody>
         <ContainerTop>
             <HeaderCard>
@@ -88,7 +39,7 @@ export function PedidosPendente(props){
                 </ContainerCard>
                 <RodapeCard>
                         <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
-                        <button onClick={handleDeletePedido} disabled={deletando}>EXCLUIR</button>
+                        <button onClick={handleDeletePedido} disabled={deletando}><img src={LogoDelete} alt="" /></button>
                 </RodapeCard>  
         </ContainerTop> 
         <FooterCard>

@@ -32,8 +32,8 @@ export const ContainerFooter = styled.footer`
 
         img{
             margin-top: 3px;
-            width: 30px;
-            height: 35px;
+            width: 25px;
+            height: 30px;
         }
 
         &:hover{

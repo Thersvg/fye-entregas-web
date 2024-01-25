@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ContainerCard, ContainerTop, DivBody, FooterCard, HeaderCard, RodapeCard } from "./HistoricoPedidosStyled";
 import PropTypes from 'prop-types'; 
 import { PedidoFinalizadoFunc } from "../../services/PedidosServices";
+import LogoTrash from '../../images/trash.png'
 
 export function HistoricoPedidos(props){
 
@@ -35,7 +36,7 @@ export function HistoricoPedidos(props){
                 </ContainerCard>
                 <RodapeCard>
                         <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
-                        <button onClick={handlePedidoFinalizado} disabled={statePedidoFinalizado}>FINALIZAR</button>
+                        <button onClick={handlePedidoFinalizado} disabled={statePedidoFinalizado}><img src={LogoTrash} alt="" /></button>
                 </RodapeCard>  
         </ContainerTop> 
         <FooterCard>

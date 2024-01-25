@@ -29,14 +29,27 @@ export const FormOrder = styled.form`
     }
 
     footer{
-
         display: flex;
         width: 100%;
         justify-content: space-between;
 
-        button{
-        margin-top: 10px;
+    button{
+        width: 30px;
         height: 30px;
+        margin-right: 10px;
+        margin-top: 10px;
+        background-color: transparent;
+
+        img{
+        width: 100%;
+        height: 100%;
     }
+
+        &:hover{
+            background-color: transparent;
+        }
     }
+
+
+}
 `
