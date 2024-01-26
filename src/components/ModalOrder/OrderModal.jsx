@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
 import { FormOrder } from "./OrderModalStyled";
 import { CreateNewOrder } from "../../services/PedidosServices";
 import LogoDelete from '../../images/delete.png'
 import LogoSend from '../../images/send.png'
+import { useContext, useState } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
 
 export default function HandleModalOrder({ isOpen, onClose}){
@@ -10,24 +10,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
         return null;
       }
 
-      function gerarCaracteresAleatorios(tamanho) {
-        const caracteresPermitidos =
-          "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        let resultado = "";
-    
-        for (let i = 0; i < tamanho; i++) {
-          const indiceAleatorio = Math.floor(
-            Math.random() * caracteresPermitidos.length
-          );
-          resultado += caracteresPermitidos.charAt(indiceAleatorio);
-        }
-    
-        return resultado;
-      }
-
       const [dadosFormulario, setDadosFormulario] = useState({});  
-
-      const { empresa } = useContext(EmpresaContext);
 
       const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -39,11 +22,10 @@ export default function HandleModalOrder({ isOpen, onClose}){
         CreateOrder(dadosFormulario)
       };
 
-      async function CreateOrder(dadosFormulario){  
-        let codigo = gerarCaracteresAleatorios(8);
-        let taxa = empresa.taxa_entrega;
-        await CreateNewOrder(dadosFormulario);
+      const { empresa } = useContext(EmpresaContext);
 
+      async function CreateOrder(dadosFormulario){  
+        await CreateNewOrder(dadosFormulario, empresa.taxa_entrega_empresa);
         onClose();
       }
 
@@ -53,7 +35,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
         <section>
             <h4>NOVA ENTREGA</h4>
         </section>
-          <label htmlFor="nameCliente">Cliente:</label>
+          <label htmlFor="nameCliente">Cliente</label>
           <input
             type="text"
             id="nameCliente"
@@ -61,7 +43,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
             onChange={handleInputChange}
             required
           />
-          <label htmlFor="endereco">Endereço:</label>
+          <label htmlFor="endereco">Endereço</label>
           <input
             type="text"
             id="endereco"
@@ -69,7 +51,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
             onChange={handleInputChange}
             required
           />
-          <label htmlFor="descricaoPedido">Descrição:</label>
+          <label htmlFor="descricaoPedido">Descrição</label>
           <input
             type="text"
             id="descricaoPedido"
@@ -77,7 +59,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
             onChange={handleInputChange}
             required
           />
-          <label htmlFor="telefoneCliente">Telefone:</label>
+          <label htmlFor="telefoneCliente">Telefone</label>
           <input
             type="text"
             id="telefoneCliente"
@@ -85,7 +67,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
             onChange={handleInputChange}
             required
           />
-          <label htmlFor="valorPedido">Valor pedido:</label>
+          <label htmlFor="valorPedido">Valor pedido</label>
           <input
             type="text"
             id="valorPedido"
@@ -93,7 +75,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
             onChange={handleInputChange}
             required
           />
-          <label htmlFor="formaPagamento">Forma de pagamento:</label>
+          <label htmlFor="formaPagamento">Forma de pagamento</label>
           <input
             type="text"
             id="formaPagamento"

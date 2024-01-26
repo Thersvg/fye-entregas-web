@@ -6,20 +6,28 @@ import { FindPedidosHistorico } from "../../services/PedidosServices";
 import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPedidos";
 import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedidosStyled";
 import LogoModificar from '../../images/modified.png'
+import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile";
 
 export function Profile(){
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+
 
     const {empresa} = useContext(EmpresaContext);
-
     const [pedidosHistorico, setPedidosHistorico] = useState([]);
 
     async function FindAllPedidosHistorico(){
-
         const response = await FindPedidosHistorico(empresa._id);
         setPedidosHistorico(response.data);
 
     }
-
     useEffect(() => {
         const intervalId = setInterval(() => {
             FindAllPedidosHistorico();
@@ -55,8 +63,12 @@ export function Profile(){
                             </DadosPessoais>
                             <AltDados>
                                 <div>
-                                    <button><img src={LogoModificar} alt="Alterar"/></button>
+                                    <button onClick={openModal}><img src={LogoModificar} alt="Alterar" /></button>
                                 </div>
+                                
+                                <HandleModalProfile isOpen={isModalOpen} onClose={closeModal}>
+                                </HandleModalProfile>
+
                             </AltDados>
                     </DadosEmpresaProfile>
                 <ProfileAllPedidosEntregues>

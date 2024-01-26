@@ -1,7 +1,5 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-import { useContext } from "react";
-import { EmpresaContext } from "../Context/EmpresaContext";
 
 /* const baseURL = "https://api-for-you-entregas.onrender.com"; */
 const baseURL = "http://localhost:3000";
@@ -88,13 +86,24 @@ export async function PedidoFinalizadoFunc(id) {
   }
 }
 
-export async function CreateNewOrder(DadosEntrega) {
+export async function CreateNewOrder(DadosEntrega, taxa) {
+  const caracteresPermitidos =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let resultado = "";
+
+  for (let i = 0; i < 6; i++) {
+    const indiceAleatorio = Math.floor(
+      Math.random() * caracteresPermitidos.length
+    );
+    resultado += caracteresPermitidos.charAt(indiceAleatorio);
+  }
+
   const body = {
     ...DadosEntrega,
-    codigo_pedido: "codigo",
-    taxa_entrega: "taxa",
+    codigo_pedido: resultado,
+    taxa_entrega: taxa,
   };
-  console.log(body);
+
   try {
     const response = axios.post(`${baseURL}/pedido/`, body, {
       headers: {

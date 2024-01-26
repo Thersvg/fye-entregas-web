@@ -25,7 +25,6 @@ export default function Footer(){
                         <button onClick={openModal} ><img src={IconMake} alt="" /></button>
                     </div>
                     <HandleModalOrder isOpen={isModalOpen} onClose={closeModal}>
-                        <HandleModalOrder isOpen={isModalOpen} onClose={closeModal} />
                     </HandleModalOrder>
                     <div>
                         <h3>Entregas aceitas</h3>
