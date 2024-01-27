@@ -36,7 +36,7 @@ export function HistoricoPedidos(props){
                 </ContainerCard>
                 <RodapeCard>
                         <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
-                        <button onClick={handlePedidoFinalizado} disabled={statePedidoFinalizado}><img src={LogoTrash} alt="" /></button>
+                        <button onClick={handlePedidoFinalizado} disabled={statePedidoFinalizado}><img src={LogoTrash} alt="Excluir" /></button>
                 </RodapeCard>  
         </ContainerTop> 
         <FooterCard>

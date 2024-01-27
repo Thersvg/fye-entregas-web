@@ -85,8 +85,8 @@ export default function HandleModalOrder({ isOpen, onClose}){
             required
           />
           <footer>
-            <button onClick={onClose}><img src={LogoDelete} alt="" /></button>
-            <button type="submit"><img src={LogoSend} alt="" /></button>
+            <button onClick={onClose}><img src={LogoDelete} alt="Fechar" /></button>
+            <button type="submit"><img src={LogoSend} alt="Enviar" /></button>
           </footer>
         </FormOrder>
         </>

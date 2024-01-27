@@ -109,3 +109,15 @@ export const AltDados = styled.div`
 
     }
 `
+
+export const Suporte = styled.div`
+    display: flex;
+    position: fixed;
+    width: 50%;
+    bottom: 0;
+    margin-left: 10px;
+
+    Link{
+        text-decoration: none;
+    }
+`

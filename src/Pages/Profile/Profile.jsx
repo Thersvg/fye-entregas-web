@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
-import { AltDados, ContainerProfile, DadosEmpresaProfile, DadosPessoais, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues} from "./ProfileStyled";
+import { AltDados, ContainerProfile, DadosEmpresaProfile, DadosPessoais, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues, Suporte} from "./ProfileStyled";
 import Logoempresa from '../../images/user.png'
 import { FindPedidosHistorico } from "../../services/PedidosServices";
 import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPedidos";
@@ -8,6 +8,7 @@ import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedido
 import LogoModificar from '../../images/modified.png'
 import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile";
 import CustomSkeletonProfile from "../../components/ProfileSkeleton/ProfileSkeleton";
+import { Link } from "react-router-dom";
 
 export function Profile(){
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -72,10 +73,13 @@ export function Profile(){
                             <AltDados>
                                 <div>
                                     <button onClick={openModal}><img src={LogoModificar} alt="Alterar" /></button>
-                                </div>                           
+                                </div>                          
                                 <HandleModalProfile isOpen={isModalOpen} onClose={closeModal}>
                                 </HandleModalProfile>
                             </AltDados>
+                            <Suporte>
+                                <Link to={""} style={{ fontSize: 14, fontWeight: 800, color: 'inherit', textDecoration: 'none'}}>Cancelar minha assinatura</Link>
+                            </Suporte> 
                     </DadosEmpresaProfile>
                 <ProfileAllPedidosEntregues>
                 {pedidosHistorico.length > 0 ? (

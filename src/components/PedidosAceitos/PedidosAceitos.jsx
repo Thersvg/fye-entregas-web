@@ -38,7 +38,7 @@ export function PedidosAceitos(props){
                     </ContainerCard>
                     <RodapeCard>
                             <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
-                            <button onClick={handlePedidoEntregue} disabled={statePedidoEntregue}><img src={LogoCheck} alt="" /></button>
+                            <button onClick={handlePedidoEntregue} disabled={statePedidoEntregue}><img src={LogoCheck} alt="Entregue" /></button>
                     </RodapeCard>  
             </ContainerTop> 
             <FooterCard>

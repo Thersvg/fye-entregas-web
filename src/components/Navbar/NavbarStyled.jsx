@@ -27,7 +27,7 @@ export const ContainerNav = styled.div`
     }
 `
 export const ImageLogo = styled.img`
-    width: 180px;
+    width: 120px;
     height: 80%;
     cursor: pointer;
 `

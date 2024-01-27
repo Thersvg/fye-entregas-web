@@ -22,7 +22,7 @@ export default function Footer(){
                         <h3>Entregas pendentes</h3>
                     </div>
                     <div>
-                        <button onClick={openModal} ><img src={IconMake} alt="" /></button>
+                        <button onClick={openModal} ><img src={IconMake} alt="Criar" /></button>
                     </div>
                     <HandleModalOrder isOpen={isModalOpen} onClose={closeModal}>
                     </HandleModalOrder>

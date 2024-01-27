@@ -39,7 +39,7 @@ export function PedidosPendente(props){
                 </ContainerCard>
                 <RodapeCard>
                         <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
-                        <button onClick={handleDeletePedido} disabled={deletando}><img src={LogoDelete} alt="" /></button>
+                        <button onClick={handleDeletePedido} disabled={deletando}><img src={LogoDelete} alt="Excluir" /></button>
                 </RodapeCard>  
         </ContainerTop> 
         <FooterCard>
