@@ -27,6 +27,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
       async function CreateOrder(dadosFormulario){  
         await CreateNewOrder(dadosFormulario, empresa.taxa_entrega_empresa);
         onClose();
+        location.reload(); 
       }
 
     return (

@@ -12,8 +12,8 @@ export function HistoricoPedidos(props){
     try{ 
         setFinalized(true);
         await PedidoFinalizadoFunc(props.id); 
+        location.reload(); 
         setFinalized(false);
-
     }catch(error){
         console.error("Erro ao finalizar pedido", error);
         setFinalized(false);    

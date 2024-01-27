@@ -12,8 +12,8 @@ export function PedidosAceitos(props){
     async function handlePedidoEntregue(){
     try{ 
         setCompleted(true);
-  
         await PedidoEntregue(props.id); 
+        location.reload(); 
         setCompleted(false);
 
     }catch(error){

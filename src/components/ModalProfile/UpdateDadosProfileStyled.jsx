@@ -39,6 +39,7 @@ export const FormOrder = styled.form`
         margin-right: 10px;
         margin-top: 10px;
         background-color: transparent;
+        cursor: pointer;
 
         img{
         width: 100%;

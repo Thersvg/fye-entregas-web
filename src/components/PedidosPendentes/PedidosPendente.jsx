@@ -12,8 +12,8 @@ export function PedidosPendente(props){
     async function handleDeletePedido(){
     try{ 
         setDeletando(true);
-  
         await DeletePedido(props.id); 
+        location.reload(); 
         setDeletando(false);
 
     }catch(error){
