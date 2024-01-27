@@ -7,9 +7,12 @@ import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPed
 import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedidosStyled";
 import LogoModificar from '../../images/modified.png'
 import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile";
+import CustomSkeletonProfile from "../../components/ProfileSkeleton/ProfileSkeleton";
 
 export function Profile(){
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [loading, setLoading] = useState(true);
 
     const openModal = () => {
       setIsModalOpen(true);
@@ -19,8 +22,9 @@ export function Profile(){
       setIsModalOpen(false);
     };
 
-
     const {empresa} = useContext(EmpresaContext);
+
+    console.log(empresa);
     const [pedidosHistorico, setPedidosHistorico] = useState([]);
 
     async function FindAllPedidosHistorico(){
@@ -31,6 +35,7 @@ export function Profile(){
     useEffect(() => {
         const intervalId = setInterval(() => {
             FindAllPedidosHistorico();
+            setLoading(false);
         }, 4000);
         return () => clearInterval(intervalId);
     }, [])
@@ -38,12 +43,15 @@ export function Profile(){
 
     return (
         <>
+            {loading ? (
+                <CustomSkeletonProfile />
+            ):(
             <ContainerProfile>
                     <DadosEmpresaProfile>
                             <PictureLogo>
                                 <img src={Logoempresa} alt="logo" />
                             </PictureLogo>
-                            <DadosPessoais>
+                                    <DadosPessoais>                     
                                         <div>
                                             <label htmlFor="">EMPRESA:</label>
                                             <p>{empresa.name_empresa}</p>
@@ -64,11 +72,9 @@ export function Profile(){
                             <AltDados>
                                 <div>
                                     <button onClick={openModal}><img src={LogoModificar} alt="Alterar" /></button>
-                                </div>
-                                
+                                </div>                           
                                 <HandleModalProfile isOpen={isModalOpen} onClose={closeModal}>
                                 </HandleModalProfile>
-
                             </AltDados>
                     </DadosEmpresaProfile>
                 <ProfileAllPedidosEntregues>
@@ -102,6 +108,7 @@ export function Profile(){
                 )}
                 </ProfileAllPedidosEntregues>
             </ContainerProfile>
+            )}
         </>
     )
 }

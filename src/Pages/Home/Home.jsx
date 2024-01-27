@@ -1,15 +1,17 @@
 import { EmpresaContext } from "../../Context/EmpresaContext";
 import Footer from "../../components/Footer/Footer";
+import CustomSkeletonHome from "../../components/HomeSkeleton/HomeSkeleton";
 import { PedidosAceitos } from "../../components/PedidosAceitos/PedidosAceitos";
 import { PedidosPendente } from "../../components/PedidosPendentes/PedidosPendente";
 import { GetAllPedidos, GetAllPedidosAceitos } from "../../services/PedidosServices";
 import { HomeBody, HomePedidosAceitos, HomePedidosPendentes, MsgRetorno} from "./HomeStyled";
 import { useContext, useEffect, useState } from "react";
 
-
 export default function Home(){
 
     const {empresa} = useContext(EmpresaContext);
+
+    const [loading, setLoading] = useState(true);
 
     const [pedidos, setPedidos] = useState([]);
     async function findAllPedidos(){
@@ -19,7 +21,6 @@ export default function Home(){
 
     const [pedidosAceitos, setPedidosAceitos] = useState([]);
     async function FindAllPedidosAceitos(){
-
         const response = await GetAllPedidosAceitos(empresa._id);
         setPedidosAceitos(response.data);
     }
@@ -28,12 +29,16 @@ export default function Home(){
         const intervalId = setInterval(() => {
         findAllPedidos();
         FindAllPedidosAceitos();
+        setLoading(false);
         }, 4000);
         return () => clearInterval(intervalId);
     }, [])
 
     return (
         <>
+        {loading ? (
+            <CustomSkeletonHome />
+        ):(        
         <HomeBody>
             {pedidos.length > 0 ? (
                 <HomePedidosPendentes>
@@ -61,9 +66,8 @@ export default function Home(){
             ):(
              <MsgRetorno>
                 <p>Nenhuma entrega criada.</p>
-             </MsgRetorno>
+             </MsgRetorno> 
             )}
-
             {pedidosAceitos.length > 0 ? (
                   <HomePedidosAceitos>
                         <div>
@@ -96,6 +100,7 @@ export default function Home(){
                 </MsgRetorno>
             )}
         </HomeBody>
+        )}
         <Footer />
         </>
     );
