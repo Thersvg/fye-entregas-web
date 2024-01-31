@@ -18,20 +18,17 @@ export function Profile(){
     const openModal = () => {
       setIsModalOpen(true);
     };
-  
     const closeModal = () => {
       setIsModalOpen(false);
     };
 
     const {empresa} = useContext(EmpresaContext);
 
-    console.log(empresa);
-    const [pedidosHistorico, setPedidosHistorico] = useState([]);
 
+    const [pedidosHistorico, setPedidosHistorico] = useState([]);
     async function FindAllPedidosHistorico(){
         const response = await FindPedidosHistorico(empresa._id);
         setPedidosHistorico(response.data);
-
     }
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -42,6 +39,22 @@ export function Profile(){
     }, [])
 
 
+    function uploadImage(){
+        const [selectedFile, setSelectedFile] = useState(null);
+
+        const handleFileChange = (event) => {
+            const file = event.target.files[0];
+            setSelectedFile(file);
+        };
+
+        const handleUpload = () => {
+            if(selectedFile){
+                const formData = new FormData();
+                formData.append('image', selectedFile);
+            }
+        }
+    }
+
     return (
         <>
             {loading ? (
@@ -50,7 +63,8 @@ export function Profile(){
             <ContainerProfile>
                     <DadosEmpresaProfile>
                             <PictureLogo>
-                                <img src={Logoempresa} alt="logo" />
+                                <img onChange={handleFileChange} src={empresa.logo_empresa} alt="logo" />
+                                <button onClick={handleUpload}>Alterar</button>
                             </PictureLogo>
                                     <DadosPessoais>                     
                                         <div>

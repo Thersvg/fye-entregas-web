@@ -7,9 +7,8 @@ const baseURL = "https://api-for-you-entregas.onrender.com";
 export function CriarContaEmpresa(data) {
   const body = {
     ...data,
-    logo_empresa: "C:/Users/Rodrigo/Desktop/fye/mamute.png",
-  };
-  console.log(body);
+    logo_empresa: "../images/user.png",
+  }; 
 
   try {
     const response = axios.post(`${baseURL}/empresa`, body);
