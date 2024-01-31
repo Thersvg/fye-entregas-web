@@ -10,8 +10,59 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'
 import {AuthenticateLogin } from './Pages/Authentication/AuthLogin.jsx'
 import { AuthenticateCadastrar } from './Pages/Authentication/AuthCadastrar.jsx'
 import EmpresaProvider from './Context/EmpresaContext.jsx'
+import Cookies from 'js-cookie'
 
-const router = createBrowserRouter([
+
+const isTokenPresent = () => {
+  const token = Cookies.get('token');
+  return !!token; 
+};
+
+const PrivateRoute = ({ element }) => {
+  const isAuthenticated = isTokenPresent();
+  return isAuthenticated ? element : <ErrorPage />;
+};
+
+
+const routes = [
+  {
+    path: '/',
+    element: <PrivateRoute element= {<Navbar />}/>,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/',
+        element: <PrivateRoute element= {<Home />}/>,
+      },
+      {
+        path: '/profile',
+        element: <PrivateRoute element={<Profile />} />,
+      },
+    ],
+  },
+  {
+    path: '/login',
+    element: <AuthenticateLogin />,
+  },
+  {
+    path: '/cadastrar',
+    element: <AuthenticateCadastrar />,
+  },
+];
+
+const router = createBrowserRouter(routes);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <GlobalStyled />
+    <EmpresaProvider>
+      <RouterProvider router={router} />
+    </EmpresaProvider>
+  </React.StrictMode>,
+);
+
+
+/* const router = createBrowserRouter([
   {
     path: "/",
     element: <Navbar/>,
@@ -45,4 +96,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router}/>
     </EmpresaProvider>
   </React.StrictMode>,
-)
+) */
