@@ -28,7 +28,6 @@ export const PictureLogo = styled.div`
         width: 180px;
         height: 180px;
         border-radius: 50%;
-        cursor: pointer;
     }
 `
 export const DadosPessoais = styled.div`

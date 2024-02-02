@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
 import { AltDados, ContainerProfile, DadosEmpresaProfile, DadosPessoais, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues, Suporte} from "./ProfileStyled";
-import Logoempresa from '../../images/user.png'
 import { FindPedidosHistorico } from "../../services/PedidosServices";
 import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPedidos";
 import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedidosStyled";
@@ -9,10 +8,10 @@ import LogoModificar from '../../images/modified.png'
 import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile";
 import CustomSkeletonProfile from "../../components/ProfileSkeleton/ProfileSkeleton";
 import { Link } from "react-router-dom";
+/* import {UpdateLogoService } from "../../services/EmpresaServices"; */
 
 export function Profile(){
     const [isModalOpen, setIsModalOpen] = useState(false);
-
     const [loading, setLoading] = useState(true);
 
     const openModal = () => {
@@ -38,23 +37,25 @@ export function Profile(){
         return () => clearInterval(intervalId);
     }, [])
 
-
-    function uploadImage(){
-        const [selectedFile, setSelectedFile] = useState(null);
-
-        const handleFileChange = (event) => {
-            const file = event.target.files[0];
-            setSelectedFile(file);
+ 
+    const [selectFile, setSelectedFile] = useState(null);
+        
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        setSelectedFile(file);
         };
 
-        const handleUpload = () => {
-            if(selectedFile){
-                const formData = new FormData();
-                formData.append('image', selectedFile);
-            }
-        }
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+        UpdateData(selectFile);
     }
 
+    async function UpdateData(dadosImg){   
+/*         const response = await UpdateLogoService(dadosImg);
+        console.log("response");
+        console.log(response); */
+    }
+    
     return (
         <>
             {loading ? (
@@ -63,8 +64,15 @@ export function Profile(){
             <ContainerProfile>
                     <DadosEmpresaProfile>
                             <PictureLogo>
-                                <img onChange={handleFileChange} src={empresa.logo_empresa} alt="logo" />
-                                <button onClick={handleUpload}>Alterar</button>
+                                <div>
+                                    <img src={empresa.logo_empresa} alt="logo" />
+                                </div>
+                                <div>
+                                    <form onSubmit={handleSubmit} action="/upload">
+                                        <input onChange={handleFileChange} type="file" accept="image/*" id="logo_empresa" name="logo_empresa" />
+                                        <button type="submit">Enviar</button>
+                                    </form>
+                                </div>
                             </PictureLogo>
                                     <DadosPessoais>                     
                                         <div>

@@ -1,8 +1,8 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const baseURL = "https://api-for-you-entregas.onrender.com"; 
-/* const baseURL = "http://localhost:3000"; */
+const baseURL = "https://api-for-you-entregas.onrender.com";  
+/* const baseURL = "http://localhost:3000";  */
 
 export function CriarContaEmpresa(data) {
   const body = {
@@ -63,3 +63,25 @@ export async function UpdateDataService(data) {
     throw error;
   }
 }
+
+/* export async function UpdateLogoService(data) {
+  const body = {
+    ...data,
+  };
+
+  console.log("img");
+  console.log(data);
+
+  try {
+    const response = await axios.patch(`${baseURL}/empresa/updatelogo/`, body, {
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    });
+
+    return response;
+  } catch (error) {
+    console.error("Erro na alteração dos dados", error);
+    throw error;
+  }
+} */
