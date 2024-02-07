@@ -8,6 +8,8 @@ import LogoModificar from '../../images/modified.png'
 import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile";
 import CustomSkeletonProfile from "../../components/ProfileSkeleton/ProfileSkeleton";
 import { Link } from "react-router-dom";
+import { UpdateDataService } from "../../services/EmpresaServices";
+
 /* import {UpdateLogoService } from "../../services/EmpresaServices"; */
 
 export function Profile(){
@@ -39,23 +41,37 @@ export function Profile(){
 
  
     const [selectFile, setSelectedFile] = useState(null);
+    const [fileName, setFileName] = useState('');
         
     const handleFileChange = (event) => {
         const file = event.target.files[0];
-        setSelectedFile(file);
-        };
+        setSelectedFile(file); 
 
-    const handleSubmit = (event) =>{
-        event.preventDefault();
-        UpdateData(selectFile);
-    }
+        const name = event.target.name;
+        setFileName(name);
+    };
 
-    async function UpdateData(dadosImg){   
-/*         const response = await UpdateLogoService(dadosImg);
-        console.log("response");
-        console.log(response); */
-    }
-    
+    const handleSubmit = async (event) =>{
+        event.preventDefault(); 
+        if(selectFile){
+
+            const requestBody = {
+                logo_empresa: `${selectFile}`
+            }
+            const jsonBody = JSON.stringify(requestBody);
+
+            console.log(jsonBody);
+
+            try{
+                const response = await UpdateDataService(jsonBody);
+                console.log(response);
+            }catch(error){
+                console.log(error);
+            }
+        }else{
+            console.log("Nenhum arquivo selecionado");
+        }
+    }   
     return (
         <>
             {loading ? (
@@ -69,7 +85,7 @@ export function Profile(){
                                 </div>
                                 <div>
                                     <form onSubmit={handleSubmit} action="/upload">
-                                        <input onChange={handleFileChange} type="file" accept="image/*" id="logo_empresa" name="logo_empresa" />
+                                        <input  name="logo_empresa" onChange={handleFileChange} type="file" accept="image/*" />
                                         <button type="submit">Enviar</button>
                                     </form>
                                 </div>

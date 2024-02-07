@@ -1,8 +1,8 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const baseURL = "https://api-for-you-entregas.onrender.com";  
-/*  const baseURL = "http://localhost:3000";  */
+/* const baseURL = "https://api-for-you-entregas.onrender.com";   */
+const baseURL = "http://localhost:4000"; 
 
 export function GetAllPedidos() {
   try {
