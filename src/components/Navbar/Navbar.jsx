@@ -44,7 +44,7 @@ export default function Navbar(){
                         <div>
                             {empresa? (
                                 <BoasVindasLocalizacao>
-                                <h4>OLÁ, {empresa.name_empresa}</h4>
+                                <h4>OLÁ, {empresa?.name_empresa}</h4>
                                 </BoasVindasLocalizacao>                                
                             ) : (
                                 <BoasVindasLocalizacao>
@@ -53,7 +53,7 @@ export default function Navbar(){
                             )}
                             <ProfileLogoEmpresa>
                                 <Link to={"/Profile"}>
-                                    <ImagePerfilUser src={empresa.logo_empresa} alt="perfil-usuário" />
+                                    <ImagePerfilUser src={empresa?.logo_empresa} alt="perfil-usuário" />
                                 </Link>
                             </ProfileLogoEmpresa>                       
                             <Exit>

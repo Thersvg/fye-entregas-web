@@ -82,7 +82,7 @@ export function Profile(){
                     <DadosEmpresaProfile>
                             <PictureLogo>
                                 <div>
-                                    <img src={empresa.logo_empresa} alt="Logo"/>
+                                    <img src={empresa?.logo_empresa} alt="Logo"/>
                                 </div>
                                 <div>
                                     <form onSubmit={handleSubmit} action="/upload">
@@ -94,19 +94,19 @@ export function Profile(){
                                     <DadosPessoais>                     
                                         <div>
                                             <label htmlFor="">EMPRESA:</label>
-                                            <p>{empresa.name_empresa}</p>
+                                            <p>{empresa?.name_empresa}</p>
                                             <label htmlFor="">CNPJ/CPF:</label>
-                                            <p>{empresa.cnpj_empresa}</p>
+                                            <p>{empresa?.cnpj_empresa}</p>
                                             <label htmlFor="">EMAIL:</label>
-                                            <p>{empresa.email_empresa}</p>
+                                            <p>{empresa?.email_empresa}</p>
                                         </div>
                                         <div>
                                             <label htmlFor="">TELEFONE:</label>
-                                            <p>{empresa.telefone_empresa}</p>
+                                            <p>{empresa?.telefone_empresa}</p>
                                             <label htmlFor="">ENDEREÇO:</label>
-                                            <p>{empresa.endereco_empresa}</p>
+                                            <p>{empresa?.endereco_empresa}</p>
                                             <label htmlFor="">TAXA DE ENTREGA:</label>
-                                            <p>{empresa.taxa_entrega_empresa}</p>
+                                            <p>{empresa?.taxa_entrega_empresa}</p>
                                         </div>
                             </DadosPessoais>
                             <AltDados>
