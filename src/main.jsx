@@ -20,7 +20,7 @@ const isTokenPresent = () => {
 
 const PrivateRoute = ({ element }) => {
   const isAuthenticated = isTokenPresent();
-  return isAuthenticated ? element : <ErrorPage />;
+  return isAuthenticated ? element :<AuthenticateLogin />;
 };
 
 

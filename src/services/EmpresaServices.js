@@ -43,18 +43,16 @@ export async function LoginContaEmpresa(data) {
   }
 }
 
-export async function UpdateDataService(data) {
-  const body = {
-    ...data,
-  };
+export async function UpdateDataService(Body) {
   try {
-    const response = await axios.patch(`${baseURL}/empresa/`, body, {
+    const response = await axios.patch(`${baseURL}/empresa/`, Body, {
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`,
       },
     });
 
     return response;
+
   } catch (error) {
     console.error("Erro na alteração dos dados", error);
     throw error;

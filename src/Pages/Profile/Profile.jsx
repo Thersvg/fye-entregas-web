@@ -25,7 +25,6 @@ export function Profile(){
 
     const {empresa} = useContext(EmpresaContext);
 
-
     const [pedidosHistorico, setPedidosHistorico] = useState([]);
     async function FindAllPedidosHistorico(){
         const response = await FindPedidosHistorico(empresa._id);
@@ -39,7 +38,6 @@ export function Profile(){
         return () => clearInterval(intervalId);
     }, [])
 
- 
     const [selectFile, setSelectedFile] = useState(null);
     const [fileName, setFileName] = useState('');
         
@@ -55,15 +53,10 @@ export function Profile(){
         event.preventDefault(); 
         if(selectFile){
 
-            const requestBody = {
-                logo_empresa: `${selectFile}`
-            }
-            const jsonBody = JSON.stringify(requestBody);
-
-            console.log(jsonBody);
+            let Body = {"logo_empresa": `${selectFile}`}  
 
             try{
-                const response = await UpdateDataService(jsonBody);
+                const response = await UpdateDataService(Body);
                 console.log(response);
             }catch(error){
                 console.log(error);
@@ -72,6 +65,31 @@ export function Profile(){
             console.log("Nenhum arquivo selecionado");
         }
     }   
+
+/*     let blobURL;
+    console.log(empresa.logo_empresa.data);
+
+    if (empresa.logo_empresa && empresa.logo_empresa.data.length) {
+        const arrayBuffer = new ArrayBuffer(empresa.logo_empresa.data.length);
+        const uint8Array = new Uint8Array(arrayBuffer);
+
+        uint8Array.set(empresa.logo_empresa.data);
+        const blob = new Blob([arrayBuffer], { type: 'image/png' });
+    
+        blobURL = URL.createObjectURL(blob);
+      } else {
+        console.error("logo_empresa não está definido ou não tem um comprimento.");
+      } */
+
+      // Supondo que empresa.logo_empresa seja o buffer recebido da API
+      console.log(empresa.logo_empresa);
+
+    const byteArray = new Uint8Array(empresa.logo_empresa);
+    const logoDataUrl = `data:image/png;base64,${btoa(String.fromCharCode.apply(null, byteArray))}`;
+
+
+
+      
     return (
         <>
             {loading ? (
@@ -81,7 +99,7 @@ export function Profile(){
                     <DadosEmpresaProfile>
                             <PictureLogo>
                                 <div>
-                                    <img src={empresa.logo_empresa} alt="logo" />
+                                    <img src={logoDataUrl} alt="logo" />
                                 </div>
                                 <div>
                                     <form onSubmit={handleSubmit} action="/upload">
