@@ -12,7 +12,7 @@ const CustomSkeletonProfile = () => {
             <Skeleton width={400} height={200} borderRadius={15} />
         </Perfil>
         <Orders>
-            <Skeleton width={600} height={600} borderRadius={15}/>
+            <Skeleton width={600} height={500} borderRadius={15}/>
         </Orders>
       </Allcontainer>
     </>

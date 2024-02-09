@@ -1,6 +1,5 @@
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import logo from '../../images/empresa.png'
-import Logoempresa from '../../images/user.png'
 import logoexit from "../../images/exit.png"
 import { ContainerNav, Nav, ImageLogo, ImagePerfilUser, BoasVindasLocalizacao, Exit, ProfileLogoEmpresa} from './NavbarStyled'
 import { EmpresaLogged } from '../../services/EmpresaServices'
@@ -54,7 +53,7 @@ export default function Navbar(){
                             )}
                             <ProfileLogoEmpresa>
                                 <Link to={"/Profile"}>
-                                    <ImagePerfilUser src={Logoempresa} alt="perfil-usuário" />
+                                    <ImagePerfilUser src={empresa.logo_empresa} alt="perfil-usuário" />
                                 </Link>
                             </ProfileLogoEmpresa>                       
                             <Exit>

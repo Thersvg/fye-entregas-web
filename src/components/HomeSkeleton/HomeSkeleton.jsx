@@ -6,10 +6,10 @@ const CustomSkeletonHome = () => {
       <>
         <Allcontainer>
           <OrderPendent>
-              <Skeleton width={600} height={600} borderRadius={15} />
+              <Skeleton width={600} height={500} borderRadius={15} />
           </OrderPendent>
           <OrdersAccept>
-              <Skeleton width={600} height={600} borderRadius={15}/>
+              <Skeleton width={600} height={500} borderRadius={15}/>
           </OrdersAccept>
         </Allcontainer>
       </>

@@ -5,7 +5,7 @@ export const ContainerProfile = styled.div`
     display: flex;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height:  93vh;
+    height:  100vh;
     overflow: hidden;
     background-color: #fff;
 
@@ -19,15 +19,55 @@ export const DadosEmpresaProfile = styled.div`
 `
 export const PictureLogo = styled.div`
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 250px;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
 
     img{
         width: 180px;
         height: 180px;
         border-radius: 50%;
+    }
+
+    form{
+
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+
+        input[type="file"]{
+            cursor: pointer;
+            display: inline-block;
+            border: none;
+            width: 150px;
+
+            &::-webkit-file-upload-button{
+                visibility: hidden;
+            }
+
+            &::before{
+                content: 'Escolher Imagem';
+                display: inline-block;
+                white-space: nowrap;
+            }
+        }
+
+        button{
+            cursor: pointer;
+            background-color: transparent;
+            width: 20px;
+            height: 20px;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+
+        }
     }
 `
 export const DadosPessoais = styled.div`
@@ -83,6 +123,7 @@ export const MsgRetorno = styled.div`
     justify-content: center;
     height: 100%;
     width: 100%;
+    
 `
 export const AltDados = styled.div`
     display: flex;

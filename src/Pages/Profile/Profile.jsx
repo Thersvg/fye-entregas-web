@@ -9,8 +9,7 @@ import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile
 import CustomSkeletonProfile from "../../components/ProfileSkeleton/ProfileSkeleton";
 import { Link } from "react-router-dom";
 import { UpdateDataService } from "../../services/EmpresaServices";
-
-/* import {UpdateLogoService } from "../../services/EmpresaServices"; */
+import LogoSendImage from "../../images/send.png"
 
 export function Profile(){
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,58 +37,42 @@ export function Profile(){
         return () => clearInterval(intervalId);
     }, [])
 
-    const [selectFile, setSelectedFile] = useState(null);
-    const [fileName, setFileName] = useState('');
+    const [selectFile, setSelectedFile] = useState('');
+    const [base64String, setBase64String] = useState(''); 
         
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         setSelectedFile(file); 
 
-        const name = event.target.name;
-        setFileName(name);
+        if(file){
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+                const base64 = e.target.result;
+                setBase64String(base64);
+            };
+
+            reader.readAsDataURL(file);
+        }
     };
 
     const handleSubmit = async (event) =>{
         event.preventDefault(); 
         if(selectFile){
-
-            let Body = {"logo_empresa": `${selectFile}`}  
-
-            try{
-                const response = await UpdateDataService(Body);
-                console.log(response);
-            }catch(error){
-                console.log(error);
-            }
+            let Body = {"logo_empresa": `${base64String}`}  
+                try{
+                    const response = await UpdateDataService(Body);
+                    console.log(response);
+                    location.reload(); 
+                }catch(error){
+                    console.log(error);
+                }
         }else{
             console.log("Nenhum arquivo selecionado");
+            alert("Nenhum arquivo selecionado");
         }
     }   
 
-/*     let blobURL;
-    console.log(empresa.logo_empresa.data);
-
-    if (empresa.logo_empresa && empresa.logo_empresa.data.length) {
-        const arrayBuffer = new ArrayBuffer(empresa.logo_empresa.data.length);
-        const uint8Array = new Uint8Array(arrayBuffer);
-
-        uint8Array.set(empresa.logo_empresa.data);
-        const blob = new Blob([arrayBuffer], { type: 'image/png' });
-    
-        blobURL = URL.createObjectURL(blob);
-      } else {
-        console.error("logo_empresa não está definido ou não tem um comprimento.");
-      } */
-
-      // Supondo que empresa.logo_empresa seja o buffer recebido da API
-      console.log(empresa.logo_empresa);
-
-    const byteArray = new Uint8Array(empresa.logo_empresa);
-    const logoDataUrl = `data:image/png;base64,${btoa(String.fromCharCode.apply(null, byteArray))}`;
-
-
-
-      
     return (
         <>
             {loading ? (
@@ -99,12 +82,12 @@ export function Profile(){
                     <DadosEmpresaProfile>
                             <PictureLogo>
                                 <div>
-                                    <img src={logoDataUrl} alt="logo" />
+                                    <img src={empresa.logo_empresa} alt="Logo"/>
                                 </div>
                                 <div>
                                     <form onSubmit={handleSubmit} action="/upload">
-                                        <input  name="logo_empresa" onChange={handleFileChange} type="file" accept="image/*" />
-                                        <button type="submit">Enviar</button>
+                                        <input name="logo_empresa" onChange={handleFileChange} type="file" accept="image/*" />
+                                        <button type="submit"><img src={LogoSendImage} alt="" /></button>
                                     </form>
                                 </div>
                             </PictureLogo>

@@ -23,7 +23,7 @@ export const ContainerTop = styled.div`
     background-color: #eeeeee;
     color: #000;
     border-radius: 15px;
-    margin-top: 15px;
+    margin-top: 20px;
 `
 
 export const HeaderCard = styled.div`
@@ -91,12 +91,12 @@ export const FooterCard = styled.div`
     justify-content: center;
     width: 100%;
     gap: 3px;
-    height: 10rem;
+    height: 8rem;
     overflow: hidden;
     background-color: #eeeeee;
     color: #000;
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: 2px;
 
     label{
         margin-left: 5px;
