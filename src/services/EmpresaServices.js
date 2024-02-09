@@ -7,7 +7,7 @@ const baseURL = "http://localhost:4000";
 export function CriarContaEmpresa(data) {
   const body = {
     ...data,
-    logo_empresa: "../images/user.png",
+    logo_empresa: "logo"
   }; 
 
   try {
