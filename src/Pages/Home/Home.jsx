@@ -6,6 +6,7 @@ import { PedidosPendente } from "../../components/PedidosPendentes/PedidosPenden
 import { GetAllPedidos, GetAllPedidosAceitos } from "../../services/PedidosServices";
 import { HomeBody, HomePedidosAceitos, HomePedidosPendentes, MsgRetorno} from "./HomeStyled";
 import { useContext, useEffect, useState } from "react";
+import NotificationSound from "../../Sounds/notification.mp3";
 
 export default function Home(){
 
@@ -14,15 +15,28 @@ export default function Home(){
     const [loading, setLoading] = useState(true);
 
     const [pedidos, setPedidos] = useState([]);
+
     async function findAllPedidos(){
         const response = await GetAllPedidos();
         setPedidos(response.data);
     }
 
     const [pedidosAceitos, setPedidosAceitos] = useState([]);
+
+    const [notificationPlayed, setNotificationPlayed] = useState(false);
+
+    const notificationAudio = new Audio(NotificationSound);
+
+
     async function FindAllPedidosAceitos(){
         const response = await GetAllPedidosAceitos(empresa._id);
-        setPedidosAceitos(response.data);
+        const novosPedidosAceitos = response.data;
+
+        if(novosPedidosAceitos.length > pedidosAceitos.length && !notificationPlayed){
+            notificationAudio.play();
+            setNotificationPlayed(true);
+        }
+        setPedidosAceitos(novosPedidosAceitos);
     }
 
     useEffect(() => {
@@ -31,9 +45,12 @@ export default function Home(){
         FindAllPedidosAceitos();
         setLoading(false);
         }, 4000);
-        return () => clearInterval(intervalId);
+        return () => {
+        clearInterval(intervalId);
+        setNotificationPlayed(false);
+        };
     }, [])
-
+ 
     return (
         <>
         {loading ? (
@@ -68,7 +85,7 @@ export default function Home(){
                 <p>Nenhuma entrega criada.</p>
              </MsgRetorno> 
             )}
-            {pedidosAceitos.length > 0 ? (
+            {pedidosAceitos.length > 0 ? (            
                   <HomePedidosAceitos>
                         <div>
                             <>
