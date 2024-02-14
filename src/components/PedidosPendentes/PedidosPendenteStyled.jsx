@@ -85,7 +85,7 @@ export const RodapeCard = styled.div`
       height: 20px;
       position: absolute;
       background-color: transparent;
-      color: #fff;
+      color: var(--thema-fonte-principal);
       padding: 5px;
       top: 0px;
       left: 100%;
