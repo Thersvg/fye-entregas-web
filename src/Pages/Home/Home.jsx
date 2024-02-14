@@ -50,7 +50,7 @@ export default function Home(){
         setNotificationPlayed(false);
         };
     }, [])
- 
+    
     return (
         <>
         {loading ? (
