@@ -7,6 +7,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import { loginSchema } from "../../Schemas/loginSchema";
 import { LoginContaEmpresa } from "../../services/EmpresaServices";
 import Cookies from "js-cookie";
+import { useState } from "react";
 
 export function AuthenticateLogin(){
 
@@ -17,18 +18,20 @@ export function AuthenticateLogin(){
     } = useForm({resolver: zodResolver(loginSchema)});
 
     const navigate = useNavigate();
-    
+
+    const [ErrorLogin, setErrorLogin] = useState('');
+  
     async function inHandleSubmit(data){
         try{
             const response = await LoginContaEmpresa(data);
             Cookies.set("token", response.data, { secure: true, sameSite: 'Strict', expires: 1 });
             navigate("/");
             location.reload();
-        }catch(error){
+        }catch(error){           
             console.log(error);
+            setErrorLogin(error.response.data);
         }
     }
-
      return(
         <AuthContainer>
             <Section type="Login">
@@ -55,12 +58,17 @@ export function AuthenticateLogin(){
                     {errors.password && (
                         <ErrorSpan>{errors.password.message}</ErrorSpan>
                     )}
+                    <div>
+                        <Link to="/cadastrar"  style={{textDecoration: 'none'}} >Criar conta</Link>
 
-                    <Button 
-                        type= "submit"
-                        text= "Entrar"
-                    />
-                    <Link to="/cadastrar"  style={{textDecoration: 'none'}} >Criar conta</Link>
+                        <Button 
+                            type= "submit"
+                            text= "Entrar"
+                        />
+                    </div>
+                    <footer>
+                        <p>{ErrorLogin.message}</p>                        
+                    </footer>
                 </form>
             </Section>
         </AuthContainer>

@@ -7,7 +7,7 @@ export const ContainerProfile = styled.div`
     width: 100%;
     height:  100vh;
     overflow: hidden;
-    background-color: #fff;
+    background-color: var(--thema-fundo-principal);
 
 `
 export const DadosEmpresaProfile = styled.div`
@@ -76,17 +76,17 @@ export const DadosPessoais = styled.div`
     grid-template-columns: 1fr 1fr;
     width: 50%;
     height: 200px;
-    background-color: #eeeeee;
+    background-color: var(--thema-fundo-secundario);
     border-radius: 15px;
 
     label{
         font-size: 14px;
         font-weight: 700;
-        color: #000;
+        color: var(--thema-fonte-principal);
     }
 
     p{
-        color: #000; 
+        color: var(--thema-fonte-principal); 
     }
 
     div{
@@ -109,13 +109,8 @@ export const ProfileAllPedidosEntregues = styled.div`
     width: 100%;
     height: 100%;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--thema-fundo-principal);
 
-    /*     
-    overflow-y: scroll;
-    &::-webkit-scrollbar{
-    background-color: #a5a5a5;
-    } */
 `
 export const MsgRetorno = styled.div`
     display: flex;
