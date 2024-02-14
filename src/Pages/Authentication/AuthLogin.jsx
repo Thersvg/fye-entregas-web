@@ -67,7 +67,8 @@ export function AuthenticateLogin(){
                         />
                     </div>
                     <footer>
-                        <p>{ErrorLogin.message}</p>                        
+                        <p>{ErrorLogin.message}</p>
+                        <Link to="/recover"  style={{textDecoration: 'none', color: '#000', fontWeight: '500', fontSize: '14px' }} >Esqueci minha senha</Link>                       
                     </footer>
                 </form>
             </Section>

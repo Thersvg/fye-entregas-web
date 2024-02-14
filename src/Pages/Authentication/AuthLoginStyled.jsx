@@ -25,8 +25,12 @@ export const AuthContainer = styled.div`
 
         footer{
             display: flex;
+            flex-direction: column;
             width: 100%;
+
             justify-content: center;
+            align-items: center;
+            gap: 4rem;
             margin-top: 15px;
         }
 

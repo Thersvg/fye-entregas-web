@@ -9,7 +9,7 @@ import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile
 import CustomSkeletonProfile from "../../components/ProfileSkeleton/ProfileSkeleton";
 import { Link } from "react-router-dom";
 import { UpdateDataService } from "../../services/EmpresaServices";
-import LogoSendImage from "../../images/send.png"
+import LogoSendImage from "../../images/troca.png"
 
 export function Profile(){
     const [isModalOpen, setIsModalOpen] = useState(false);
