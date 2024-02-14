@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const ContainerFooter = styled.footer`
-    background-color: #eeeeee;
+    background-color: var(--thema-fundo-secundario);
     align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -9,7 +9,7 @@ export const ContainerFooter = styled.footer`
     width: 100%;
     height: 40px;
     align-items: center;
-    color: #000;
+    color: var(--thema-fonte-principal);
 
     position: fixed;
     bottom: 0;
@@ -24,8 +24,8 @@ export const ContainerFooter = styled.footer`
         height: 40px;
         font-weight: 800;
         font-size: 16px;
-        color: #fff;
-        background-color: #4b0082;
+        color: var(--thema-fundo-principal);
+        background-color: var(--thema-principal);
         cursor: pointer;
         transition: 0.4s;
         border-radius: 5px;
@@ -37,8 +37,8 @@ export const ContainerFooter = styled.footer`
         }
 
         &:hover{
-            color: #4b0082;
-            background-color: #8445b1; 
+            color: var(--thema-fundo-principal);
+            background-color: var(--thema-terciario); 
         }
     }
 

@@ -7,7 +7,7 @@ export const AuthContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    background: linear-gradient(to right, #141e30, #243b55);
+    background: var(--thema-grandiente-principal);
 
     form{
         display: flex;
@@ -28,11 +28,6 @@ export const AuthContainer = styled.div`
             width: 100%;
             justify-content: center;
             margin-top: 15px;
-            p{
-               font-size : 13px;
-               font-weight: 700px;
-               color: #ff3333;
-            }
         }
 
     }
@@ -47,7 +42,7 @@ export const Section = styled.section`
     padding: 2rem;
     gap: 1rem;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--thema-fundo-principal);
 
     h2{
         font-size: 2rem;

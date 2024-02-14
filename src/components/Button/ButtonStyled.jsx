@@ -1,12 +1,12 @@
 import styled from "styled-components"
 
 export const ButtonSpace = styled.button`
-    background-color: #243b55;
+    background-color: var(--thema-principal);
     border: none;
     outline: none;
     font-size: 1rem;
     padding:  0.4rem 1rem;
-    color: #fff;
+    color: var(--thema-fundo-principal);
     transition:  all 0.4s ease-in-out;
     cursor: pointer;
     border-radius: 3px;
@@ -16,6 +16,6 @@ export const ButtonSpace = styled.button`
     text-transform: uppercase;
 
     &:hover{
-        background-color: #dbdbdb;
+        background-color: var(--thema-terciario);
     }
 `

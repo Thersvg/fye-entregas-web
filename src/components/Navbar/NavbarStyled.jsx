@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Nav = styled.nav`
     display: flex;
-    background-color: #4b0082;
+    background-color: var(--thema-principal);
     width: 100%;
     height: 50px;
     justify-content: center;
@@ -22,7 +22,7 @@ export const ContainerNav = styled.div`
 
         p{
             margin-right: 10px;
-            color: #fff;
+            color: var(--thema-fundo-principal);
         }
     }
 `
@@ -40,7 +40,7 @@ export const BoasVindasLocalizacao = styled.div`
     margin-right: 10px;
 
     h4{
-        color: #fff;
+        color: var(--thema-fundo-principal);
         
     }
 `

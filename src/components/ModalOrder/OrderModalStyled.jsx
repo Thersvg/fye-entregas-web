@@ -9,7 +9,7 @@ export const FormOrder = styled.form`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(223, 223, 223, 1);
+    background-color: var(--thema-fundo-secundario);
     padding: 20px;
     z-index: 1;
     border-radius: 15px;

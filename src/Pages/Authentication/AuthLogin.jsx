@@ -59,7 +59,7 @@ export function AuthenticateLogin(){
                         <ErrorSpan>{errors.password.message}</ErrorSpan>
                     )}
                     <div>
-                        <Link to="/cadastrar"  style={{textDecoration: 'none'}} >Criar conta</Link>
+                        <Link to="/cadastrar"  style={{textDecoration: 'none', color: '#000', fontWeight: '500', fontSize: '14px' }} >Criar conta</Link>
 
                         <Button 
                             type= "submit"

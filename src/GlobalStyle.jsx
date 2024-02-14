@@ -5,11 +5,14 @@ export const GlobalStyled = createGlobalStyle`
 :root{
     --thema-principal: #243b55;
     --thema-secundario: #243b55;
+    --thema-terciario: #4d75a3;
 
     --thema-fundo-principal: #fff;
     --thema-fundo-secundario: #eeeeee;
 
     --thema-fonte-principal: #000;
+
+    --thema-grandiente-principal: linear-gradient(to right, #141e30, #243b55);
 
 }
 

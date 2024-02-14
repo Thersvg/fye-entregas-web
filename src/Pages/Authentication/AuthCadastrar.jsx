@@ -6,7 +6,7 @@ import { AuthContainer, ErrorSpan, Section } from "./AuthCadastrarStyled";
 import { cadastrarSchema } from "../../Schemas/cadastrarSchema";
 import { CriarContaEmpresa } from "../../services/EmpresaServices";
 import Cookies from "js-cookie";
-import { useNavigate} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 export function AuthenticateCadastrar(){
 
@@ -83,7 +83,7 @@ export function AuthenticateCadastrar(){
                         type= "text"
                         placeholder= "Cidade"
                         name= "cidade_empresa"       
-                        register = {register}                        
+                        register = {register}                  
                     />
                     {errors.cidade_empresa && (
                         <ErrorSpan>{errors.cidade_empresa.message}</ErrorSpan>
@@ -105,11 +105,14 @@ export function AuthenticateCadastrar(){
                     />
                     {errors.taxa_entrega_empresa && (
                         <ErrorSpan>{errors.taxa_entrega_empresa.message}</ErrorSpan>
-                    )}  */}                  
+                    )}  */}   
+                    <div>
+                    <Link to="/login"  style={{textDecoration: 'none', color: '#000', fontWeight: '500', fontSize: '14px'  }} >Voltar</Link>
                     <Button 
                         type= "submit"
-                        text= "Criar Conta"
+                        text= "Criar"
                     />
+                    </div>               
                 </form>
             </Section>
         </AuthContainer>

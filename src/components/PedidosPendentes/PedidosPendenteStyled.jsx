@@ -20,8 +20,8 @@ export const ContainerTop = styled.div`
     flex-direction: column;
     width: 100%;
     height: 19rem;
-    background-color: #eeeeee;
-    color: #000;
+    background-color: var(--thema-fundo-secundario);
+    color: var(--thema-fonte-principal);
     border-radius: 15px;
     margin-top: 20px;
 `
@@ -68,7 +68,7 @@ export const RodapeCard = styled.div`
         font-weight: 700;
         background-color: transparent;
         cursor: pointer;
-        color: #000;
+        color: var(--thema-fonte-principal);
         transition: 0.4s;
         margin-right: 10px;
         margin-top: 10px;
@@ -77,10 +77,6 @@ export const RodapeCard = styled.div`
         width: 100%;
         height: 100%;
     }
-
-        &:hover{
-            color: #df0000;
-        }
     }
 
 `
@@ -93,8 +89,8 @@ export const FooterCard = styled.div`
     gap: 3px;
     height: 8rem;
     overflow: hidden;
-    background-color: #eeeeee;
-    color: #000;
+    background-color: var(--thema-fundo-secundario);
+    color: var(--thema-fonte-principal);
     border-radius: 15px;
     margin-top: 2px;
 
@@ -108,6 +104,6 @@ export const FooterCard = styled.div`
 export const CardHistorico = styled.div`
     overflow-y: scroll;
     &::-webkit-scrollbar{
-        background-color: #fff;
+        background-color: var(--thema-fundo-principal);
     }
 `

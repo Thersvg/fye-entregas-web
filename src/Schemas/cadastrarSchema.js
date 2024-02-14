@@ -18,7 +18,7 @@ export const cadastrarSchema = z.object({
 
   password_empresa: z.string().min(4, { message: "Senha Inválida" }),
 
-  cidade_empresa: z.string().min(4, { message: "Cidade Inválida" }),
+  cidade_empresa: z.string().min(4, { message: "Cidade Inválida" }).toLowerCase(),
 
 /*   taxa_entrega_empresa: z
     .string()
