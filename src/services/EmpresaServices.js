@@ -7,7 +7,9 @@ const baseURL = "http://localhost:4000";
 export function CriarContaEmpresa(data) {
   const body = {
     ...data,
-    logo_empresa: "logo"
+    logo_empresa: "logo",
+    endereco_empresa: "Seu Endereço",
+    taxa_entrega_empresa: "6,00"
   }; 
 
   try {

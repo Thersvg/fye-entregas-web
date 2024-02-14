@@ -38,4 +38,5 @@ export const Section = styled.section`
 `
 export const ErrorSpan = styled.div`
     display: flex;
+    font-size: 12px;
 `

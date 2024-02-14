@@ -23,6 +23,7 @@ export function AuthenticateCadastrar(){
             const response = await CriarContaEmpresa(data);
             Cookies.set("token", response.data.token, {expires: 1});
             navigate("/");
+            location.reload();
         }catch(error){
             console.log(error);
         }
@@ -31,7 +32,7 @@ export function AuthenticateCadastrar(){
      return(
         <AuthContainer>
             <Section type="CadastrarEmpresa">
-                <h2>Cadastrar Empresa</h2>
+                <h2>Cadastrar</h2>
                 <form onSubmit={handleSubmit(inHandleSubmit)}>
                     <Input 
                         type= "text"
@@ -52,14 +53,14 @@ export function AuthenticateCadastrar(){
                         <ErrorSpan>{errors.cnpj_empresa.message}</ErrorSpan>
                     )}
                     <Input 
-                        type= "text"
-                        placeholder= "Endereço"
-                        name= "endereco_empresa" 
-                        register = {register}                              
+                        type= "email"
+                        placeholder= "Email"
+                        name= "email_empresa"   
+                        register = {register}                            
                     />
-                    {errors.endereco_empresa && (
-                        <ErrorSpan>{errors.endereco_empresa.message}</ErrorSpan>
-                    )}                    
+                    {errors.email_empresa && (
+                        <ErrorSpan>{errors.email_empresa.message}</ErrorSpan>
+                    )}  
                     <Input 
                         type= "text"
                         placeholder= "Telefone"
@@ -68,16 +69,7 @@ export function AuthenticateCadastrar(){
                     />
                     {errors.telefone_empresa && (
                         <ErrorSpan>{errors.telefone_empresa.message}</ErrorSpan>
-                    )}                    
-                    <Input 
-                        type= "email"
-                        placeholder= "Email"
-                        name= "email_empresa"   
-                        register = {register}                            
-                    />
-                    {errors.email_empresa && (
-                        <ErrorSpan>{errors.email_empresa.message}</ErrorSpan>
-                    )}                    
+                    )} 
                     <Input 
                         type= "password"
                         placeholder= "Password"
@@ -86,7 +78,25 @@ export function AuthenticateCadastrar(){
                     />
                     {errors.password_empresa && (
                         <ErrorSpan>{errors.password_empresa.message}</ErrorSpan>
-                    )}                    
+                    )}
+                    <Input 
+                        type= "text"
+                        placeholder= "Cidade"
+                        name= "cidade_empresa"       
+                        register = {register}                        
+                    />
+                    {errors.cidade_empresa && (
+                        <ErrorSpan>{errors.cidade_empresa.message}</ErrorSpan>
+                    )}
+{/*                     <Input 
+                        type= "text"
+                        placeholder= "Endereço"
+                        name= "endereco_empresa" 
+                        register = {register}                              
+                    />
+                    {errors.endereco_empresa && (
+                        <ErrorSpan>{errors.endereco_empresa.message}</ErrorSpan>
+                    )}                                                                              
                     <Input 
                         type= "text"
                         placeholder= "Valor da taxa de entrega"
@@ -95,7 +105,7 @@ export function AuthenticateCadastrar(){
                     />
                     {errors.taxa_entrega_empresa && (
                         <ErrorSpan>{errors.taxa_entrega_empresa.message}</ErrorSpan>
-                    )}                    
+                    )}  */}                  
                     <Button 
                         type= "submit"
                         text= "Criar Conta"
