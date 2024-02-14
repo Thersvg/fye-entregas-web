@@ -53,7 +53,7 @@ export default function Navbar(){
                             )}
                             <ProfileLogoEmpresa>
                                 <Link to={"/Profile"}>
-                                    <ImagePerfilUser src={empresa?.logo_empresa} alt="perfil-usuário" />
+                                    <ImagePerfilUser src={empresa?.logo_empresa} alt="perfil" />
                                 </Link>
                             </ProfileLogoEmpresa>                       
                             <Exit>
