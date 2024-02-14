@@ -21,6 +21,7 @@ export const ContainerFooter = styled.footer`
 
     button{
         width: 90px;
+        position: relative;
         height: 40px;
         font-weight: 800;
         font-size: 16px;
@@ -35,6 +36,26 @@ export const ContainerFooter = styled.footer`
             width: 25px;
             height: 30px;
         }
+
+/*         &:hover::before {
+        content: "Criar entrega";
+        width: 200px;
+        height: 20px;
+        position: absolute;
+        background-color: transparent;
+        color: #fff;
+        padding: 5px;
+        top: -80%;
+        left: 100%;
+        transform: translateX(-70%);
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        }
+
+        &:hover::before {
+        opacity: 1;
+        } */
 
         &:hover{
             color: var(--thema-fundo-principal);

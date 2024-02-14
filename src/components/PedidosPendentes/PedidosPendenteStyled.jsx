@@ -63,6 +63,7 @@ export const RodapeCard = styled.div`
 
     button{
         width: 25px;
+        position: relative;
         height: 25px;
         font-size: 14px;
         font-weight: 700;
@@ -77,8 +78,28 @@ export const RodapeCard = styled.div`
         width: 100%;
         height: 100%;
     }
+
+    &:hover::before {
+      content: "Excluir entrega";
+      width: 200px;
+      height: 20px;
+      position: absolute;
+      background-color: transparent;
+      color: #fff;
+      padding: 5px;
+      top: 0px;
+      left: 100%;
+      transform: translateX(-90%);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
     }
 
+    &:hover::before {
+      opacity: 1;
+    }
+
+    }
 `
 
 export const FooterCard = styled.div`
