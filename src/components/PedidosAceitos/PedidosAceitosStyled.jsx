@@ -92,7 +92,7 @@ export const FooterCard = styled.div`
     background-color: var(--thema-fundo-secundario);
     color: var(--thema-fonte-principal);
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: 2px;
 
     label{
         margin-left: 5px;

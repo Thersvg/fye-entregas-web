@@ -7,7 +7,7 @@ import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedido
 import LogoModificar from '../../images/modified.png'
 import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile";
 import CustomSkeletonProfile from "../../components/ProfileSkeleton/ProfileSkeleton";
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom"; */
 import { UpdateDataService } from "../../services/EmpresaServices";
 import LogoSendImage from "../../images/troca.png"
 
@@ -117,7 +117,7 @@ export function Profile(){
                                 </HandleModalProfile>
                             </AltDados>
                             <Suporte>
-                                <Link to={""} style={{ fontSize: 14, fontWeight: 800, color: 'inherit', textDecoration: 'none'}}>Cancelar minha assinatura</Link>
+                                {/* <Link to={""} style={{ fontSize: 14, fontWeight: 800, color: 'inherit', textDecoration: 'none'}}>Cancelar minha assinatura</Link> */}
                             </Suporte> 
                     </DadosEmpresaProfile>
                 <ProfileAllPedidosEntregues>

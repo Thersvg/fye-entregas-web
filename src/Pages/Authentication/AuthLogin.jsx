@@ -8,6 +8,7 @@ import { loginSchema } from "../../Schemas/loginSchema";
 import { LoginContaEmpresa } from "../../services/EmpresaServices";
 import Cookies from "js-cookie";
 import { useState } from "react";
+import logo from '../../images/empresa.png'
 
 export function AuthenticateLogin(){
 
@@ -35,7 +36,7 @@ export function AuthenticateLogin(){
      return(
         <AuthContainer>
             <Section type="Login">
-                <h2>Entrar</h2>
+                <img src={logo} alt="Entrar" />
                 <form onSubmit={handleSubmit(inHandleSubmit)} >
                     <Input 
                         type= "email"

@@ -53,7 +53,6 @@ export const Section = styled.section`
         text-align: center;
         font-weight: 700;
     }
-
 `
 
 export const ErrorSpan = styled.div`
