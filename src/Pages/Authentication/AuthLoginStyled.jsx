@@ -53,6 +53,20 @@ export const Section = styled.section`
         text-align: center;
         font-weight: 700;
     }
+
+    div{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 250px;
+            height: 100px;
+        }
+    }
+
 `
 
 export const ErrorSpan = styled.div`

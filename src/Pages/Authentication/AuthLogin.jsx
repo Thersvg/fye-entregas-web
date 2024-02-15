@@ -36,7 +36,9 @@ export function AuthenticateLogin(){
      return(
         <AuthContainer>
             <Section type="Login">
-                <img src={logo} alt="Entrar" />
+                <div>
+                    <img src={logo} alt="Entrar" />
+                </div>
                 <form onSubmit={handleSubmit(inHandleSubmit)} >
                     <Input 
                         type= "email"

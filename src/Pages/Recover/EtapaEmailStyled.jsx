@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const InputEmail = styled.input`
-    height: 35px;
-    width: 100%;
-    border-radius: 5px;
-    padding-left: 5px;
+    padding: 1rem;
+    border-radius: 0;
+    background: none;
+    outline: none;
+    border-bottom: 1px solid var(--thema-fundo-principal);
 `
 export const AuthContainerEmail = styled.div`
     height: 100vh;
