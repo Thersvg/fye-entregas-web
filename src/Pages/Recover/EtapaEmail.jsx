@@ -19,7 +19,6 @@ const handleSubmit = async (event) =>{
     console.log(response);
 }
 
-
     return(
         <AuthContainerEmail>
             <SectionEmail type="recover">
