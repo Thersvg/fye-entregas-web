@@ -11,6 +11,7 @@ import {AuthenticateLogin } from './Pages/Authentication/AuthLogin.jsx'
 import { AuthenticateCadastrar } from './Pages/Authentication/AuthCadastrar.jsx'
 import EmpresaProvider from './Context/EmpresaContext.jsx'
 import Cookies from 'js-cookie'
+import { GetEmailClient } from './Pages/Recover/EtapaEmail.jsx'
 
 
 const isTokenPresent = () => {
@@ -47,6 +48,10 @@ const routes = [
   {
     path: '/cadastrar',
     element: <AuthenticateCadastrar />,
+  },
+  {
+    path: '/recuperacao',
+    element: <GetEmailClient />,
   },
 ];
 

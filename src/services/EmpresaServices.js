@@ -61,25 +61,13 @@ export async function UpdateDataService(Body) {
   }
 }
 
-/* export async function UpdateLogoService(data) {
-  const body = {
-    ...data,
-  };
-
-  console.log("img");
-  console.log(data);
-
+export async function SendClientEmail(data){
   try {
-    const response = await axios.patch(`${baseURL}/empresa/updatelogo/`, body, {
-      headers: {
-        Authorization: `Bearer ${Cookies.get("token")}`,
-      },
-    });
-
+    const response = await axios.post(`${baseURL}/empresa/enviar-email`, data);
     return response;
+    
   } catch (error) {
-    console.error("Erro na alteração dos dados", error);
+    console.error("Erro ao enviar email", error);
     throw error;
   }
-} 
- */
+}
