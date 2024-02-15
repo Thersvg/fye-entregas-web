@@ -5,7 +5,7 @@ export const InputEmail = styled.input`
     border-radius: 0;
     background: none;
     outline: none;
-    border-bottom: 1px solid var(--thema-fundo-principal);
+    border-bottom: 1px solid var(--thema-fonte-principal);
 `
 export const AuthContainerEmail = styled.div`
     height: 100vh;

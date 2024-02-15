@@ -9,7 +9,7 @@ export const GlobalStyled = createGlobalStyle`
 
     --thema-fundo-principal: #fff;
     --thema-fundo-secundario: #eeeeee;
-    --thema-fundo-terciario: #cccccc;
+    --thema-fundo-terciario: #dbdbdb;
 
     --thema-fonte-principal: #000;
 

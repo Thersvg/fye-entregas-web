@@ -19,7 +19,10 @@ export const FormOrder = styled.form`
     input{
         height: 60px;
         width: 100%;
-        border-radius: 5px;
+        border-radius: 0;
+        background: none;
+        outline: none;
+        border-bottom: 1px solid var(--thema-fonte-principal);
     }
 
     section{
