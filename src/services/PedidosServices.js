@@ -34,7 +34,6 @@ export function GetAllPedidosAceitos(id) {
 
 export function DeletePedido(id) {
   try {
-    console.log(`${baseURL}/pedido/`, id);
     const response = axios.delete(`${baseURL}/pedido/${id}`);
     return response;
   } catch (error) {
@@ -45,7 +44,6 @@ export function DeletePedido(id) {
 
 export function FindPedidosHistorico(id) {
   try {
-    console.log(id);
     const response = axios.get(`${baseURL}/historico-pedido/empresa/${id}`, {
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`,
