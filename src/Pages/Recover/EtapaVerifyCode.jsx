@@ -20,7 +20,7 @@ export function VerifyCodeClient(){
     const handleSubmit = async (event) =>{
         event.preventDefault();
         try{
-            const code = Cookies.get('code', { signed: true })
+            const code = Cookies.get('rY6660v28hf87h3', { signed: true })
 
             if(dadosFormulario.codigo == code){
                 navigate("/newpassword");

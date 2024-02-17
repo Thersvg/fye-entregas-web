@@ -22,8 +22,8 @@ const handleSubmit = async (event) =>{
     event.preventDefault();
     try{
         const response = await SendClientEmail(dadosFormulario);
-        Cookies.set("code", response.data, { secure: true, sameSite: 'Strict', expires: 1 });
-        Cookies.set("email", dadosFormulario.email_empresa, { secure: true, sameSite: 'Strict', expires: 1});
+        Cookies.set("rY6660v28hf87h3", response.data, { secure: true, sameSite: 'Strict', expires: 1 });
+        Cookies.set("T5Xk8tWKeVpNDP1", dadosFormulario.email_empresa, { secure: true, sameSite: 'Strict', expires: 1});
 
         navigate("/verificacao");
         location.reload(); 

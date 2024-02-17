@@ -63,7 +63,7 @@ export async function UpdateDataService(Body) {
 
 export async function UpdatePasswordService(Body) {
   try {
-    const response = await axios.patch(`${baseURL}/empresa/recover/`, Body);
+    const response = await axios.put(`${baseURL}/empresa/recover/`, Body);
     return response;
 
   } catch (error) {

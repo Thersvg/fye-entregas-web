@@ -23,13 +23,13 @@ export function NewPasswordClient(){
 
         const body = {
             password_empresa: dadosFormulario.password,
-            email_empresa: Cookies.get('email', { signed: true })
+            email_empresa: Cookies.get('T5Xk8tWKeVpNDP1', { signed: true })
         }
 
         try{
         const response =  await UpdatePasswordService(body);
-        Cookies.remove('code')
-        Cookies.remove('email')
+        Cookies.remove('rY6660v28hf87h3')
+        Cookies.remove('T5Xk8tWKeVpNDP1')
         navigate("/login");
         location.reload(); 
         }catch(error){
