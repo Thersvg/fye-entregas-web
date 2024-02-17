@@ -82,3 +82,10 @@ export async function SendClientEmail(data){
     throw error;
   }
 }
+
+export async function ExpireCode(){
+  const dataAtual = new Date();
+  dataAtual.setTime(dataAtual.getTime() + (10 * 60 * 1000));
+  const dataExpiracao = dataAtual;
+  return dataExpiracao;
+}
