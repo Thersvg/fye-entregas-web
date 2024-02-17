@@ -27,6 +27,15 @@ export const AuthContainerEmail = styled.div`
             justify-content: space-between;
             align-items: center;
         }
+
+        footer{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem;
+        }
     }
 `
 

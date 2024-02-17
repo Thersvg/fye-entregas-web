@@ -61,6 +61,17 @@ export async function UpdateDataService(Body) {
   }
 }
 
+export async function UpdatePasswordService(Body) {
+  try {
+    const response = await axios.patch(`${baseURL}/empresa/recover/`, Body);
+    return response;
+
+  } catch (error) {
+    console.error("Erro na alteração dos dados", error);
+    throw error;
+  }
+}
+
 export async function SendClientEmail(data){
   try {
     const response = await axios.post(`${baseURL}/empresa/enviar-email`, data);

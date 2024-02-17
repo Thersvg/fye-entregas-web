@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { Button } from "../../components/Button/Button";
 import { AuthContainerEmail, InputEmail, SectionEmail } from "./EtapaEmailStyled";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SendClientEmail } from "../../services/EmpresaServices";
+import Cookies from "js-cookie";
 
 export function GetEmailClient(){
 
+const navigate = useNavigate();
+
 const [dadosFormulario, setDadosFormulario] = useState({});  
+
+const [ResultSendEmail, setResultSendEmail] = useState('');
 
 const handleChange = (event) =>{
     const { name, value } = event.target;
@@ -15,8 +20,16 @@ const handleChange = (event) =>{
 
 const handleSubmit = async (event) =>{
     event.preventDefault();
-    const response = await SendClientEmail(dadosFormulario);
-    console.log(response);
+    try{
+        const response = await SendClientEmail(dadosFormulario);
+        Cookies.set("code", response.data, { secure: true, sameSite: 'Strict', expires: 1 });
+        Cookies.set("email", dadosFormulario.email_empresa, { secure: true, sameSite: 'Strict', expires: 1});
+
+        navigate("/verificacao");
+        location.reload(); 
+    }catch(error){
+        setResultSendEmail(error.response.data);
+    }
 }
 
     return(
@@ -37,6 +50,9 @@ const handleSubmit = async (event) =>{
                             text= "Enviar"
                         />
                     </div>
+                    <footer>
+                        <p>{ResultSendEmail.message}</p>
+                    </footer>
                 </form>
             </SectionEmail>
         </AuthContainerEmail>

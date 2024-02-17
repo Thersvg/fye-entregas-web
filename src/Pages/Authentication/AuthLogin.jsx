@@ -8,7 +8,7 @@ import { loginSchema } from "../../Schemas/loginSchema";
 import { LoginContaEmpresa } from "../../services/EmpresaServices";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import logo from '../../images/empresa.png'
+import logo from '../../images/logoazul.png'
 
 export function AuthenticateLogin(){
 

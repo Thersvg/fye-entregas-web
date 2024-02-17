@@ -12,6 +12,8 @@ import { AuthenticateCadastrar } from './Pages/Authentication/AuthCadastrar.jsx'
 import EmpresaProvider from './Context/EmpresaContext.jsx'
 import Cookies from 'js-cookie'
 import { GetEmailClient } from './Pages/Recover/EtapaEmail.jsx'
+import { VerifyCodeClient } from './Pages/Recover/EtapaVerifyCode.jsx'
+import { NewPasswordClient } from './Pages/Recover/EtapaNewPassword.jsx'
 
 
 const isTokenPresent = () => {
@@ -53,7 +55,16 @@ const routes = [
     path: '/recuperacao',
     element: <GetEmailClient />,
   },
+  {
+    path: '/verificacao',
+    element: <VerifyCodeClient />,
+  },
+  {
+    path: '/newpassword',
+    element: <NewPasswordClient />,
+  },
 ];
+
 
 const router = createBrowserRouter(routes);
 
