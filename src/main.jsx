@@ -26,6 +26,16 @@ const PrivateRoute = ({ element }) => {
   return isAuthenticated ? element :<AuthenticateLogin />;
 };
 
+const isTokenRecover = () => {
+  const token = Cookies.get('rY6660v28hf87h3');
+  return !!token; 
+};
+
+const PrivateRouteRecover = ({ element }) => {
+  const isAuthenticatedToModify = isTokenRecover();
+  return isAuthenticatedToModify ? element :<AuthenticateLogin />;
+};
+
 
 const routes = [
   {
@@ -57,11 +67,11 @@ const routes = [
   },
   {
     path: '/verificacao',
-    element: <VerifyCodeClient />,
+    element: <PrivateRouteRecover element={<VerifyCodeClient />}/>,
   },
   {
     path: '/newpassword',
-    element: <NewPasswordClient />,
+    element: <PrivateRouteRecover element={<NewPasswordClient />}/>,
   },
 ];
 
