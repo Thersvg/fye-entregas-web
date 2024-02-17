@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "../../components/Button/Button";
 import { AuthContainerEmail, InputEmail, SectionEmail } from "./EtapaEmailStyled";
 import { Link, useNavigate } from "react-router-dom";
-import { SendClientEmail } from "../../services/EmpresaServices";
+import { ExpireCode, SendClientEmail } from "../../services/EmpresaServices";
 import Cookies from "js-cookie";
 
 export function GetEmailClient(){
@@ -22,8 +22,9 @@ const handleSubmit = async (event) =>{
     event.preventDefault();
     try{
         const response = await SendClientEmail(dadosFormulario);
+
         Cookies.set("rY6660v28hf87h3", response.data, { secure: true, sameSite: 'Strict', expires: 1 });
-        Cookies.set("T5Xk8tWKeVpNDP1", dadosFormulario.email_empresa, { secure: true, sameSite: 'Strict', expires: 1});
+        Cookies.set("T5Xk8tWKeVpNDP1", dadosFormulario.email_empresa, { secure: true, sameSite: 'Strict', expires: 1 });
 
         navigate("/verificacao");
         location.reload(); 
