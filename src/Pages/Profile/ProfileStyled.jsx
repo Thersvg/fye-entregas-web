@@ -74,7 +74,7 @@ export const DadosPessoais = styled.div`
     display: flex;
     justify-content: center;
     grid-template-columns: 1fr 1fr;
-    width: 50%;
+    width: 100%;
     height: 200px;
     background-color: var(--thema-fundo-secundario);
     border-radius: 15px;
@@ -122,7 +122,7 @@ export const MsgRetorno = styled.div`
 `
 export const AltDados = styled.div`
     display: flex;
-    width: 50%;
+    width: 100%;
 
     div{
         display: flex;
@@ -148,7 +148,7 @@ export const AltDados = styled.div`
 export const Suporte = styled.div`
     display: flex;
     position: fixed;
-    width: 50%;
+    width: 100%;
     bottom: 0;
     margin-left: 10px;
 

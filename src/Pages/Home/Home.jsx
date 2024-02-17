@@ -1,12 +1,12 @@
 import { EmpresaContext } from "../../Context/EmpresaContext";
 import Footer from "../../components/Footer/Footer";
-import CustomSkeletonHome from "../../components/HomeSkeleton/HomeSkeleton";
 import { PedidosAceitos } from "../../components/PedidosAceitos/PedidosAceitos";
 import { PedidosPendente } from "../../components/PedidosPendentes/PedidosPendente";
 import { GetAllPedidos, GetAllPedidosAceitos } from "../../services/PedidosServices";
 import { HomeBody, HomePedidosAceitos, HomePedidosPendentes, MsgRetorno} from "./HomeStyled";
 import { useContext, useEffect, useState } from "react";
 import NotificationSound from "../../Sounds/notification.mp3";
+import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
 export default function Home(){
 
@@ -54,7 +54,7 @@ export default function Home(){
     return (
         <>
         {loading ? (
-            <CustomSkeletonHome />
+            <LoadingCylonHold />
         ):(        
         <HomeBody>
             {pedidos.length > 0 ? (

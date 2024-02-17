@@ -6,10 +6,9 @@ import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPed
 import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedidosStyled";
 import LogoModificar from '../../images/modified.png'
 import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile";
-import CustomSkeletonProfile from "../../components/ProfileSkeleton/ProfileSkeleton";
-/* import { Link } from "react-router-dom"; */
 import { UpdateDataService } from "../../services/EmpresaServices";
 import LogoSendImage from "../../images/troca.png"
+import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
 export function Profile(){
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -76,7 +75,7 @@ export function Profile(){
     return (
         <>
             {loading ? (
-                <CustomSkeletonProfile />
+                <LoadingCylonHold />
             ):(
             <ContainerProfile>
                     <DadosEmpresaProfile>
