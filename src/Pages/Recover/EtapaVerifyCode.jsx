@@ -12,6 +12,8 @@ export function VerifyCodeClient(){
 
     const [ResultVerifyCode, setResultVerifyCode] = useState('');
 
+    const [EmailClient, setEmailClient] = useState(Cookies.get('T5Xk8tWKeVpNDP1', { signed: true }));
+
     const handleChange = (event) =>{
         const { name, value } = event.target;
         setDadosFormulario({ ...dadosFormulario, [name]: value });
@@ -36,7 +38,8 @@ export function VerifyCodeClient(){
     return(
         <AuthContainerEmail>
         <SectionEmail type="verify">
-            <h1>Digite seu codigo</h1>
+            <h1>Digite seu código</h1>
+            <p>Enviamos um código para: <b>{EmailClient}.</b> Atenção o código expira em <b>10 minutos.</b></p>
             <form onSubmit={handleSubmit} >
                 <InputEmail
                     type= "text"

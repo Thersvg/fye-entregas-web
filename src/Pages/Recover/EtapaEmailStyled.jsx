@@ -55,4 +55,10 @@ export const SectionEmail = styled.section`
         text-align: center;
         font-weight: 700;
     }
+
+    p{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
 `

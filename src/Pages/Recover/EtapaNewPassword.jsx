@@ -44,9 +44,9 @@ export function NewPasswordClient(){
             <form onSubmit={handleSubmit} >
                 <InputEmail
                     type= "password"
-                    placeholder= "password"
+                    placeholder= "Nova senha"
                     name= "password" 
-                    onChange={handleChange}                          
+                    onChange={handleChange}                        
                 />
                 <div>
                 <Link to="/login"  style={{textDecoration: 'none', color: '#000', fontWeight: '500', fontSize: '14px' }} >Voltar</Link>
