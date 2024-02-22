@@ -40,10 +40,10 @@ export function HistoricoPedidos(props){
                 </RodapeCard>  
         </ContainerTop> 
         <FooterCard>
-            <label>ENTREGADOR: <p>{props.entregador_name.name_entregador}</p></label>
-            <label>CPF: <p>{props.entregador_name.cpf_entregador}</p></label>
-            <label>TELEFONE: <p>{props.entregador_name.telefone_entregador}</p></label>
-            <label>FORMA DE PAGAMENTO: <p>{props.entregador_name.formaDepagamento_entregador}</p></label>
+            <label>ENTREGADOR: <p>{props.entregador_name}</p></label>
+            <label>CPF: <p>{props.entregador_cpf}</p></label>
+            <label>TELEFONE: <p>{props.entregador_telefone}</p></label>
+            <label>FORMA DE PAGAMENTO: <p>{props.form_pagamento_entr}</p></label>
         </FooterCard>
         </DivBody>
     )

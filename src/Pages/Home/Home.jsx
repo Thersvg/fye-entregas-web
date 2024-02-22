@@ -4,7 +4,7 @@ import { PedidosAceitos } from "../../components/PedidosAceitos/PedidosAceitos";
 import { PedidosPendente } from "../../components/PedidosPendentes/PedidosPendente";
 import { GetAllPedidos, GetAllPedidosAceitos } from "../../services/PedidosServices";
 import { HomeBody, HomePedidosAceitos, HomePedidosPendentes, MsgRetorno} from "./HomeStyled";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useId, useState } from "react";
 import NotificationSound from "../../Sounds/notification.mp3";
 import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
@@ -68,9 +68,9 @@ export default function Home(){
                 <HomePedidosPendentes>
                     <div>
                         <>
-                        {pedidos.map((item) => 
+                        {pedidos.map((item, index) => 
                             <PedidosPendente 
-                                key={item.id} 
+                                key={index} 
                                 id={item._id} 
                                 codigo = {item.codigo_pedido}
                                 name = {item.name_cliente}
@@ -80,7 +80,9 @@ export default function Home(){
                                 descricao  = {item.descricao_pedido}
                                 forma_p  = {item.forma_pagamento}
                                 taxa_ent = {item.taxa_entrega}
-                                name_emp = {item.name_empresa}
+                                nome_empresa = {item.name_empresa.name_empresa}
+                                endereco_empresa = {item.name_empresa.endereco_empresa}
+                                telefone_empresa = {item.name_empresa.telefone_empresa}
                              /> 
                             )}
                         </>
@@ -96,9 +98,9 @@ export default function Home(){
                   <HomePedidosAceitos>
                         <div>
                             <>
-                            {pedidosAceitos.map((item) => 
+                            {pedidosAceitos.map((item, index) => 
                                 <PedidosAceitos 
-                                key={item.id} 
+                                key={index} 
                                 id={item._id} 
                                 codigo = {item.detalhes_pedido.codigo_pedido}
                                 name = {item.detalhes_pedido.name_cliente}
@@ -108,11 +110,11 @@ export default function Home(){
                                 descricao  = {item.detalhes_pedido.descricao_pedido}
                                 forma_p  = {item.detalhes_pedido.forma_pagamento}
                                 taxa_ent = {item.detalhes_pedido.taxa_entrega}
-                                name_emp = {item.name_empresa}
-                                entregador_name = {item.name_entregador}
-                                entregador_cpf = {item.name_entregador}
-                                entregador_email = {item.name_entregador}
-                                form_pagamento_entr = {item.name_entregador}
+                                entregador_name = {item.name_entregador?.name_entregador}
+                                entregador_cpf = {item.name_entregador?.cpf_entregador}
+                                entregador_telefone = {item.name_entregador?.telefone_entregador}
+                                form_pagamento_entr = {item.name_entregador?.formaDepagamento_entregador}
+                                
                                 /> 
                             )}
                             </>

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useId, useState } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
 import { AltDados, ContainerProfile, DadosEmpresaProfile, DadosPessoais, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues, Suporte} from "./ProfileStyled";
 import { FindPedidosHistorico } from "../../services/PedidosServices";
@@ -124,7 +124,7 @@ export function Profile(){
                         <CardHistorico>
                                         {pedidosHistorico.map((item) => 
                                             <HistoricoPedidos
-                                                key={item.id} 
+                                                key={useId} 
                                                 id={item._id} 
                                                 codigo = {item.detalhes_pedido.codigo_pedido}
                                                 name = {item.detalhes_pedido.name_cliente}
@@ -135,7 +135,7 @@ export function Profile(){
                                                 forma_p  = {item.detalhes_pedido.forma_pagamento}
                                                 taxa_ent = {item.detalhes_pedido.taxa_entrega}
                                                 name_emp = {item.name_empresa}
-                                                entregador_name = {item.name_entregador}
+                                                entregador_name = {item.name_entregador?.name_entregador}
                                                 entregador_cpf = {item.name_entregador?.cpf_entregador}
                                                 entregador_telefone = {item.name_entregador?.telefone_entregador}
                                                 form_pagamento_entr = {item.name_entregador?.formaDepagamento_entregador}

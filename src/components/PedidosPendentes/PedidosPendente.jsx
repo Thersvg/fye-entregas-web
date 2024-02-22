@@ -43,9 +43,9 @@ export function PedidosPendente(props){
                 </RodapeCard>  
         </ContainerTop> 
         <FooterCard>
-            <label>EMPRESA: <p>{props.name_emp.name_empresa}</p></label>
-            <label>ENDEREÇO: <p>{props.name_emp.endereco_empresa}</p></label>
-            <label>TELEFONE: <p>{props.name_emp.telefone_empresa}</p></label>
+            <label>EMPRESA: <p>{props.nome_empresa}</p></label>
+            <label>ENDEREÇO: <p>{props.endereco_empresa}</p></label>
+            <label>TELEFONE: <p>{props.telefone_empresa}</p></label>
         </FooterCard>
         </DivBody>
         </>
