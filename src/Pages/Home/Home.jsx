@@ -23,20 +23,14 @@ export default function Home(){
 
     const [pedidosAceitos, setPedidosAceitos] = useState([]);
 
-    const [notificationPlayed, setNotificationPlayed] = useState(false);
+    const [tamanhoAnterior, setTamanhoAnterior] = useState(0);
 
     const notificationAudio = new Audio(NotificationSound);
 
 
     async function FindAllPedidosAceitos(){
         const response = await GetAllPedidosAceitos(empresa._id);
-        const novosPedidosAceitos = response.data;
-
-        if(novosPedidosAceitos.length > pedidosAceitos.length && !notificationPlayed){
-            notificationAudio.play();
-            setNotificationPlayed(true);
-        }
-        setPedidosAceitos(novosPedidosAceitos);
+        setPedidosAceitos(response.data);
     }
 
     useEffect(() => {
@@ -47,9 +41,21 @@ export default function Home(){
         }, 4000);
         return () => {
         clearInterval(intervalId);
-        setNotificationPlayed(false);
         };
     }, [])
+
+
+    useEffect(() => {
+        const verificarPedidosEEnviarNotificacao = async () => {
+            const tamanhoAtual = pedidosAceitos.length;
+            if (tamanhoAtual > 0 && tamanhoAtual > tamanhoAnterior) {
+                notificationAudio.play();
+            }
+            setTamanhoAnterior(tamanhoAtual);
+        };
+
+        verificarPedidosEEnviarNotificacao();
+    }, [pedidosAceitos, tamanhoAnterior]);
 
  
     return (
