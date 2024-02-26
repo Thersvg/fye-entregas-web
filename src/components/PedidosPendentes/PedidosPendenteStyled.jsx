@@ -13,7 +13,7 @@ export const DivBody = styled.div`
     p{
         font-weight: 400;
     }
-
+   
 `
 export const ContainerTop = styled.div`
     display: flex;
@@ -24,6 +24,7 @@ export const ContainerTop = styled.div`
     color: var(--thema-fonte-principal);
     border-radius: 15px;
     margin-top: 20px;
+
 `
 
 export const HeaderCard = styled.div`
@@ -98,8 +99,11 @@ export const RodapeCard = styled.div`
     &:hover::before {
       opacity: 1;
     }
-
     }
+    @media only screen and (max-width: 600px) {
+    flex-direction: column; /* Alteração para coluna em telas pequenas */
+    height: auto; /* Ajuste a altura conforme necessário */
+  }
 `
 
 export const FooterCard = styled.div`

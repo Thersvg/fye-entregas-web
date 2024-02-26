@@ -24,6 +24,14 @@ export const ContainerNav = styled.div`
             margin-right: 10px;
             color: var(--thema-fundo-principal);
         }
+
+        @media only screen and (max-width: 600px) {
+        div {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        }
+    }
     }
 `
 export const ImageLogo = styled.img`

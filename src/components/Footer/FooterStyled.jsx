@@ -20,7 +20,7 @@ export const ContainerFooter = styled.footer`
     }
 
     button{
-        width: 90px;
+        width: 100%;
         position: relative;
         height: 40px;
         font-weight: 800;
@@ -37,30 +37,17 @@ export const ContainerFooter = styled.footer`
             height: 30px;
         }
 
-/*         &:hover::before {
-        content: "Criar entrega";
-        width: 200px;
-        height: 20px;
-        position: absolute;
-        background-color: transparent;
-        color: #fff;
-        padding: 5px;
-        top: -80%;
-        left: 100%;
-        transform: translateX(-70%);
-        z-index: 1;
-        opacity: 0;
-        transition: opacity 0.4s ease-in-out;
-        }
-
-        &:hover::before {
-        opacity: 1;
-        } */
-
         &:hover{
             color: var(--thema-fundo-principal);
             background-color: var(--thema-terciario); 
         }
     }
+
+    @media only screen and (max-width: 600px) {
+        div{
+            display: flex;
+            max-width: 100px;
+        }
+    } 
 
 `

@@ -52,7 +52,9 @@ export const FormOrder = styled.form`
             background-color: transparent;
         }
     }
-
-
 }
+@media only screen and (max-width: 600px) {
+        width: 90%; /* Reduz a largura para 90% da largura da tela em telas pequenas */
+        height: auto; /* Ajuste a altura conforme necessário */
+    }
 `

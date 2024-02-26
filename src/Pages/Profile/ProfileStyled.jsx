@@ -9,6 +9,10 @@ export const ContainerProfile = styled.div`
     overflow: hidden;
     background-color: var(--thema-fundo-principal);
 
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+
 `
 export const DadosEmpresaProfile = styled.div`
     display: flex;
@@ -95,6 +99,11 @@ export const DadosPessoais = styled.div`
         display: flex;
         flex-direction: column;
     }
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+        height: auto; 
+    }
 `
 export const ProfileDadosHistoricoPedidosProfile = styled.div`
     display: flex;
@@ -154,5 +163,10 @@ export const Suporte = styled.div`
 
     Link{
         text-decoration: none;
+    }
+
+    @media only screen and (max-width: 600px) {
+        grid-template-columns: 1fr; 
+        height: auto; 
     }
 `

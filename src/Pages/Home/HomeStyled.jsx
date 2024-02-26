@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+
 export const HomeBody = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -7,6 +8,12 @@ export const HomeBody = styled.div`
     width: 100%;
     height: 80vh;
     position: absolute;
+
+    @media only screen and (max-width: 600px) {
+    div{
+        width: auto;
+    }
+    }
 `
 export const HomePedidosPendentes = styled.div`
     display: flex;
@@ -22,6 +29,13 @@ export const HomePedidosPendentes = styled.div`
 
     &::-webkit-scrollbar{
         background-color: var(--thema-fundo-principal);
+    }
+
+    @media only screen and (max-width: 600px) {
+    div{
+        display: flex;
+        width: 100px;
+    }
     }
 `
 export const HomePedidosAceitos = styled.div`
@@ -39,10 +53,24 @@ export const HomePedidosAceitos = styled.div`
     &::-webkit-scrollbar{
         background-color: var(--thema-fundo-principal);
     }
+
+    @media only screen and (max-width: 600px) {
+    div{
+        display: flex;
+        width: 100px;
+    }
+    }
 `
 
 export const MsgRetorno = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    @media only screen and (max-width: 600px) {
+    div{
+        height: auto;
+        width: auto;
+    }
+}
 `

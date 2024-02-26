@@ -14,6 +14,12 @@ export const DivBody = styled.div`
         font-weight: 400;
     }
 
+    @media only screen and (max-width: 600px) {
+    /* Adicione estilos específicos para telas pequenas */
+    width: 100%; /* Reduz a largura para 90% da largura da tela em telas pequenas */
+    height: auto; /* Ajuste a altura conforme necessário */
+    }
+
 `
 export const ContainerTop = styled.div`
     display: flex;
@@ -125,5 +131,11 @@ export const CardHistorico = styled.div`
     overflow-y: scroll;
     &::-webkit-scrollbar{
         background-color: var(--thema-fundo-principal);
+    }
+
+    @media only screen and (max-width: 600px) {
+    /* Adicione estilos específicos para telas pequenas */
+    width: 90%; /* Reduz a largura para 90% da largura da tela em telas pequenas */
+    height: auto; /* Ajuste a altura conforme necessário */
     }
 `
