@@ -27,7 +27,6 @@ export default function HandleModalProfile({ isOpen, onClose}){
         const response = await UpdateDataService(dadosFormulario);
         console.log(response);
         onClose();
-        location.reload(); 
       }
 
       const { empresa } = useContext(EmpresaContext);

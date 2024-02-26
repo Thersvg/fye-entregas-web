@@ -23,7 +23,6 @@ export function AuthenticateCadastrar(){
             const response = await CriarContaEmpresa(data);
             Cookies.set("token", response.data.token, {expires: 1});
             navigate("/");
-            location.reload();
         }catch(error){
             console.log(error);
         }

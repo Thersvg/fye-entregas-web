@@ -61,8 +61,6 @@ export function Profile(){
             let Body = {"logo_empresa": `${base64String}`}  
                 try{
                     const response = await UpdateDataService(Body);
-                    console.log(response);
-                    location.reload(); 
                 }catch(error){
                     console.log(error);
                 }

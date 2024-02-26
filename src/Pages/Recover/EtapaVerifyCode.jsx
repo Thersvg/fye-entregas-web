@@ -26,7 +26,6 @@ export function VerifyCodeClient(){
 
             if(dadosFormulario.codigo == code){
                 navigate("/newpassword");
-                location.reload(); 
             }else{
                 setResultVerifyCode('Codigo inválido');
             }

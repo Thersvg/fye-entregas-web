@@ -31,7 +31,6 @@ export function NewPasswordClient(){
         Cookies.remove('rY6660v28hf87h3')
         Cookies.remove('T5Xk8tWKeVpNDP1')
         navigate("/login");
-        location.reload(); 
         }catch(error){
             setResultCreatePassword(error.response.data);
         }

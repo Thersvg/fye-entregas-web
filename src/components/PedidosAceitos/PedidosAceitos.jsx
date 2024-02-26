@@ -13,7 +13,6 @@ export function PedidosAceitos(props){
     try{ 
         setCompleted(true);
         await PedidoEntregue(props.id); 
-        location.reload(); 
         setCompleted(false);
 
     }catch(error){

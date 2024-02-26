@@ -27,7 +27,6 @@ export function AuthenticateLogin(){
             const response = await LoginContaEmpresa(data);
             Cookies.set("token", response.data, { secure: true, sameSite: 'Strict', expires: 1 });
             navigate("/");
-            location.reload();
         }catch(error){           
             console.log(error);
             setErrorLogin(error.response.data);

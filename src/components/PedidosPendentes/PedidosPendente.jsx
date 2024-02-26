@@ -13,7 +13,6 @@ export function PedidosPendente(props){
     try{ 
         setDeletando(true);
         await DeletePedido(props.id); 
-        location.reload(); 
         setDeletando(false);
 
     }catch(error){
