@@ -35,6 +35,12 @@ export const AuthContainer = styled.div`
         }
 
     }
+
+    @media only screen and (max-width: 768px) {
+        form {
+            width: 100%; /* Reduzindo a largura do formulário em telas menores */
+        }
+    }
 `
 
 export const Section = styled.section`
@@ -67,6 +73,11 @@ export const Section = styled.section`
         }
     }
 
+    @media only screen and (max-width: 768px) {
+        width: 80%;
+        display: flex;
+        align-items: center;
+    }
 `
 
 export const ErrorSpan = styled.div`

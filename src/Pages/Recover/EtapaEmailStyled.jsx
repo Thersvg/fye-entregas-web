@@ -6,6 +6,7 @@ export const InputEmail = styled.input`
     background: none;
     outline: none;
     border-bottom: 1px solid var(--thema-fonte-principal);
+
 `
 export const AuthContainerEmail = styled.div`
     height: 100vh;
@@ -37,6 +38,12 @@ export const AuthContainerEmail = styled.div`
             margin-top: 5rem;
         }
     }
+
+    @media only screen and (max-width: 768px) {
+        form {
+            width: 100%; /* Reduzindo a largura do formulário em telas menores */
+        }
+    }
 `
 
 export const SectionEmail = styled.section`
@@ -60,5 +67,9 @@ export const SectionEmail = styled.section`
         display: flex;
         flex-direction: column;
         text-align: center;
+    }
+
+    @media only screen and (max-width: 768px) {
+        width: 80%; /* Reduzindo a largura da seção em telas menores */
     }
 `
