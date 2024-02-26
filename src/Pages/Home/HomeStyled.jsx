@@ -11,7 +11,7 @@ export const HomeBody = styled.div`
 
     @media only screen and (max-width: 600px) {
     div{
-        width: auto;
+        width:  100%;
     }
     }
 `
@@ -34,7 +34,11 @@ export const HomePedidosPendentes = styled.div`
     @media only screen and (max-width: 600px) {
     div{
         display: flex;
-        width: 100px;
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
     }
     }
 `
@@ -57,7 +61,11 @@ export const HomePedidosAceitos = styled.div`
     @media only screen and (max-width: 600px) {
     div{
         display: flex;
-        width: 100px;
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
     }
     }
 `

@@ -18,7 +18,7 @@ export const DivBody = styled.div`
     /* Adicione estilos específicos para telas pequenas */
     width: 100%; /* Reduz a largura para 90% da largura da tela em telas pequenas */
     height: auto; /* Ajuste a altura conforme necessário */
-    }
+}
 
 `
 export const ContainerTop = styled.div`

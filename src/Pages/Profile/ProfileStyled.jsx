@@ -103,6 +103,7 @@ export const DadosPessoais = styled.div`
     @media only screen and (max-width: 600px) {
         width: 100%;
         height: auto; 
+        padding: 5px;
     }
 `
 export const ProfileDadosHistoricoPedidosProfile = styled.div`
