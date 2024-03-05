@@ -3,8 +3,8 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyled = createGlobalStyle`
 
 :root{
-    --thema-principal: #243b55;
-    --thema-secundario: #243b55;
+    --thema-principal: #03bb85;
+    --thema-secundario: #03bb85;
     --thema-terciario: #4d75a3;
 
     --thema-fundo-principal: #fff;

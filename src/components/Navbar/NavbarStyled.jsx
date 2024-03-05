@@ -22,12 +22,13 @@ export const ContainerNav = styled.div`
         height: 100%;
 
         @media only screen and (max-width: 600px) {
+        
         div {
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: 100%; 
         }
-    }
+        }
     }
 `
 export const ImageLogo = styled.img`
@@ -39,11 +40,12 @@ export const ImageLogo = styled.img`
 export const ProfileLogoEmpresa = styled.div`
     display: flex;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 30%;
+    width: 70%;
 
     a{
         height: 30px;
+        width: 30px;
     }
 
 `
@@ -57,11 +59,12 @@ export const ImagePerfilUser = styled.img`
 export const Exit = styled.div`
     display: flex;
     margin-left: 10px;
-    height: 100%;
+    height: 30%;
+    width: 30%;
 
     img{
-        width: 30px;
-        height: 23px;
+        width: 18px;
+        height: 17px;
         cursor: pointer;
     }
 
