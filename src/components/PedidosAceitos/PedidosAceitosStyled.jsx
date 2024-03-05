@@ -182,7 +182,6 @@ export const RodapeCard = styled.div`
     }
 `
 
-
 export const FooterCard = styled.div`
 
     display: flex;

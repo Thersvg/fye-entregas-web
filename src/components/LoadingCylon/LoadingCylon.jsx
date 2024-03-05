@@ -7,7 +7,7 @@ const LoadingCylonHold = () => {
   return (
     <>
        <Allcontainer>
-         <ReactLoading type={'cylon'} color={'#243b55'} height={100} width={100} />
+         <ReactLoading type={'cylon'} color={'#03bb85'} height={100} width={100} />
       </Allcontainer>  
     </>
   );

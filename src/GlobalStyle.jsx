@@ -5,7 +5,7 @@ export const GlobalStyled = createGlobalStyle`
 :root{
     --thema-principal: #03bb85;
     --thema-secundario: #03bb85;
-    --thema-terciario: #4d75a3;
+    --thema-terciario: #03bb85;
 
     --thema-fundo-principal: #fff;
     --thema-fundo-secundario: #eeeeee;
