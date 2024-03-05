@@ -21,8 +21,8 @@ export default function Footer(){
                     <div style={{width: '100%'}}>
                     </div>
 
-                    <div style={{width: 30,backgroundColor: '#8f2036'}}>
-                        <button style={{width: 30, height: '100%', cursor: 'pointer'}} onClick={openModal} ><img style={{width: 30, height: 30}} src={IconMake} alt="Criar" /></button>
+                    <div style={{width: 30}}>
+                        <button style={{width: 30, height: '100%', cursor: 'pointer', backgroundColor: 'transparent'}} onClick={openModal} ><img style={{width: 30, height: 30, backgroundColor: 'transparent'}} src={IconMake} alt="Criar" /></button>
                     </div>
                     <HandleModalOrder isOpen={isModalOpen} onClose={closeModal}>
                     </HandleModalOrder>
