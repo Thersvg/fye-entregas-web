@@ -14,6 +14,10 @@ export const DivBody = styled.div`
     height: auto; 
     width: 100%;
 
+    h3{
+        font-size: 7px !important;
+    }
+
     p{
         font-size: 7px;
     }
