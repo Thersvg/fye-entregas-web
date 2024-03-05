@@ -1,5 +1,5 @@
 import { ContainerFooter } from "./FooterStyled";
-import IconMake from "../../images/make.png"
+import IconMake from "../../images/to-do.png"
 import HandleModalOrder from "../ModalOrder/OrderModal";
 import { useState } from "react";
 
@@ -18,16 +18,16 @@ export default function Footer(){
         <>
             <footer>
                 <ContainerFooter>
-                    <div>
-                        <h3>Entregas pendentes</h3>
+                    <div style={{width: '100%'}}>
                     </div>
-                    <div>
-                        <button onClick={openModal} ><img src={IconMake} alt="Criar" /></button>
+
+                    <div style={{width: 30,backgroundColor: '#8f2036'}}>
+                        <button style={{width: 30, height: '100%', cursor: 'pointer'}} onClick={openModal} ><img style={{width: 30, height: 30}} src={IconMake} alt="Criar" /></button>
                     </div>
                     <HandleModalOrder isOpen={isModalOpen} onClose={closeModal}>
                     </HandleModalOrder>
-                    <div>
-                        <h3>Entregas aceitas</h3>
+                    
+                    <div style={{width: '100%'}}>
                     </div>
                 </ContainerFooter>
             </footer>
