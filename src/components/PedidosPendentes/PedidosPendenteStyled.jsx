@@ -142,13 +142,11 @@ export const RodapeCard = styled.div`
 
     button{
 
-        width: 25px;
+        width: 20px;
         position: relative;
-        height: 25px;
-        font-size: 14px;
-        font-weight: 700;
+        height: 18px;
+        font-size: 12px;
         background-color: transparent;
-
         cursor: pointer;
         color: var(--thema-fonte-principal);
         transition: 0.4s;
@@ -159,7 +157,7 @@ export const RodapeCard = styled.div`
     }
 
     &:hover::before {
-      content: "Excluir entrega";
+      content: "Excluir ordem";
       width: 200px;
       height: 20px;
       position: absolute;
@@ -177,32 +175,5 @@ export const RodapeCard = styled.div`
     &:hover::before {
       opacity: 1;
     }
-    }
-`
-
-export const FooterCard = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    gap: 3px;
-    height: 8rem;
-    overflow: hidden;
-    background-color: var(--thema-fundo-secundario);
-    color: var(--thema-fonte-principal);
-    border-radius: 15px;
-    margin-top: 2px;
-
-    label{
-        margin-left: 5px;
-        font-size: 14px;
-    }
-
-`
-
-export const CardHistorico = styled.div`
-    overflow-y: scroll;
-    &::-webkit-scrollbar{
-        background-color: var(--thema-fundo-principal);
     }
 `
