@@ -15,7 +15,7 @@ export const DivBody = styled.div`
     width: 100%;
 
     p{
-        font-size: 6px;
+        font-size: 7px;
     }
 
     label{
@@ -25,6 +25,11 @@ export const DivBody = styled.div`
     footer{
         display: flex;
         flex-direction: row;
+    }
+
+    img{
+        width: 10px !important;
+        height: 10px !important;
     }
   }
    
