@@ -1,7 +1,7 @@
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import logo from '../../images/empresa.png'
 import logoexit from "../../images/exit.png"
-import { ContainerNav, Nav, ImageLogo, ImagePerfilUser, BoasVindasLocalizacao, Exit, ProfileLogoEmpresa} from './NavbarStyled'
+import { ContainerNav, Nav, ImageLogo, ImagePerfilUser, Exit, ProfileLogoEmpresa} from './NavbarStyled'
 import { EmpresaLogged } from '../../services/EmpresaServices'
 import { useContext, useEffect} from 'react'
 import Cookies from 'js-cookie'
@@ -42,15 +42,6 @@ export default function Navbar(){
                     </Link>              
                     <div>
                         <div>
-                            {empresa? (
-                                <BoasVindasLocalizacao>
-                                <h4>OLÁ, {empresa?.name_empresa}</h4>
-                                </BoasVindasLocalizacao>                                
-                            ) : (
-                                <BoasVindasLocalizacao>
-                                <h4>OLÁ</h4>
-                                </BoasVindasLocalizacao>   
-                            )}
                             <ProfileLogoEmpresa>
                                 <Link to={"/Profile"}>
                                     <ImagePerfilUser src={empresa?.logo_empresa} alt="perfil" />

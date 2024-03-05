@@ -6,24 +6,20 @@ export const Nav = styled.nav`
     width: 100%;
     height: 50px;
     justify-content: center;
+    align-content: center;
 `
 export const ContainerNav = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 98%;
-    height: 100%;
+    width: 100%;
+    padding: 5px;
 
     div{
         display: flex;
         flex-direction: wrap;
         align-items: center;
         height: 100%;
-
-        p{
-            margin-right: 10px;
-            color: var(--thema-fundo-principal);
-        }
 
         @media only screen and (max-width: 600px) {
         div {
@@ -35,22 +31,9 @@ export const ContainerNav = styled.div`
     }
 `
 export const ImageLogo = styled.img`
-    width: 120px;
-    height: 80%;
+    width: 110px;
+    padding: 5px;
     cursor: pointer;
-`
-
-export const BoasVindasLocalizacao = styled.div`
-    display: flex;
-    flex-direction: wrap;
-    align-items: center;
-    height: 100%;
-    margin-right: 10px;
-
-    h4{
-        color: var(--thema-fundo-principal);
-        
-    }
 `
 
 export const ProfileLogoEmpresa = styled.div`
