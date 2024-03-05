@@ -2,78 +2,151 @@ import styled from "styled-components";
 
 export const DivBody = styled.div`
     display: flex;
-    width: 610px;
+    width: 300px;
     justify-content: center;
     flex-direction: column;
 
-    label{
-        font-weight: 700;
+    p{
+        font-size: 12px;
     }
 
+    @media only screen and (max-width: 600px) {
+    height: auto; 
+    width: 100%;
+
     p{
-        font-weight: 400;
+        font-size: 6px;
     }
+
+    label{
+        font-size: 0%;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: row;
+    }
+  }
    
 `
 export const ContainerTop = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 19rem;
-    background-color: var(--thema-fundo-secundario);
+    height: 16rem;
+    background-color: var(--thema-fundo-principal);
     color: var(--thema-fonte-principal);
     border-radius: 15px;
     margin-top: 20px;
+    box-shadow: 0px 5px 21px 0px rgba(0,0,0,0.1);
 
 `
 
 export const HeaderCard = styled.div`
     display: flex;
-    width: 100%;
-    height: 15%;
-    justify-content: center;
+    width: 90%;
+    height: 20px;
+    justify-content: space-between;
+    align-items: center;
 
-    label{
-        margin-top: 5px;
+    p{
+        display: flex;
+        align-items: center;
     }
+
+    img{
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+    }
+
 `
 export const ContainerCard = styled.div`
     display: flex;
-    width: 100%;
-    height: 70%;
+    width: 90%;
+    height: 60%;
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
+    gap: 10px;
+
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+    }
+
+    img{
+        width: 14px;
+        height: 14px;
+    }
 
     label{
-        margin-left: 5px;
-        font-size: 14px;
+        font-size: small;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    p{
+        margin-left: 3px;
     }
 `
 export const RodapeCard = styled.div`
     display: flex;
-    width: 100%;
+    width: 90%;
     height: 15%;
     justify-content: space-between;
     overflow: hidden;
 
-    label{
-        margin-left: 5px;
-        font-size: 14px;
+    footer{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        label{
+        display: flex;
+        flex-direction: row;
+        font-size: small;
+
+        img{
+            width: 14px;
+            height: 14px;
+        }
+
+        p{
+        margin-left: 3px;
+        }
+    }
     }
 
     button{
+
         width: 25px;
         position: relative;
         height: 25px;
         font-size: 14px;
         font-weight: 700;
         background-color: transparent;
+
         cursor: pointer;
         color: var(--thema-fonte-principal);
         transition: 0.4s;
-        margin-right: 10px;
-        margin-top: 10px;
 
         img{
         width: 100%;
@@ -100,10 +173,6 @@ export const RodapeCard = styled.div`
       opacity: 1;
     }
     }
-    @media only screen and (max-width: 600px) {
-    flex-direction: column; /* Alteração para coluna em telas pequenas */
-    height: auto; /* Ajuste a altura conforme necessário */
-  }
 `
 
 export const FooterCard = styled.div`
