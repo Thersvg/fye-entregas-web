@@ -9,6 +9,7 @@ export const AuthContainer = styled.div`
     margin: 0 auto;
     background: var(--thema-grandiente-principal);
 
+    
     form{
         display: flex;
         flex-direction: column;
@@ -31,7 +32,7 @@ export const Section = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 25%;
+    width: 30%;
     height: 400px;
     padding: 2rem;
     gap: 1rem;
@@ -48,22 +49,35 @@ export const Section = styled.section`
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        height: auto;
 
         img{
-            width: 250px;
-            height: 100px;
+            width: 80%;
+            height: 100%;
         }
     }
 
     footer{
         width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        flex-direction: column;
+
+        p{
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
     }
 
 
 
 
     @media only screen and (max-width: 600px) {
-        width: 50%;
+        width: 70%;
         height: 50%;
         display: flex;
         align-items: center;

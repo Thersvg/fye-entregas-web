@@ -35,7 +35,7 @@ export function AuthenticateLogin(){
      return(
         <AuthContainer>
             <Section type="Login">
-                <div>
+                <div style={{display: 'flex', justifyContent: 'center', alignContent:'center'}}>
                     <img src={logo} alt="Entrar" />
                 </div>
                 <form onSubmit={handleSubmit(inHandleSubmit)} >
@@ -60,8 +60,8 @@ export function AuthenticateLogin(){
                     {errors.password && (
                         <ErrorSpan>{errors.password.message}</ErrorSpan>
                     )}
-                    <div>
-                        <Link to="/cadastrar"  style={{textDecoration: 'none', color: '#000', fontWeight: '500', fontSize: '14px' }} >Criar conta</Link>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <Link to="/cadastrar"  style={{color: '#000', fontWeight: '600', fontSize: '13px' }} >Cadastre-se</Link>
 
                         <Button 
                             type= "submit"
@@ -69,8 +69,12 @@ export function AuthenticateLogin(){
                         />
                     </div>
                     <footer>
-                        <p>{ErrorLogin.message}</p>
-                        <Link to="/recuperacao"  style={{textDecoration: 'none', color: '#000', fontWeight: '500', fontSize: '14px' }} >Esqueci minha senha</Link>                       
+                        <div style={{width: '100%', height:'50%', justifyContent: 'center'}}>
+                            <p>{ErrorLogin}</p>
+                        </div>
+                        <div style={{width: '100%', height:'50%', justifyContent: 'center'}}>
+                            <Link to="/recuperacao"  style={{textDecoration: 'none', color: '#000', fontWeight: '500', fontSize: '12px' }} >Esqueceu a senha?</Link>                       
+                        </div>
                     </footer>
                 </form>
             </Section>
