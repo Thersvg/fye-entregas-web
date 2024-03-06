@@ -142,7 +142,6 @@ export function Profile(){
                     </HistoryOrdersProfile>
                 ):(
                   <MsgRetorno>
-                    <p>Nenhuma entrega concluida.</p>
                   </MsgRetorno>
                 )}
                 </ProfileAllPedidosEntregues>

@@ -91,7 +91,6 @@ export default function Home(){
 
             ):(
              <MsgRetorno>
-                <p>Nenhuma entrega criada.</p>
              </MsgRetorno> 
             )}
             {pedidosAceitos.length > 0 ? (            
@@ -122,7 +121,6 @@ export default function Home(){
                         </HomePedidosAceitos>
             ):(
                 <MsgRetorno>
-                    <p>Nenhuma entrega foi aceita.</p>
                 </MsgRetorno>
             )}
         </HomeBody>
