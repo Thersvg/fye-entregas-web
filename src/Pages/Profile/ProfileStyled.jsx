@@ -43,30 +43,20 @@ export const PictureLogo = styled.div`
 
         input[type="file"]{
             cursor: pointer;
-            display: inline-block;
-            border: none;
-            width: 150px;
-
-            &::-webkit-file-upload-button{
-                visibility: hidden;
-            }
 
             &::before{
-                content: 'Escolher Imagem';
-                display: inline-block;
-                white-space: nowrap;
             }
         }
 
         button{
             cursor: pointer;
             background-color: transparent;
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
 
             img{
-                width: 100%;
-                height: 100%;
+                width: 60%;
+                height: 60%;
             }
 
         }

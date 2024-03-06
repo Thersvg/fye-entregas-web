@@ -6,7 +6,7 @@ import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPed
 import LogoModificar from '../../images/modified.png'
 import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile";
 import { UpdateDataService } from "../../services/EmpresaServices";
-import LogoSendImage from "../../images/troca.png"
+import LogoSendImage from "../../images/arrow-up-from-square.png"
 import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
 import LogoEmpresa from "../../images/shop.png"
