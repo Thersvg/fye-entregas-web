@@ -35,12 +35,6 @@ export const AuthContainer = styled.div`
         }
 
     }
-
-    @media only screen and (max-width: 768px) {
-        form {
-            width: 100%; /* Reduzindo a largura do formulário em telas menores */
-        }
-    }
 `
 
 export const Section = styled.section`
@@ -73,10 +67,24 @@ export const Section = styled.section`
         }
     }
 
-    @media only screen and (max-width: 768px) {
-        width: 80%;
+    @media only screen and (max-width: 600px) {
+        width: 50%;
+        height: 50%;
         display: flex;
         align-items: center;
+
+        form{
+            width: 100%;
+            height: 100%;
+        }
+
+        div{
+
+            img{
+                width: 180px;
+                height: 80px;
+            }
+        }
     }
 `
 

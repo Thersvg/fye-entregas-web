@@ -8,12 +8,6 @@ export const AuthContainer = styled.div`
     width: 100%;
     margin: 0 auto;
     background: var(--thema-grandiente-principal);
-
-    @media only screen and (max-width: 768px) {
-        form {
-            width: 100%; /* Reduzindo a largura do formulário em telas menores */
-        }
-    }
 `
 
 export const Section = styled.section`
@@ -48,8 +42,13 @@ export const Section = styled.section`
 
     }
 
-    @media only screen and (max-width: 768px) {
-        width: 80%; /* Reduzindo a largura da seção em telas menores */
+    @media only screen and (max-width: 600px) {
+        
+        
+        
+        form {
+            width: 50%; 
+        }
     }
 
 `

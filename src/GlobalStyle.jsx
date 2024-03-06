@@ -4,8 +4,8 @@ export const GlobalStyled = createGlobalStyle`
 
 :root{
     --thema-principal: #03bb85;
-    --thema-secundario: #03bb85;
-    --thema-terciario: #03bb85;
+    --thema-secundario: #04b3ba;
+    --thema-terciario: #04b3ba;
 
     --thema-fundo-principal: #fff;
     --thema-fundo-secundario: #eeeeee;
@@ -13,7 +13,7 @@ export const GlobalStyled = createGlobalStyle`
 
     --thema-fonte-principal: #000;
 
-    --thema-grandiente-principal: linear-gradient(to right, #141e30, #243b55);
+    --thema-grandiente-principal: linear-gradient(90deg, rgba(3,187,133,1) 0%, rgba(4,179,186,1) 100%);
 
 }
 

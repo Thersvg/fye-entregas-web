@@ -86,25 +86,7 @@ export function AuthenticateCadastrar(){
                     />
                     {errors.cidade_empresa && (
                         <ErrorSpan>{errors.cidade_empresa.message}</ErrorSpan>
-                    )}
-{/*                     <Input 
-                        type= "text"
-                        placeholder= "Endereço"
-                        name= "endereco_empresa" 
-                        register = {register}                              
-                    />
-                    {errors.endereco_empresa && (
-                        <ErrorSpan>{errors.endereco_empresa.message}</ErrorSpan>
-                    )}                                                                              
-                    <Input 
-                        type= "text"
-                        placeholder= "Valor da taxa de entrega"
-                        name= "taxa_entrega_empresa"  
-                        register = {register}                             
-                    />
-                    {errors.taxa_entrega_empresa && (
-                        <ErrorSpan>{errors.taxa_entrega_empresa.message}</ErrorSpan>
-                    )}  */}   
+                    )} 
                     <div>
                     <Link to="/login"  style={{textDecoration: 'none', color: '#000', fontWeight: '500', fontSize: '14px'  }} >Voltar</Link>
                     <Button 

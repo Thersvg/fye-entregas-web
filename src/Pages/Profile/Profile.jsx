@@ -32,6 +32,7 @@ export function Profile(){
     const {empresa} = useContext(EmpresaContext);
 
     const [pedidosHistorico, setPedidosHistorico] = useState([]);
+   
     async function FindAllPedidosHistorico(){
         const response = await FindPedidosHistorico(empresa._id);
         setPedidosHistorico(response.data);
@@ -68,7 +69,10 @@ export function Profile(){
         if(selectFile){
             let Body = {"logo_empresa": `${base64String}`}  
                 try{
+                    setLoading(true);
                     const response = await UpdateDataService(Body);
+                    location.reload();
+                    setLoading(false);
                 }catch(error){
                     console.log(error);
                 }
