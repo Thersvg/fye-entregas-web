@@ -74,8 +74,8 @@ export const FormOrder = styled.form`
     }
 }
 @media only screen and (max-width: 600px) {
-        width: 70%; 
-        height: auto; 
+        width: 75%; 
+        height: 70%; 
 
         input{
         height: 40px;
