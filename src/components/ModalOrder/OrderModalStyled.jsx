@@ -27,8 +27,20 @@ export const FormOrder = styled.form`
     }
 
     div {
+
     display: flex;
     width: 80%;
+
+    label{
+        font-size: medium;
+    }
+
+    }
+
+    select{
+       width: 80%;
+       height: 30px;
+       margin-top: 5px;
     }
 
     section{

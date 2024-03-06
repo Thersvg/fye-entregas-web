@@ -29,13 +29,14 @@ export default function HandleModalOrder({ isOpen, onClose}){
         onClose();
       }
 
+    console.log(dadosFormulario);
+
     return (
         <>
         <FormOrder onSubmit={handleSubmit}>       
         <div>
         <label htmlFor="nameCliente">Cliente</label>
         </div>
-
           <input
             type="text"
             placeholder="Nome*"
@@ -91,17 +92,19 @@ export default function HandleModalOrder({ isOpen, onClose}){
           <div>
           <label htmlFor="formaPagamento">Forma de pagamento</label>
           </div>
-          <input
-            type="text"
-            placeholder="Pix/Dinheiro/Cartão de crédido*"
-            id="formaPagamento"
-            name="forma_pagamento"
+
+          <select name="forma_pagamento" id="formaPagamento"
             onChange={handleInputChange}
             required
-          />
+          >
+            <option value="Cartão de crédito">Cartão de crédito</option>
+            <option value="Pix">Pix</option>
+            <option value="Dinheiro">Dinheiro</option>
+          </select>
+
           <footer>
             <button onClick={onClose}><img src={LogoDelete} alt="Fechar" /></button>
-            <button type="submit"><img src={LogoSend} alt="Enviar" /></button>
+            <button type="submit"><img src={LogoSend} alt="Criar" /></button>
           </footer>
         </FormOrder>
         </>
