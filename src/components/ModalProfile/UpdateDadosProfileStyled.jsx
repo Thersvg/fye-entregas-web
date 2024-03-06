@@ -2,27 +2,45 @@ import styled from "styled-components";
 
 export const FormOrder = styled.form`
     display: flex;
-    width: 500px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     flex-direction: column;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--thema-fundo-terciario);
-    padding: 20px;
+    background-color: var(--thema-fundo-principal);
+    padding: 10px;
     z-index: 1;
     border-radius: 15px;
-    gap: 3px;
-    align-items: flex-start;
+    gap: 5px;
+    align-items: center;
+    box-shadow: 0px 5px 21px 0px rgba(0,0,0,0.1);
 
     input{
         height: 60px;
-        width: 100%;
+        width: 80%;
         border-radius: 0;
         background: none;
         outline: none;
         border-bottom: 1px solid var(--thema-fonte-principal);
+    }
+
+    div {
+
+    display: flex;
+    width: 80%;
+
+    label{
+        font-size: medium;
+    }
+
+    }
+
+    select{
+       width: 80%;
+       height: 30px;
+       margin-top: 5px;
     }
 
     section{
@@ -31,22 +49,23 @@ export const FormOrder = styled.form`
         justify-content: center;
     }
 
-    footer{
+    section{
         display: flex;
-        width: 100%;
+        width: 90%;
+        height: 40px;
         justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
 
     button{
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-        margin-top: 10px;
+        width: 20px;
+        height: 20px;
         background-color: transparent;
         cursor: pointer;
 
         img{
-        width: 100%;
-        height: 100%;
+        width: 20px;
+        height: 20px;
     }
 
         &:hover{
@@ -54,8 +73,12 @@ export const FormOrder = styled.form`
         }
     }
 }
-    @media only screen and (max-width: 600px) {
-            width: 90%; /* Reduz a largura para 90% da largura da tela em telas pequenas */
-            height: auto; /* Ajuste a altura conforme necessário */
+@media only screen and (max-width: 600px) {
+        width: 70%; 
+        height: auto; 
+
+        input{
+        height: 40px;
+    }
     }
 `

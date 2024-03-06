@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
-import LogoDelete from '../../images/delete.png'
-import LogoSend from '../../images/send.png'
+import LogoDelete from '../../images/cross-small.png'
+import LogoSend from '../../images/box-circle-check.png'
 import { FormOrder } from './UpdateDadosProfileStyled';
 import { EmpresaContext } from '../../Context/EmpresaContext';
 import { UpdateDataService } from '../../services/EmpresaServices';
@@ -34,10 +34,9 @@ export default function HandleModalProfile({ isOpen, onClose}){
     return (
         <>
         <FormOrder onSubmit={handleSubmit}>
-        <section>
-            <h4>Minha empresa</h4>
-        </section>
-          <label htmlFor="name_empresa">Empresa</label>
+          <div>
+          <label htmlFor="name_empresa">Nome</label>
+          </div>
           <input
             type="text"
             id="name_empresa"
@@ -45,7 +44,9 @@ export default function HandleModalProfile({ isOpen, onClose}){
             onChange={handleInputChange}
             placeholder={empresa.name_empresa}
           />
+          <div>
           <label htmlFor="cnpj_empresa">CNPJ</label>
+          </div>
           <input
             type="text"
             id="cnpj_empresa"
@@ -53,7 +54,9 @@ export default function HandleModalProfile({ isOpen, onClose}){
             onChange={handleInputChange}
             placeholder={empresa.cnpj_empresa}
           />
+          <div>
           <label htmlFor="email_empresa">Email</label>
+          </div>
           <input
             type="text"
             id="email_empresa"
@@ -61,7 +64,9 @@ export default function HandleModalProfile({ isOpen, onClose}){
             onChange={handleInputChange}
             placeholder={empresa.email_empresa}
           />
+          <div>
           <label htmlFor="endereco_empresa">Endereço</label>
+          </div>
           <input
             type="text"
             id="endereco_empresa"
@@ -69,7 +74,9 @@ export default function HandleModalProfile({ isOpen, onClose}){
             onChange={handleInputChange}
             placeholder={empresa.endereco_empresa}
           />
+          <div>
           <label htmlFor="telefone_empresa">Telefone</label>
+          </div>
           <input
             type="text"
             id="telefone_empresa"
@@ -77,7 +84,9 @@ export default function HandleModalProfile({ isOpen, onClose}){
             onChange={handleInputChange}
             placeholder={empresa.telefone_empresa}
           />
+          <div>
           <label htmlFor="taxa_entrega_empresa">Valor taxa</label>
+          </div>
           <input
             type="text"
             id="taxa_entrega_empresa"
@@ -85,10 +94,10 @@ export default function HandleModalProfile({ isOpen, onClose}){
             onChange={handleInputChange}
             placeholder={empresa.taxa_entrega_empresa}
           />
-          <footer>
+          <section>
             <button onClick={onClose}><img src={LogoDelete} alt="Fechar" /></button>
-            <button type="submit"><img src={LogoSend} alt="Enviar" /></button>
-          </footer>
+            <button type="submit"><img src={LogoSend} alt="Atualizar" /></button>
+          </section>
         </FormOrder>
         </>
     )
