@@ -91,7 +91,7 @@ export const Section = styled.section`
 
             img{
                 width: 180px;
-                height: 80px;
+                height: 90px;
             }
         }
     }
