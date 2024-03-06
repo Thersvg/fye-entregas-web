@@ -11,15 +11,16 @@ export const DivBody = styled.div`
     }
 
     @media only screen and (max-width: 600px) {
+    display: flex;
     height: auto; 
-    width: 100%;
+    width: 85%;
 
     h3{
-        font-size: 7px !important;
+        font-size: 10px !important;
     }
 
     p{
-        font-size: 7px;
+        font-size: 10px;
     }
 
     label{
@@ -32,8 +33,8 @@ export const DivBody = styled.div`
     }
 
     img{
-        width: 10px !important;
-        height: 10px !important;
+        width: 16px !important;
+        height: 16px !important;
     }
   }
    

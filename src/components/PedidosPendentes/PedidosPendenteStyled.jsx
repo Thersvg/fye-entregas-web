@@ -15,7 +15,7 @@ export const DivBody = styled.div`
     width: 100%;
 
     p{
-        font-size: 7px;
+        font-size: 8px;
     }
 
     label{
@@ -28,8 +28,8 @@ export const DivBody = styled.div`
     }
 
     img{
-        width: 10px !important;
-        height: 10px !important;
+        width: 12px !important;
+        height: 12px !important;
     }
   }
    
