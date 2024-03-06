@@ -32,7 +32,7 @@ export const FormOrder = styled.form`
     width: 80%;
 
     label{
-        font-size: medium;
+        font-size: small;
     }
 
     }

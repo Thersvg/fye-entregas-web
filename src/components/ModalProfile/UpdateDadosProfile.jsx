@@ -35,7 +35,7 @@ export default function HandleModalProfile({ isOpen, onClose}){
         <>
         <FormOrder onSubmit={handleSubmit}>
           <div>
-          <label htmlFor="name_empresa">Nome</label>
+          <label htmlFor="name_empresa">Nome*</label>
           </div>
           <input
             type="text"
@@ -45,7 +45,7 @@ export default function HandleModalProfile({ isOpen, onClose}){
             placeholder={empresa.name_empresa}
           />
           <div>
-          <label htmlFor="cnpj_empresa">CNPJ</label>
+          <label htmlFor="cnpj_empresa">CNPJ ou CPF*</label>
           </div>
           <input
             type="text"
@@ -55,7 +55,7 @@ export default function HandleModalProfile({ isOpen, onClose}){
             placeholder={empresa.cnpj_empresa}
           />
           <div>
-          <label htmlFor="email_empresa">Email</label>
+          <label htmlFor="email_empresa">Email*</label>
           </div>
           <input
             type="text"
@@ -65,7 +65,7 @@ export default function HandleModalProfile({ isOpen, onClose}){
             placeholder={empresa.email_empresa}
           />
           <div>
-          <label htmlFor="endereco_empresa">Endereço</label>
+          <label htmlFor="endereco_empresa">Endereço atual*</label>
           </div>
           <input
             type="text"
@@ -75,7 +75,7 @@ export default function HandleModalProfile({ isOpen, onClose}){
             placeholder={empresa.endereco_empresa}
           />
           <div>
-          <label htmlFor="telefone_empresa">Telefone</label>
+          <label htmlFor="telefone_empresa">Telefone*</label>
           </div>
           <input
             type="text"
@@ -85,7 +85,7 @@ export default function HandleModalProfile({ isOpen, onClose}){
             placeholder={empresa.telefone_empresa}
           />
           <div>
-          <label htmlFor="taxa_entrega_empresa">Valor taxa</label>
+          <label htmlFor="taxa_entrega_empresa">Taxa delivery*</label>
           </div>
           <input
             type="text"
