@@ -144,12 +144,14 @@ export const MsgRetorno = styled.div`
 export const HistoryOrdersProfile = styled.div`
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: auto;
     height: 100%;
     gap: 15px;
     height: auto;
     justify-content: center;
-    overflow-x: scroll;
+    padding: 5px;
+    overflow-x:scroll;
+    white-space: nowrap;
 
     @media only screen and (max-width: 600px) {
         width: 100%;
