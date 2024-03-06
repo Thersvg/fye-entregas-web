@@ -39,7 +39,6 @@ export function NewPasswordClient(){
     return(
         <AuthContainerEmail>
         <SectionEmail type="verify">
-            <h1>Nova Senha</h1>
             <form onSubmit={handleSubmit} >
                 <InputEmail
                     type= "password"

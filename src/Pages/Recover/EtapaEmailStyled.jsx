@@ -35,13 +35,13 @@ export const AuthContainerEmail = styled.div`
             width: 100%;
             justify-content: center;
             align-items: center;
-            margin-top: 5rem;
+            margin-top: 2rem;
         }
     }
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 600px) {
         form {
-            width: 100%; /* Reduzindo a largura do formulário em telas menores */
+            width: 100%; 
         }
     }
 `
@@ -70,6 +70,7 @@ export const SectionEmail = styled.section`
     }
 
     @media only screen and (max-width: 768px) {
-        width: 80%; /* Reduzindo a largura da seção em telas menores */
+        width: 70%;
+        height: 30%;
     }
 `

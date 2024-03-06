@@ -37,7 +37,6 @@ export function VerifyCodeClient(){
     return(
         <AuthContainerEmail>
         <SectionEmail type="verify">
-            <h1>Digite seu código</h1>
             <p>Enviamos um código para: <b>{EmailClient}.</b> Atenção o código expira em <b>10 minutos.</b></p>
             <form onSubmit={handleSubmit} >
                 <InputEmail

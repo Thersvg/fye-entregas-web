@@ -37,7 +37,6 @@ const handleSubmit = async (event) =>{
     return(
         <AuthContainerEmail>
             <SectionEmail type="recover">
-                <h1>Recuperação</h1>
                 <form onSubmit={handleSubmit} >
                     <InputEmail
                         type= "email"
