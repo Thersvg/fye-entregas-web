@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 export const ContainerProfile = styled.div`
     display: flex;
-    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
     width: 100%;
     height:  100vh;
-    overflow: hidden;
     background-color: var(--thema-fundo-principal);
+
+
 
     @media only screen and (max-width: 600px) {
         flex-direction: column;
@@ -77,51 +78,72 @@ export const PictureLogo = styled.div`
 export const DadosPessoais = styled.div`
     display: flex;
     justify-content: center;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
+    width: auto;
     height: 200px;
     background-color: var(--thema-fundo-secundario);
     border-radius: 15px;
 
     label{
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--thema-fonte-principal);
-    }
-
-    p{
-        color: var(--thema-fonte-principal); 
+        font-size: small;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     div{
         justify-content: center;
-        padding: 20px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
+        gap: 10px;
+
+        img{
+            width: 15px;
+            height: 15px;
+        }
+
+        p{
+            margin-left: 3px;
+        }
+
+        footer{
+            display: flex;
+            width: 100%;
+            height: 20px;
+            justify-content: flex-end;
+
+            img{
+                width: 20px;
+                height: 20px; 
+            }
+
+        }
     }
 
     @media only screen and (max-width: 600px) {
-        width: 100%;
+        width: 80%;
         height: auto; 
         padding: 5px;
     }
 `
-export const ProfileDadosHistoricoPedidosProfile = styled.div`
-    display: flex;
-    width: 100%;
-    height: 100%;
-`
-
 export const ProfileAllPedidosEntregues = styled.div`
     display: flex;
     position: relative;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     height: 100%;
     align-items: center;
     background-color: var(--thema-fundo-principal);
 
 `
+
+export const ProfileDadosHistoricoPedidosProfile = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+`
+
 export const MsgRetorno = styled.div`
     display: flex;
     align-items: center;
@@ -129,45 +151,4 @@ export const MsgRetorno = styled.div`
     height: 100%;
     width: 100%;
     
-`
-export const AltDados = styled.div`
-    display: flex;
-    width: 100%;
-
-    div{
-        display: flex;
-        position: relative;
-        top: -100%;
-        justify-content: flex-end;
-        width: 100%;
-
-        button{
-        width: 25px;
-        height: 25px;
-        cursor: pointer;
-
-        img{
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    }
-`
-
-export const Suporte = styled.div`
-    display: flex;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    margin-left: 10px;
-
-    Link{
-        text-decoration: none;
-    }
-
-    @media only screen and (max-width: 600px) {
-        grid-template-columns: 1fr; 
-        height: auto; 
-    }
 `

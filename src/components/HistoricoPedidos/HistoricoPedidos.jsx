@@ -2,7 +2,19 @@ import { useState } from "react";
 import { ContainerCard, ContainerTop, DivBody, FooterCard, HeaderCard, RodapeCard } from "./HistoricoPedidosStyled";
 import PropTypes from 'prop-types'; 
 import { PedidoFinalizadoFunc } from "../../services/PedidosServices";
-import LogoTrash from '../../images/trash.png'
+import LogoCheck from '../../images/route.png';
+import LogoCode from '../../images/ticket.png';
+import LogoUser from '../../images/circle-user.png';
+import LogoTelefone from '../../images/circle-phone.png';
+import LogoEndereco from '../../images/marker.png';
+import LogoOrder from '../../images/box-circle-check.png';
+import LogoPay from '../../images/moneypay.png';
+import LogoMotobike from '../../images/moped.png';
+import LogoOrderExit from '../../images/expense.png';
+import LogoDeliveryman from '../../images/biking-mountain.png';
+import LogoDeliverymancpf from '../../images/id-card-clip-alt.png';
+import LogoDeliverymantelefone from '../../images/circle-phone.png';
+import LogoDeliverymanpayment from '../../images/key.png';
 
 export function HistoricoPedidos(props){
 
@@ -22,28 +34,56 @@ export function HistoricoPedidos(props){
     return(
         <DivBody>
         <ContainerTop>
-             <HeaderCard>
-                        <label>{props.codigo}</label>
-                </HeaderCard>
+            <HeaderCard>
+                        <p>FINALIZADO <img src={LogoCheck} alt="check" /> </p>
+                        <p> <img src={LogoCode} alt="code" /> {props.codigo}</p>
+            </HeaderCard>
                 <ContainerCard>
-                        <label>CLIENTE: <p>{props.name}</p></label>
-                        <label>TELEFONE: <p>{props.telefone}</p></label>
-                        <label>ENDEREÇO: <p>{props.endereco}</p></label>
-                        <label>DESCRIÇÃO: <p>{props.descricao}</p></label>
-                        <label>VALOR DO PEDIDO: <p>R$ {props.valor}</p></label>
-                        <label>FORMA DE PAGAMENTO: <p>{props.forma_p}</p></label>
+                    <div>
+                        <label><img src={LogoUser} alt="name_user" /> <p>{props.name}</p></label>
+                        <label><img src={LogoTelefone} alt="_telefone_user" /> <p>{props.telefone}</p></label>
+                    </div>
+
+                    <div>
+                        <label><img src={LogoEndereco} alt="endereco_user" /> <p>{props.endereco}</p></label>
+                    </div>    
+
+                    <div>
+                        <label><img src={LogoOrder} alt="description_order_user" /><p>{props.descricao}</p></label>
+                    </div>    
+
+                    <div>
+                        <label><img src={LogoPay} alt="payment"/><p>{props.forma_p} R$ {props.valor}</p></label>
+                    </div>                    
                 </ContainerCard>
                 <RodapeCard>
-                        <label>ENTREGA: <p>R$ {props.taxa_ent}</p></label>
-                        <button onClick={handlePedidoFinalizado} disabled={statePedidoFinalizado}><img src={LogoTrash} alt="Excluir" /></button>
+                    <footer>
+                        <div>
+                            <label><img src={LogoMotobike} alt="delivery"/> <p>R$ {props.taxa_ent}</p></label>
+                        </div>                
+                        <button onClick={handlePedidoFinalizado} disabled={statePedidoFinalizado}><img src={LogoOrderExit} alt="Saiu para entrega" /></button>
+                    </footer>
                 </RodapeCard>  
-        </ContainerTop> 
+        </ContainerTop>
         <FooterCard>
-            <label>ENTREGADOR: <p>{props.entregador_name}</p></label>
-            <label>CPF: <p>{props.entregador_cpf}</p></label>
-            <label>TELEFONE: <p>{props.entregador_telefone}</p></label>
-            <label>FORMA DE PAGAMENTO: <p>{props.form_pagamento_entr}</p></label>
-        </FooterCard>
+            <div><h3>Dados do entregador</h3></div>
+            <div>
+            <label><img src={LogoDeliveryman} alt="delivery_man"/><p>{props.entregador_name}</p></label>
+            </div>
+
+            <div>
+            <label><img src={LogoDeliverymancpf} alt="delivery_man_cpf"/><p>{props.entregador_cpf}</p></label>
+            </div>
+
+            <div>
+            <label><img src={LogoDeliverymantelefone} alt="delivery_man_telefone"/><p>{props.entregador_telefone}</p></label>
+            </div>
+
+            <div>
+            <label><img src={LogoDeliverymanpayment} alt="delivery_man_payment"/><p>{props.form_pagamento_entr}</p></label>
+            </div>
+
+            </FooterCard> 
         </DivBody>
     )
 }

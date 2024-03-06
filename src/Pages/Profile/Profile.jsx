@@ -1,6 +1,6 @@
 import { useContext, useEffect, useId, useState } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
-import { AltDados, ContainerProfile, DadosEmpresaProfile, DadosPessoais, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues, Suporte} from "./ProfileStyled";
+import {ContainerProfile, DadosEmpresaProfile, DadosPessoais, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues} from "./ProfileStyled";
 import { FindPedidosHistorico } from "../../services/PedidosServices";
 import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPedidos";
 import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedidosStyled";
@@ -9,6 +9,15 @@ import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile
 import { UpdateDataService } from "../../services/EmpresaServices";
 import LogoSendImage from "../../images/troca.png"
 import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
+
+import LogoEmpresa from "../../images/shop.png"
+import LogoCNPJ from "../../images/id-card-clip-alt.png"
+import LogoEMAIL from "../../images/envelope.png"
+
+import LogoTelefone from "../../images/circle-phone.png"
+import LogoEndereco from "../../images/marker.png"
+import LogoTaxa from "../../images/moped.png"
+
 
 export function Profile(){
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -88,34 +97,22 @@ export function Profile(){
                                     </form>
                                 </div>
                             </PictureLogo>
-                                    <DadosPessoais>                     
+                            <DadosPessoais>                     
                                         <div>
-                                            <label htmlFor="">EMPRESA:</label>
-                                            <p>{empresa?.name_empresa}</p>
-                                            <label htmlFor="">CNPJ/CPF:</label>
-                                            <p>{empresa?.cnpj_empresa}</p>
-                                            <label htmlFor="">EMAIL:</label>
-                                            <p>{empresa?.email_empresa}</p>
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">TELEFONE:</label>
-                                            <p>{empresa?.telefone_empresa}</p>
-                                            <label htmlFor="">ENDEREÇO:</label>
-                                            <p>{empresa?.endereco_empresa}</p>
-                                            <label htmlFor="">TAXA DE ENTREGA:</label>
-                                            <p>{empresa?.taxa_entrega_empresa}</p>
+                                            <label> <img src={LogoEmpresa} alt="Empresa" /> <p>{empresa?.name_empresa}</p></label>
+                                            <label> <img src={LogoCNPJ} alt="Identidade" /> <p>{empresa?.cnpj_empresa}</p></label>
+                                            <label> <img src={LogoEMAIL} alt="Email" /> <p>{empresa?.email_empresa}</p></label>
+                                            <label> <img src={LogoTelefone} alt="Telefone" /> <p>{empresa?.telefone_empresa}</p></label>
+                                            <label> <img src={LogoEndereco} alt="Endereco" /> <p>{empresa?.endereco_empresa}</p></label>
+                                            <label> <img src={LogoTaxa} alt="Taxa de entrega" /> <p>{empresa?.taxa_entrega_empresa}</p></label>
+                                            
+                                            <footer>
+                                                <button onClick={openModal}><img src={LogoModificar} alt="Alterar" /></button>                         
+                                                <HandleModalProfile isOpen={isModalOpen} onClose={closeModal}>
+                                                </HandleModalProfile>     
+                                            </footer>                                  
                                         </div>
                             </DadosPessoais>
-                            <AltDados>
-                                <div>
-                                    <button onClick={openModal}><img src={LogoModificar} alt="Alterar" /></button>
-                                </div>                          
-                                <HandleModalProfile isOpen={isModalOpen} onClose={closeModal}>
-                                </HandleModalProfile>
-                            </AltDados>
-                            <Suporte>
-                                {/* <Link to={""} style={{ fontSize: 14, fontWeight: 800, color: 'inherit', textDecoration: 'none'}}>Cancelar minha assinatura</Link> */}
-                            </Suporte> 
                     </DadosEmpresaProfile>
                 <ProfileAllPedidosEntregues>
                 {pedidosHistorico.length > 0 ? (
