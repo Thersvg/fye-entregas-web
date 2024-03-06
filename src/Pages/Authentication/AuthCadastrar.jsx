@@ -19,6 +19,7 @@ export function AuthenticateCadastrar(){
     const navigate = useNavigate();
 
     async function inHandleSubmit(data){
+        console.log(data);
         try{
             const response = await CriarContaEmpresa(data);
             Cookies.set("token", response.data.token, {expires: 1});
@@ -31,11 +32,11 @@ export function AuthenticateCadastrar(){
      return(
         <AuthContainer>
             <Section type="CadastrarEmpresa">
-                <h2>Cadastrar</h2>
+                <h2>CADASTRE-SE</h2>
                 <form onSubmit={handleSubmit(inHandleSubmit)}>
                     <Input 
                         type= "text"
-                        placeholder= "Empresa"
+                        placeholder= "Nome da sua empresa*"
                         name= "name_empresa" 
                         register = {register}                              
                     />
@@ -44,7 +45,7 @@ export function AuthenticateCadastrar(){
                     )}
                     <Input 
                         type= "text"
-                        placeholder= "CNPJ/CPF"
+                        placeholder= "CNPJ/CPF*"
                         name= "cnpj_empresa" 
                         register = {register}                              
                     />
@@ -53,7 +54,7 @@ export function AuthenticateCadastrar(){
                     )}
                     <Input 
                         type= "email"
-                        placeholder= "Email"
+                        placeholder= "Email*"
                         name= "email_empresa"   
                         register = {register}                            
                     />
@@ -62,7 +63,7 @@ export function AuthenticateCadastrar(){
                     )}  
                     <Input 
                         type= "text"
-                        placeholder= "Telefone"
+                        placeholder= "Telefone*"
                         name= "telefone_empresa" 
                         register = {register}                                                      
                     />
@@ -71,22 +72,22 @@ export function AuthenticateCadastrar(){
                     )} 
                     <Input 
                         type= "password"
-                        placeholder= "Password"
+                        placeholder= "Password*"
                         name= "password_empresa"       
                         register = {register}                        
                     />
                     {errors.password_empresa && (
                         <ErrorSpan>{errors.password_empresa.message}</ErrorSpan>
                     )}
-                    <Input 
+                     <Input 
                         type= "text"
-                        placeholder= "Cidade"
+                        placeholder= "Cidade*"
                         name= "cidade_empresa"       
                         register = {register}                  
                     />
                     {errors.cidade_empresa && (
                         <ErrorSpan>{errors.cidade_empresa.message}</ErrorSpan>
-                    )} 
+                    )}  
                     <div>
                     <Link to="/login"  style={{textDecoration: 'none', color: '#000', fontWeight: '500', fontSize: '14px'  }} >Voltar</Link>
                     <Button 

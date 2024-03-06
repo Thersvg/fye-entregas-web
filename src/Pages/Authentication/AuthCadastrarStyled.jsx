@@ -15,14 +15,14 @@ export const Section = styled.section`
     flex-direction: column;
     justify-content: center;
     width: 30%;
-    height: 500px;
-    padding: 2rem;
+    height: 550px;
+    padding: 40px;
     gap: 1rem;
     border-radius: 10px;
     background-color: var(--thema-fundo-principal);
 
     h2{
-        font-size: 2rem;
+        font-size: 1.3rem;
         text-align: center;
         font-weight: 700;
     }
@@ -42,12 +42,23 @@ export const Section = styled.section`
 
     }
 
-    @media only screen and (max-width: 600px) {
-        
-        
-        
-        form {
-            width: 50%; 
+    @media only screen and (max-width: 600px) {      
+        width: 70%;
+        height: 70%;
+        display: flex;
+        align-items: center;
+
+        form{
+            width: 100%;
+            height: auto;
+        }
+
+        div{
+
+            img{
+                width: 180px;
+                height: 80px;
+            }
         }
     }
 
