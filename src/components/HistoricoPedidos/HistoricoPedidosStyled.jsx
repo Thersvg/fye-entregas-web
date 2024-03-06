@@ -223,12 +223,12 @@ export const FooterCard = styled.div`
 `
 
 export const CardHistorico = styled.div`
-    overflow-x: scroll;
+    overflow-x: auto;
     display: flex;
     flex-direction: row;
     gap: 20px;
 
-    &::-webkit-scrollbar{
+     &::-webkit-scrollbar{
         background-color: var(--thema-fundo-principal);
-    }
+    } 
 `

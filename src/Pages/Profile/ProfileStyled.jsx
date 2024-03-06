@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
-
 export const ContainerProfile = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height:  100vh;
+    height:  auto;
     background-color: var(--thema-fundo-principal);
-
-
 
     @media only screen and (max-width: 600px) {
         flex-direction: column;
@@ -82,6 +79,7 @@ export const DadosPessoais = styled.div`
     height: 200px;
     background-color: var(--thema-fundo-secundario);
     border-radius: 15px;
+    margin-bottom: 20px;
 
     label{
         font-size: small;
@@ -128,18 +126,8 @@ export const DadosPessoais = styled.div`
 `
 export const ProfileAllPedidosEntregues = styled.div`
     display: flex;
-    position: relative;
     flex-direction: row;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    background-color: var(--thema-fundo-principal);
-
-`
-
-export const ProfileDadosHistoricoPedidosProfile = styled.div`
-    display: flex;
-    flex-direction: row;
+    justify-content: center;
     width: 100%;
     height: 100%;
 `
@@ -151,4 +139,23 @@ export const MsgRetorno = styled.div`
     height: 100%;
     width: 100%;
     
+`
+
+export const HistoryOrdersProfile = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 100%;
+    gap: 15px;
+    height: auto;
+    justify-content: center;
+    overflow-x: scroll;
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+        height: 100%;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+    }
 `

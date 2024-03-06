@@ -1,9 +1,8 @@
 import { useContext, useEffect, useId, useState } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
-import {ContainerProfile, DadosEmpresaProfile, DadosPessoais, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues} from "./ProfileStyled";
+import {ContainerProfile, DadosEmpresaProfile, DadosPessoais, HistoryOrdersProfile, MsgRetorno, PictureLogo, ProfileAllPedidosEntregues} from "./ProfileStyled";
 import { FindPedidosHistorico } from "../../services/PedidosServices";
 import { HistoricoPedidos } from "../../components/HistoricoPedidos/HistoricoPedidos";
-import { CardHistorico } from "../../components/HistoricoPedidos/HistoricoPedidosStyled";
 import LogoModificar from '../../images/modified.png'
 import HandleModalProfile from "../../components/ModalProfile/UpdateDadosProfile";
 import { UpdateDataService } from "../../services/EmpresaServices";
@@ -114,30 +113,29 @@ export function Profile(){
                                         </div>
                             </DadosPessoais>
                     </DadosEmpresaProfile>
-                <ProfileAllPedidosEntregues>
+                <ProfileAllPedidosEntregues>        
                 {pedidosHistorico.length > 0 ? (
-                        <CardHistorico>
-                                        {pedidosHistorico.map((item) => 
-                                            <HistoricoPedidos
-                                                key={useId} 
-                                                id={item._id} 
-                                                codigo = {item.detalhes_pedido.codigo_pedido}
-                                                name = {item.detalhes_pedido.name_cliente}
-                                                valor = {item.detalhes_pedido.valor_pedido}
-                                                endereco = {item.detalhes_pedido.endereco_cliente}
-                                                telefone  = {item.detalhes_pedido.telefone_cliente}
-                                                descricao  = {item.detalhes_pedido.descricao_pedido}
-                                                forma_p  = {item.detalhes_pedido.forma_pagamento}
-                                                taxa_ent = {item.detalhes_pedido.taxa_entrega}
-                                                name_emp = {item.name_empresa}
-                                                entregador_name = {item.name_entregador?.name_entregador}
-                                                entregador_cpf = {item.name_entregador?.cpf_entregador}
-                                                entregador_telefone = {item.name_entregador?.telefone_entregador}
-                                                form_pagamento_entr = {item.name_entregador?.formaDepagamento_entregador}
-                                            /> 
-                                        )} 
-                        </CardHistorico> 
-
+                    <HistoryOrdersProfile>
+                        {pedidosHistorico.map((item) => 
+                                <HistoricoPedidos
+                                            key={useId} 
+                                            id={item._id} 
+                                            codigo = {item.detalhes_pedido.codigo_pedido}
+                                            name = {item.detalhes_pedido.name_cliente}
+                                            valor = {item.detalhes_pedido.valor_pedido}
+                                            endereco = {item.detalhes_pedido.endereco_cliente}
+                                            telefone  = {item.detalhes_pedido.telefone_cliente}
+                                            descricao  = {item.detalhes_pedido.descricao_pedido}
+                                            forma_p  = {item.detalhes_pedido.forma_pagamento}
+                                            taxa_ent = {item.detalhes_pedido.taxa_entrega}
+                                            name_emp = {item.name_empresa}
+                                            entregador_name = {item.name_entregador?.name_entregador}
+                                            entregador_cpf = {item.name_entregador?.cpf_entregador}
+                                            entregador_telefone = {item.name_entregador?.telefone_entregador}
+                                            form_pagamento_entr = {item.name_entregador?.formaDepagamento_entregador}
+                                        /> 
+                                    )} 
+                    </HistoryOrdersProfile>
                 ):(
                   <MsgRetorno>
                     <p>Nenhuma entrega concluida.</p>
