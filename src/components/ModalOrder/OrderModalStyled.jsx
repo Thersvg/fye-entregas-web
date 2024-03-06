@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FormOrder = styled.form`
     display: flex;
     width: 450px;
-    height: 450px;
+    height: 500px;
     flex-direction: column;
     position: fixed;
     top: 50%;
