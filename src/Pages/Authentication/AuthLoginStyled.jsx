@@ -14,26 +14,16 @@ export const AuthContainer = styled.div`
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
+        height: auto;
 
         div{
             display: flex;
             width: 100%;
+            height: auto;
             justify-content: space-between;
             align-items: center;
 
         }
-
-        footer{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-
-            justify-content: center;
-            align-items: center;
-            gap: 4rem;
-            margin-top: 15px;
-        }
-
     }
 `
 
@@ -41,7 +31,7 @@ export const Section = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 30%;
+    width: 25%;
     height: 400px;
     padding: 2rem;
     gap: 1rem;
@@ -55,8 +45,6 @@ export const Section = styled.section`
     }
 
     div{
-        width: 100%;
-        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -67,6 +55,13 @@ export const Section = styled.section`
         }
     }
 
+    footer{
+        width: 100%;
+    }
+
+
+
+
     @media only screen and (max-width: 600px) {
         width: 50%;
         height: 50%;
@@ -75,7 +70,7 @@ export const Section = styled.section`
 
         form{
             width: 100%;
-            height: 100%;
+            height: auto;
         }
 
         div{

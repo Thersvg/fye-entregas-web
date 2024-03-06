@@ -162,7 +162,7 @@ export const RodapeCard = styled.div`
     }
 
     &:hover::before {
-      content: "Eu paguei a entrega";
+      content: "Entrega paga";
       width: 200px;
       height: 20px;
       position: absolute;
