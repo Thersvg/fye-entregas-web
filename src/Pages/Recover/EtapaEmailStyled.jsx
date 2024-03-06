@@ -50,8 +50,8 @@ export const SectionEmail = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 30%;
-    height: 400px;
+    width: 25%;
+    height: 250px;
     padding: 2rem;
     gap: 1rem;
     border-radius: 10px;
