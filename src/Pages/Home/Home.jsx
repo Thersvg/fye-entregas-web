@@ -4,7 +4,7 @@ import { PedidosAceitos } from "../../components/PedidosAceitos/PedidosAceitos";
 import { PedidosPendente } from "../../components/PedidosPendentes/PedidosPendente";
 import { GetAllPedidos, GetAllPedidosAceitos } from "../../services/PedidosServices";
 import { HomeBody, HomePedidosAceitos, HomePedidosPendentes, MsgRetorno} from "./HomeStyled";
-import { useContext, useEffect, useId, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import NotificationSound from "../../Sounds/notification.mp3";
 import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 

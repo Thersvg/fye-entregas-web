@@ -7,6 +7,8 @@ import { cadastrarSchema } from "../../Schemas/cadastrarSchema";
 import { CriarContaEmpresa } from "../../services/EmpresaServices";
 import Cookies from "js-cookie";
 import { Link, useNavigate} from "react-router-dom";
+import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
+import { useState } from "react";
 
 export function AuthenticateCadastrar(){
 
@@ -18,18 +20,27 @@ export function AuthenticateCadastrar(){
 
     const navigate = useNavigate();
 
+    const [loading, setLoading] = useState(false);  
+
     async function inHandleSubmit(data){
         console.log(data);
         try{
+            setLoading(true);
             const response = await CriarContaEmpresa(data);
+            setLoading(false);
             Cookies.set("token", response.data.token, {expires: 1});
             navigate("/");
+            location.reload();
         }catch(error){
             console.log(error);
         }
     }
 
      return(
+        <>
+        {loading ? (
+            <LoadingCylonHold />
+        ):(
         <AuthContainer>
             <Section type="CadastrarEmpresa">
                 <h2>CADASTRE-SE</h2>
@@ -98,5 +109,7 @@ export function AuthenticateCadastrar(){
                 </form>
             </Section>
         </AuthContainer>
+        )}
+        </>
      )
 }

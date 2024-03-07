@@ -8,7 +8,8 @@ import { loginSchema } from "../../Schemas/loginSchema";
 import { LoginContaEmpresa } from "../../services/EmpresaServices";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import logo from '../../images/logoazul.png'
+import logo from '../../images/logoazul.png';
+import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
 export function AuthenticateLogin(){
 
@@ -21,18 +22,29 @@ export function AuthenticateLogin(){
     const navigate = useNavigate();
 
     const [ErrorLogin, setErrorLogin] = useState('');
+
+    const [loading, setLoading] = useState(false);  
   
     async function inHandleSubmit(data){
         try{
+            setLoading(true);
             const response = await LoginContaEmpresa(data);
+            setLoading(false);
             Cookies.set("token", response.data, { secure: true, sameSite: 'Strict', expires: 1 });
             navigate("/");
+            location.reload();
         }catch(error){           
             console.log(error);
             setErrorLogin(error.response.data);
         }
+
     }
+
      return(
+        <>
+        {loading ? (
+            <LoadingCylonHold />
+        ):(
         <AuthContainer>
             <Section type="Login">
                 <div style={{display: 'flex', justifyContent: 'center', alignContent:'center'}}>
@@ -79,5 +91,7 @@ export function AuthenticateLogin(){
                 </form>
             </Section>
         </AuthContainer>
+        )}
+        </>
      )
 }
