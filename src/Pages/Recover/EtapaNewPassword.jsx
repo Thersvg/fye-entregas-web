@@ -4,6 +4,8 @@ import { AuthContainerEmail, InputEmail, SectionEmail } from "./EtapaEmailStyled
 import { useState } from "react";
 import { UpdatePasswordService } from "../../services/EmpresaServices";
 import Cookies from "js-cookie";
+import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
+
 
 export function NewPasswordClient(){
 
@@ -12,6 +14,8 @@ export function NewPasswordClient(){
     const [dadosFormulario, setDadosFormulario] = useState({});  
 
     const [ResultCreatePassword, setResultCreatePassword] = useState('');
+
+    const [loading, setLoading] = useState(false); 
 
     const handleChange = (event) =>{
         const { name, value } = event.target;
@@ -27,9 +31,11 @@ export function NewPasswordClient(){
         }
 
         try{
+        setLoading(true);
         const response =  await UpdatePasswordService(body);
         Cookies.remove('rY6660v28hf87h3')
         Cookies.remove('T5Xk8tWKeVpNDP1')
+        setLoading(false);
         navigate("/login");
         }catch(error){
             setResultCreatePassword(error.response.data);
@@ -37,6 +43,10 @@ export function NewPasswordClient(){
     }
 
     return(
+        <>
+        {loading ? (
+            <LoadingCylonHold />
+        ):(
         <AuthContainerEmail>
         <SectionEmail type="verify">
             <form onSubmit={handleSubmit} >
@@ -59,5 +69,7 @@ export function NewPasswordClient(){
             </form>
         </SectionEmail>
         </AuthContainerEmail>
+        )}
+        </>
     )
 }

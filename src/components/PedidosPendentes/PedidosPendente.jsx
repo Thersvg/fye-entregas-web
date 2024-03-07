@@ -11,26 +11,35 @@ import LogoOrder from '../../images/box-circle-check.png'
 import LogoPay from '../../images/moneypay.png'
 import LogoMotobike from '../../images/moped.png'
 import { useState } from 'react';
+import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
 
 export function PedidosPendente(props){
 
     const [deletando, setDeletando] = useState(false);
 
+    const [loading, setLoading] = useState(false);  
+
     async function handleDeletePedido(){
     try{ 
+        setLoading(true);
         setDeletando(true);
         await DeletePedido(props.id); 
         setDeletando(false);
+        setLoading(false);
 
     }catch(error){
         console.error("Erro ao deletar pedido:", error);
-        setDeletando(false);    
+        setDeletando(false); 
+        setLoading(false);   
     }      
     }
 
     return(
         <>
+        {loading ? (
+            <LoadingCylonHold />
+        ):(
         <DivBody>
         <ContainerTop>
             <HeaderCard>
@@ -65,6 +74,7 @@ export function PedidosPendente(props){
                 </RodapeCard>  
         </ContainerTop> 
         </DivBody>
+        )}
         </>
     )
 }

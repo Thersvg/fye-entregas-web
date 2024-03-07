@@ -15,24 +15,34 @@ import LogoDeliveryman from '../../images/biking-mountain.png';
 import LogoDeliverymancpf from '../../images/id-card-clip-alt.png';
 import LogoDeliverymantelefone from '../../images/circle-phone.png';
 import LogoDeliverymanpayment from '../../images/key.png';
+import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
 export function PedidosAceitos(props){
 
     const [statePedidoEntregue, setCompleted] = useState(false);
 
+    const [loading, setLoading] = useState(false);  
+
     async function handlePedidoEntregue(){
     try{ 
+        setLoading(true);
         setCompleted(true);
         await PedidoEntregue(props.id); 
         setCompleted(false);
+        setLoading(false);
 
     }catch(error){
         console.error("Erro marcar pedido como pago", error);
-        setCompleted(false);    
+        setCompleted(false);  
+        setLoading(false);  
     }      
     }
 
     return(
+        <>
+        {loading ? (
+            <LoadingCylonHold />
+        ):(
         <DivBody>
         <ContainerTop>
             <HeaderCard>
@@ -86,7 +96,8 @@ export function PedidosAceitos(props){
 
             </FooterCard> 
         </DivBody>
-
+        )}
+        </>
     )
 }
 

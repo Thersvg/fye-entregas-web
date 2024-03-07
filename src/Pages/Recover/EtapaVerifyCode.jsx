@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContainerEmail, InputEmail, SectionEmail } from "./EtapaEmailStyled";
 import { Button } from "../../components/Button/Button";
+import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
 export function VerifyCodeClient(){
 
@@ -11,6 +12,8 @@ export function VerifyCodeClient(){
     const [dadosFormulario, setDadosFormulario] = useState({});  
 
     const [ResultVerifyCode, setResultVerifyCode] = useState('');
+
+    const [loading, setLoading] = useState(false); 
 
     const [EmailClient, setEmailClient] = useState(Cookies.get('T5Xk8tWKeVpNDP1', { signed: true }));
 
@@ -22,10 +25,12 @@ export function VerifyCodeClient(){
     const handleSubmit = async (event) =>{
         event.preventDefault();
         try{
+            setLoading(true);
             const code = Cookies.get('rY6660v28hf87h3', { signed: true })
-
             if(dadosFormulario.codigo == code){
+                setLoading(false);
                 navigate("/newpassword");
+
             }else{
                 setResultVerifyCode('Codigo inválido');
             }
@@ -35,6 +40,10 @@ export function VerifyCodeClient(){
     }
 
     return(
+        <>
+        {loading ? (
+            <LoadingCylonHold />
+        ):(
         <AuthContainerEmail>
         <SectionEmail type="verify">
             <p>Enviamos um código para: <b>{EmailClient}.</b> Atenção o código expira em <b>10 minutos.</b></p>
@@ -58,5 +67,7 @@ export function VerifyCodeClient(){
             </form>
         </SectionEmail>
     </AuthContainerEmail>
+    )}
+    </>
     )
 }

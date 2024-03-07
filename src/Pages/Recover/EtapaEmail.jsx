@@ -4,6 +4,7 @@ import { AuthContainerEmail, InputEmail, SectionEmail } from "./EtapaEmailStyled
 import { Link, useNavigate } from "react-router-dom";
 import { ExpireCode, SendClientEmail } from "../../services/EmpresaServices";
 import Cookies from "js-cookie";
+import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
 export function GetEmailClient(){
 
@@ -13,6 +14,8 @@ const [dadosFormulario, setDadosFormulario] = useState({});
 
 const [ResultSendEmail, setResultSendEmail] = useState('');
 
+const [loading, setLoading] = useState(false); 
+
 const handleChange = (event) =>{
     const { name, value } = event.target;
     setDadosFormulario({ ...dadosFormulario, [name]: value });
@@ -21,13 +24,15 @@ const handleChange = (event) =>{
 const handleSubmit = async (event) =>{
     event.preventDefault();
     try{
+        setLoading(true);
         const response = await SendClientEmail(dadosFormulario);
-
         const responsecode =  await ExpireCode();
-
         Cookies.set("rY6660v28hf87h3", response.data, { secure: true, sameSite: 'Strict', expires: responsecode });
         Cookies.set("T5Xk8tWKeVpNDP1", dadosFormulario.email_empresa, { secure: true, sameSite: 'Strict', expires: responsecode });
+        setLoading(false);
         navigate("/verificacao");
+        location.reload();
+
     }catch(error){
         console.log(error);
         setResultSendEmail(error.response.data);
@@ -35,6 +40,10 @@ const handleSubmit = async (event) =>{
 }
 
     return(
+        <>
+        {loading ? (
+            <LoadingCylonHold />
+        ):(
         <AuthContainerEmail>
             <SectionEmail type="recover">
                 <form onSubmit={handleSubmit} >
@@ -57,5 +66,7 @@ const handleSubmit = async (event) =>{
                 </form>
             </SectionEmail>
         </AuthContainerEmail>
+        )}
+        </>
     )
 }
