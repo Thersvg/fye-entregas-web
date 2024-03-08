@@ -103,7 +103,7 @@ export function Profile(){
                                 </div>
                             </PictureLogo>
                             <DadosPessoais>                     
-                                        <div>
+                                        <div style={{width: '100%'}}>
                                             <label> <img src={LogoEmpresa} alt="Empresa" /> <p>{empresa?.name_empresa}</p></label>
                                             <label> <img src={LogoCNPJ} alt="Identidade" /> <p>{empresa?.cnpj_empresa}</p></label>
                                             <label> <img src={LogoEMAIL} alt="Email" /> <p>{empresa?.email_empresa}</p></label>

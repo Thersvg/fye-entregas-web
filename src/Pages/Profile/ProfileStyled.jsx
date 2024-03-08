@@ -65,7 +65,7 @@ export const PictureLogo = styled.div`
 export const DadosPessoais = styled.div`
     display: flex;
     justify-content: center;
-    width: auto;
+    width: 30%;
     height: 200px;
     background-color: var(--thema-fundo-secundario);
     border-radius: 15px;
