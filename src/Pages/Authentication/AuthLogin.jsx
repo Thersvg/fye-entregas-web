@@ -33,7 +33,8 @@ export function AuthenticateLogin(){
             Cookies.set("token", response.data, { secure: true, sameSite: 'Strict', expires: 1 });
             navigate("/");
             location.reload();
-        }catch(error){           
+        }catch(error){   
+            setLoading(false);        
             console.log(error);
             setErrorLogin(error.response.data);
         }

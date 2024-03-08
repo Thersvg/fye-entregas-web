@@ -34,6 +34,7 @@ const handleSubmit = async (event) =>{
         location.reload();
 
     }catch(error){
+        setLoading(false);
         console.log(error);
         setResultSendEmail(error.response.data);
     }

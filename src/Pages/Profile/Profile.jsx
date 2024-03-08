@@ -74,6 +74,7 @@ export function Profile(){
                     location.reload();
                     setLoading(false);
                 }catch(error){
+                    setLoading(false);
                     console.log(error);
                 }
         }else{

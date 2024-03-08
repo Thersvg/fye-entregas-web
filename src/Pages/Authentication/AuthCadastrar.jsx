@@ -32,6 +32,7 @@ export function AuthenticateCadastrar(){
             navigate("/");
             location.reload();
         }catch(error){
+            setLoading(false);
             console.log(error);
         }
     }

@@ -38,6 +38,7 @@ export function NewPasswordClient(){
         setLoading(false);
         navigate("/login");
         }catch(error){
+            setLoading(false);
             setResultCreatePassword(error.response.data);
         }
     }
