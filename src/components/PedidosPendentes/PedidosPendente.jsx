@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { ContainerCard, ContainerTop, DivBody, HeaderCard, RodapeCard } from './PedidosPendenteStyled';
 import { DeletePedido } from '../../services/PedidosServices';
 import LogoDelete from '../../images/cross-small.png'
-import LogoCheck from '../../images/check-circle.png'
+import LogoCheck from '../../images/exclamation.png'
 import LogoCode from '../../images/ticket.png'
 import LogoUser from '../../images/circle-user.png'
 import LogoTelefone from '../../images/circle-phone.png'
