@@ -33,6 +33,7 @@ export function HistoricoPedidos(props){
     }catch(error){
         setLoading(false);
         console.error("Erro ao finalizar pedido", error);
+        alert("Erro");
         setFinalized(false);    
     }      
     }
