@@ -25,11 +25,15 @@ export default function HandleModalOrder({ isOpen, onClose}){
       const { empresa } = useContext(EmpresaContext);
 
       async function CreateOrder(dadosFormulario){  
-        await CreateNewOrder(dadosFormulario, empresa.taxa_entrega_empresa);
-        onClose();
-      }
+        try{
+          await CreateNewOrder(dadosFormulario, empresa.taxa_entrega_empresa);
+          onClose();
+        }catch (error){
+          alert("Erro");
+          onClose();
+        }
 
-    console.log(dadosFormulario);
+      }
 
     return (
         <>

@@ -23,10 +23,15 @@ export default function HandleModalProfile({ isOpen, onClose}){
       };
 
 
-      async function UpdateData(dadosFormulario){       
-        const response = await UpdateDataService(dadosFormulario);
-        console.log(response);
-        onClose();
+      async function UpdateData(dadosFormulario){  
+        try{
+          const response = await UpdateDataService(dadosFormulario);
+          onClose();
+        } catch (error){
+          alert("Erro");
+          onClose();
+        }    
+
       }
 
       const { empresa } = useContext(EmpresaContext);
