@@ -27,6 +27,7 @@ export default function HandleModalProfile({ isOpen, onClose}){
         try{
           const response = await UpdateDataService(dadosFormulario);
           onClose();
+          location.reload();
         } catch (error){
           alert("Erro");
           onClose();

@@ -28,6 +28,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
         try{
           await CreateNewOrder(dadosFormulario, empresa.taxa_entrega_empresa);
           onClose();
+          location.reload();
         }catch (error){
           alert("Erro");
           onClose();
@@ -101,6 +102,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
             onChange={handleInputChange}
             required
           >
+            <option value="--"></option>
             <option value="Cartão de crédito">Cartão de crédito</option>
             <option value="Pix">Pix</option>
             <option value="Dinheiro">Dinheiro</option>
