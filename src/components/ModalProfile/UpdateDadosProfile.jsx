@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import LogoDelete from '../../images/cross-small.png'
-import LogoSend from '../../images/box-circle-check.png'
+import LogoSend from '../../images/arrow-up-from-square.png'
 import { FormOrder } from './UpdateDadosProfileStyled';
 import { EmpresaContext } from '../../Context/EmpresaContext';
 import { UpdateDataService } from '../../services/EmpresaServices';
