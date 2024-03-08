@@ -75,6 +75,7 @@ export function Profile(){
                     setLoading(false);
                 }catch(error){
                     setLoading(false);
+                    alert("Erro");
                     console.log(error);
                 }
         }else{

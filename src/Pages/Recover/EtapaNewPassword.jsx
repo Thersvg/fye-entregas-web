@@ -39,6 +39,7 @@ export function NewPasswordClient(){
         navigate("/login");
         }catch(error){
             setLoading(false);
+            alert("Erro");
             setResultCreatePassword(error.response.data);
         }
     }

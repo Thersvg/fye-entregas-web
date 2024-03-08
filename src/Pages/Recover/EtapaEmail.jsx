@@ -35,6 +35,7 @@ const handleSubmit = async (event) =>{
 
     }catch(error){
         setLoading(false);
+        alert("Erro");
         console.log(error);
         setResultSendEmail(error.response.data);
     }

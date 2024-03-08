@@ -36,6 +36,7 @@ export function VerifyCodeClient(){
             }
         }catch(error){
             setLoading(false);
+            alert("Erro");
             setResultVerifyCode(error.response.data);
         }
     }
