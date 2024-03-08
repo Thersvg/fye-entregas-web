@@ -15,23 +15,33 @@ import LogoDeliveryman from '../../images/biking-mountain.png';
 import LogoDeliverymancpf from '../../images/id-card-clip-alt.png';
 import LogoDeliverymantelefone from '../../images/circle-phone.png';
 import LogoDeliverymanpayment from '../../images/key.png';
+import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
 export function HistoricoPedidos(props){
 
     const [statePedidoFinalizado, setFinalized] = useState(false);
 
+    const [loading, setLoading] = useState(false); 
+
     async function handlePedidoFinalizado(){
     try{ 
+        setLoading(true);
         setFinalized(true);
         await PedidoFinalizadoFunc(props.id); 
         setFinalized(false);
+        setLoading(false);
     }catch(error){
+        setLoading(false);
         console.error("Erro ao finalizar pedido", error);
         setFinalized(false);    
     }      
     }
 
     return(
+        <>
+        {loading ? (
+            <LoadingCylonHold />
+        ):(
         <DivBody>
         <ContainerTop>
             <HeaderCard>
@@ -85,6 +95,8 @@ export function HistoricoPedidos(props){
 
             </FooterCard> 
         </DivBody>
+        )}
+        </>
     )
 }
 
