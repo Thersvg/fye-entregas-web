@@ -32,9 +32,10 @@ export function PedidosAceitos(props){
         setLoading(false);
 
     }catch(error){
+        setLoading(false);  
+        alert("Erro");
         console.error("Erro marcar pedido como pago", error);
         setCompleted(false);  
-        setLoading(false);  
     }      
     }
 

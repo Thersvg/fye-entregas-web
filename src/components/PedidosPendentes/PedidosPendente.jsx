@@ -29,9 +29,10 @@ export function PedidosPendente(props){
         setLoading(false);
 
     }catch(error){
+        setLoading(false); 
+        alert("Erro");
         console.error("Erro ao deletar pedido:", error);
         setDeletando(false); 
-        setLoading(false);   
     }      
     }
 
