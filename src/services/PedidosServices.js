@@ -71,7 +71,7 @@ export function PedidoEntregue(id) {
 
 export async function PedidoFinalizadoFunc(id) {
   try {
-    const response = axios.delete(`${baseURL}/historico-pedido/${id}`, {
+    const response = axios.post(`${baseURL}/order-to-backup/${id}`, {
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`,
       },

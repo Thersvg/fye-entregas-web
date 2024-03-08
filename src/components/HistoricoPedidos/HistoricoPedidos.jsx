@@ -72,7 +72,7 @@ export function HistoricoPedidos(props){
                         <div>
                             <label><img src={LogoMotobike} alt="delivery"/> <p>R$ {props.taxa_ent}</p></label>
                         </div>                
-                        <button onClick={handlePedidoFinalizado} disabled={statePedidoFinalizado}><img src={LogoOrderExit} alt="Saiu para entrega" /></button>
+                        <button onClick={handlePedidoFinalizado} disabled={statePedidoFinalizado}><img src={LogoOrderExit} alt="Finalizar" /></button>
                     </footer>
                 </RodapeCard>  
         </ContainerTop>
