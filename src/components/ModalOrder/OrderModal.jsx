@@ -106,7 +106,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
           </div>
           <input
             type="text"
-            placeholder="Av. ou Rua e N°*"
+            placeholder="Av/Rua + N° + Cidade*"
             id="endereco"
             name="endereco_cliente"
             onChange={handleInputChange}
