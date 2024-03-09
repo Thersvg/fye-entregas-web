@@ -10,9 +10,15 @@ import LogoEndereco from '../../images/marker.png'
 import LogoOrder from '../../images/box-circle-check.png'
 import LogoPay from '../../images/moneypay.png'
 import LogoMotobike from '../../images/moped.png'
-import { useState } from 'react';
+import React, { useState} from 'react';
 import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 export function PedidosPendente(props){
 
@@ -20,12 +26,23 @@ export function PedidosPendente(props){
 
     const [loading, setLoading] = useState(false);  
 
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+      };
+    
+      const handleClose = () => {
+        setOpen(false);
+      };
+
     async function handleDeletePedido(){
     try{ 
         setLoading(true);
         setDeletando(true);
         await DeletePedido(props.id); 
         setDeletando(false);
+        setOpen(false);
         setLoading(false);
 
     }catch(error){
@@ -33,7 +50,8 @@ export function PedidosPendente(props){
         alert("Erro");
         console.error("Erro ao deletar pedido:", error);
         setDeletando(false); 
-    }      
+    } 
+
     }
 
     return(
@@ -42,7 +60,35 @@ export function PedidosPendente(props){
             <LoadingCylonHold />
         ):(
         <DivBody>
-        <ContainerTop>
+            <ContainerTop>
+            
+            <Dialog
+            open={open}
+            onClose={handleClose}
+
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+            >
+            <DialogTitle id="alert-dialog-title">
+            {"Atenção"}
+            </DialogTitle>
+
+            <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+                Tem certeza que quer excluir essa ordem?
+            </DialogContentText>
+            </DialogContent>
+
+            <DialogActions>
+            <Button sx={{color: '#000'}} onClick={handleClose}>Fechar</Button>
+
+            <Button sx={{color: '#03bb85'}} onClick={handleDeletePedido} autoFocus>
+                Confirmar
+            </Button>
+
+            </DialogActions>
+            </Dialog>
+
             <HeaderCard>
                         <p>ORDEM CRIADA <img src={LogoCheck} alt="check" /> </p>
                         <p> <img src={LogoCode} alt="code" /> {props.codigo}</p>
@@ -70,7 +116,7 @@ export function PedidosPendente(props){
                         <div>
                             <label><img src={LogoMotobike} alt="delivery"/> <p>R$ {props.taxa_ent}</p></label>
                         </div>                
-                        <button onClick={handleDeletePedido} disabled={deletando}><img src={LogoDelete} alt="Excluir" /></button>
+                        <button onClick={handleClickOpen} disabled={deletando}><img src={LogoDelete} alt="Excluir" /></button>
                     </footer>
                 </RodapeCard>  
         </ContainerTop> 
