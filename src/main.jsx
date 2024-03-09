@@ -14,6 +14,7 @@ import Cookies from 'js-cookie'
 import { GetEmailClient } from './Pages/Recover/EtapaEmail.jsx'
 import { VerifyCodeClient } from './Pages/Recover/EtapaVerifyCode.jsx'
 import { NewPasswordClient } from './Pages/Recover/EtapaNewPassword.jsx'
+import { Welcome } from './Pages/Welcome/Welcome.jsx'
 
 
 const isTokenPresent = () => {
@@ -23,7 +24,7 @@ const isTokenPresent = () => {
 
 const PrivateRoute = ({ element }) => {
   const isAuthenticated = isTokenPresent();
-  return isAuthenticated ? element :<AuthenticateLogin />;
+  return isAuthenticated ? element :<Welcome />;
 };
 
 const isTokenRecover = () => {
@@ -33,7 +34,7 @@ const isTokenRecover = () => {
 
 const PrivateRouteRecover = ({ element }) => {
   const isAuthenticatedToModify = isTokenRecover();
-  return isAuthenticatedToModify ? element :<AuthenticateLogin />;
+  return isAuthenticatedToModify ? element :<Welcome />;
 };
 
 
@@ -53,6 +54,12 @@ const routes = [
       },
     ],
   },
+
+  {
+    path: '/welcome',
+    element: <Welcome />,
+  },  
+
   {
     path: '/login',
     element: <AuthenticateLogin />,
