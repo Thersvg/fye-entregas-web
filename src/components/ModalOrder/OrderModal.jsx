@@ -2,8 +2,16 @@ import { FormOrder } from "./OrderModalStyled";
 import { CreateNewOrder } from "../../services/PedidosServices";
 import LogoDelete from '../../images/cross-small.png'
 import LogoSend from '../../images/box-circle-check.png'
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { EmpresaContext } from "../../Context/EmpresaContext";
+
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { useNavigate } from "react-router-dom";
 
 export default function HandleModalOrder({ isOpen, onClose}){
     if (!isOpen) {
@@ -11,6 +19,18 @@ export default function HandleModalOrder({ isOpen, onClose}){
       }
 
       const [dadosFormulario, setDadosFormulario] = useState({});  
+
+      const [open, setOpen] = React.useState(false);
+
+      const navigate = useNavigate();
+
+      const handleClickOpen = () => {
+          setOpen(true);
+      };
+      
+        const handleClose = () => {
+          setOpen(false);
+      };
 
       const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -25,6 +45,10 @@ export default function HandleModalOrder({ isOpen, onClose}){
       const { empresa } = useContext(EmpresaContext);
 
       async function CreateOrder(dadosFormulario){  
+
+        if(empresa.endereco_empresa == 'Endereço'){
+            handleClickOpen();
+        }else{
         try{
           await CreateNewOrder(dadosFormulario, empresa.taxa_entrega_empresa);
           onClose();
@@ -33,11 +57,38 @@ export default function HandleModalOrder({ isOpen, onClose}){
           alert("Erro");
           onClose();
         }
-
+        }
       }
 
     return (
         <>
+            <Dialog
+            open={open}
+            onClose={handleClose}
+
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+            >
+            <DialogTitle id="alert-dialog-title">
+            {"Atenção"}
+            </DialogTitle>
+
+            <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+                Por favor altere seu endereço!
+            </DialogContentText>
+            </DialogContent>
+
+            <DialogActions>
+            <Button sx={{color: '#000'}} onClick={handleClose}>Fechar</Button>
+
+            <Button sx={{color: '#03bb85'}} onClick={() => navigate("/Profile")} autoFocus>
+                Alterar
+            </Button>
+
+            </DialogActions>
+            </Dialog>
+
         <FormOrder onSubmit={handleSubmit}>       
         <div>
         <label htmlFor="nameCliente">Cliente</label>
