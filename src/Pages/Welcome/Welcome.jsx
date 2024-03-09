@@ -15,8 +15,7 @@ export function Welcome(){
                     </div>
                 </div>
             </EntryTop>
-                <ContainerContent>
-                    
+                <ContainerContent> 
                 </ContainerContent>
             </Container>
         </>
