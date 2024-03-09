@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'; 
 import { ContainerCard, ContainerTop, DivBody, FooterCard,HeaderCard,RodapeCard } from './PedidosAceitosStyled';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { PedidoEntregue } from '../../services/PedidosServices';
 import LogoCheck from '../../images/check-circle.png';
 import LogoCode from '../../images/ticket.png';
@@ -17,11 +17,28 @@ import LogoDeliverymantelefone from '../../images/circle-phone.png';
 import LogoDeliverymanpayment from '../../images/key.png';
 import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 export function PedidosAceitos(props){
 
     const [statePedidoEntregue, setCompleted] = useState(false);
 
     const [loading, setLoading] = useState(false);  
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    
+      const handleClose = () => {
+        setOpen(false);
+    };
 
     async function handlePedidoEntregue(){
     try{ 
@@ -46,6 +63,34 @@ export function PedidosAceitos(props){
         ):(
         <DivBody>
         <ContainerTop>
+
+            <Dialog
+            open={open}
+            onClose={handleClose}
+
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+            >
+            <DialogTitle id="alert-dialog-title">
+            {"Atenção"}
+            </DialogTitle>
+
+            <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+                Essa entrega já foi entregue para o cliente?
+            </DialogContentText>
+            </DialogContent>
+
+            <DialogActions>
+            <Button sx={{color: '#000'}} onClick={handleClose}>Fechar</Button>
+
+            <Button sx={{color: '#03bb85'}} onClick={handlePedidoEntregue} autoFocus>
+                Confirmar
+            </Button>
+
+            </DialogActions>
+            </Dialog>
+
             <HeaderCard>
                         <p>ORDEM ACEITA <img src={LogoCheck} alt="check" /> </p>
                         <p> <img src={LogoCode} alt="code" /> {props.codigo}</p>
@@ -73,7 +118,7 @@ export function PedidosAceitos(props){
                         <div>
                             <label><img src={LogoMotobike} alt="delivery"/> <p>R$ {props.taxa_ent}</p></label>
                         </div>                
-                        <button onClick={handlePedidoEntregue} disabled={statePedidoEntregue}><img src={LogoOrderExit} alt="Saiu para entrega" /></button>
+                        <button onClick={handleClickOpen} disabled={statePedidoEntregue}><img src={LogoOrderExit} alt="Saiu para entrega" /></button>
                     </footer>
                 </RodapeCard>  
         </ContainerTop>
