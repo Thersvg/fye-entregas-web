@@ -11,7 +11,7 @@ export function Welcome(){
             <EntryTop>
                 <div style={{width: '98%', display: 'flex' ,justifyContent: 'flex-end'}}>
                     <div>
-                        <Button sx={{backgroundColor: '#03bb85', ":hover": {backgroundColor:'#04b3ba'}}} onClick={() => navigate('/login')} variant="contained">Entrar</Button>
+                        <Button sx={{color: "#fff", fontWeight: 800 ,border: 'none',backgroundColor: '#transparent', ":hover": {border: 'none',backgroundColor:'#fff', color: '#03bb85'}}} onClick={() => navigate('/login')} variant="outlined">Entrar</Button>
                     </div>
                 </div>
             </EntryTop>
