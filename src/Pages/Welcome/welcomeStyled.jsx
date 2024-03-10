@@ -53,6 +53,11 @@ export const SubscribeContainer = styled.div`
     border-radius: 2%;
     overflow: hidden;
 
+    h1{
+        font-size: 60px;
+        color: #fff;
+    }
+
     @media only screen and (max-width: 600px) {
         width: 80%;
         height: 60%; 
@@ -60,13 +65,13 @@ export const SubscribeContainer = styled.div`
         gap: 20px;
 
         h1{
-            font-size: 45px;
+            font-size: 40px;
             display: flex;
             text-align: center;
         }
 
         p{
-            font-size: 10px;
+            font-size: 15px;
             display: flex;
             text-align: center;
         }

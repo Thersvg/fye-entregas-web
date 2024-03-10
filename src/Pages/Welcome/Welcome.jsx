@@ -22,7 +22,7 @@ export function Welcome(){
                 <ContainerContent> 
                     <SubscribeContainer>
                         <div>
-                            <h1 style={{fontSize: 60, color: '#fff'}}>Seja bem vindo</h1>
+                            <h1>Seja bem vindo</h1>
                         </div>
                         <div>
                             <p style={{color: '#fff'}}>Várias pessoas mudando de vida, mude a sua agora mesmo.</p>
