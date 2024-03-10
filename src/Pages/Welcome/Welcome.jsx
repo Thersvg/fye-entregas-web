@@ -1,13 +1,20 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Container, ContainerContent, EntryTop, SubscribeContainer } from "./welcomeStyled";
+import { Helmet } from 'react-helmet';
 import Button from '@mui/material/Button';
 import logo from '../../images/empresa.png'
+
 
 export function Welcome(){
 
     const navigate = useNavigate();
     return(
         <>
+            <Helmet>
+                <title>Bem vindo</title>
+                <meta name="description" content="Sua descrição aqui." />
+                <meta name="keywords" content="palavra-chave1, palavra-chave2, palavra-chave3" />
+            </Helmet>
             <Container>
             <EntryTop>
                 <div style={{width: '98%', height: '40px'}}>
