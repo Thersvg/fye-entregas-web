@@ -3,6 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
+    overflow: hidden;
+
+    @media only screen and (max-width: 600px) {
+        img{
+        }
+    }
 `
 export const EntryTop = styled.div`
     width: 100%;
@@ -30,7 +36,8 @@ export const ContainerContent = styled.div`
 
 export const SubscribeContainer = styled.div`
     display: flex;
-    background-color: #03bb85;
+    background: linear-gradient(90deg, rgba(3,187,133,1) 0%, rgba(4,179,186,1) 100%); 
+    opacity: 90%;
     width: 40%;
     height: 50%;
     gap: 15px;

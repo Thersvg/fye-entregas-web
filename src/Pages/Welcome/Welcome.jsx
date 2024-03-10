@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container, ContainerContent, EntryTop, SubscribeContainer } from "./welcomeStyled";
 import Button from '@mui/material/Button';
-import imgbackground from '../../images/city.jpg'
+import imgbackground from '../../images/usingcll.png'
+import logo from '../../images/empresa.png'
 
 export function Welcome(){
 
@@ -9,9 +10,13 @@ export function Welcome(){
     return(
         <>
             <Container>
+                <img style={{width: '100%', height: '100%'}} src={imgbackground} alt="" />
             <EntryTop>
-                <div style={{width: '98%', display: 'flex' ,justifyContent: 'flex-end'}}>
-                    <div>
+                <div style={{width: '98%'}}>
+                    <div style={{width: '100%',display: 'flex' ,justifyContent: 'space-between'}}>
+                        <Link to={"/welcome"}>
+                            <img style={{width: '120px', height: '100%'}} src={logo} alt="logo-for-you-entregas" />
+                        </Link> 
                         <Button sx={{color: "#fff", fontWeight: 800 ,border: 'none',backgroundColor: '#transparent', ":hover": {border: 'none',backgroundColor:'#fff', color: '#03bb85'}}} onClick={() => navigate('/login')} variant="outlined">Entrar</Button>
                     </div>
                 </div>
@@ -19,7 +24,7 @@ export function Welcome(){
                 <ContainerContent> 
                     <SubscribeContainer>
                         <div>
-                            <h1 style={{fontSize: 60, color: '#fff'}}>Seja bem vindo!</h1>
+                            <h1 style={{fontSize: 60, color: '#fff'}}>Seja bem vindo</h1>
                         </div>
                         <div>
                             <p style={{color: '#fff'}}>Várias pessoas mudando de vida, mude a sua agora mesmo.</p>
