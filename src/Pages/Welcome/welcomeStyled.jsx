@@ -27,3 +27,15 @@ export const ContainerContent = styled.div`
     z-index: 1;
     top: 10%;
 `
+
+export const SubscribeContainer = styled.div`
+    display: flex;
+    background-color: #03bb85;
+    width: 40%;
+    height: 50%;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2%;
+`
