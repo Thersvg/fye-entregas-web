@@ -46,6 +46,7 @@ export function PedidosPendente(props){
         setLoading(false);
 
     }catch(error){
+        setOpen(false);
         setLoading(false); 
         alert("Erro");
         console.error("Erro ao deletar pedido:", error);

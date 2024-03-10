@@ -46,8 +46,10 @@ export function HistoricoPedidos(props){
         setFinalized(true);
         await PedidoFinalizadoFunc(props.id); 
         setFinalized(false);
+        setOpen(false);
         setLoading(false);
     }catch(error){
+        setOpen(false);
         setLoading(false);
         console.error("Erro ao finalizar pedido", error);
         alert("Erro");

@@ -46,9 +46,11 @@ export function PedidosAceitos(props){
         setCompleted(true);
         await PedidoEntregue(props.id); 
         setCompleted(false);
+        setOpen(false);
         setLoading(false);
 
     }catch(error){
+        setOpen(false);
         setLoading(false);  
         alert("Erro");
         console.error("Erro marcar pedido como pago", error);
