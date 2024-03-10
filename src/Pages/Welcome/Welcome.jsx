@@ -10,10 +10,10 @@ export function Welcome(){
         <>
             <Container>
             <EntryTop>
-                <div style={{width: '98%'}}>
-                    <div style={{width: '100%',display: 'flex' ,justifyContent: 'space-between'}}>
+                <div style={{width: '98%', height: '40px'}}>
+                    <div style={{width: '100%', height: '100%',display: 'flex' ,justifyContent: 'space-between'}}>
                         <Link to={"/welcome"}>
-                            <img style={{width: '120px', height: '100%'}} src={logo} alt="logo-for-you-entregas" />
+                            <img style={{width: '100px', height: '100%'}} src={logo} alt="logo-for-you-entregas" />
                         </Link> 
                         <Button sx={{color: "#fff", fontWeight: 800 ,border: 'none',backgroundColor: '#transparent', ":hover": {border: 'none',backgroundColor:'#fff', color: '#03bb85'}}} onClick={() => navigate('/login')} variant="outlined">Entrar</Button>
                     </div>
