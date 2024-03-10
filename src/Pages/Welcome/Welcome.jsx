@@ -25,7 +25,7 @@ export function Welcome(){
                             <p style={{color: '#fff'}}>Várias pessoas mudando de vida, mude a sua agora mesmo.</p>
                         </div>
                         <div>
-                            <Button sx={{width: '100%',color: "#fff", fontWeight: 800, borderColor: '#fff',backgroundColor: '#transparent', ":hover": {border: 'none',backgroundColor:'#fff', color: '#03bb85'}}} onClick={() => navigate('/login')} variant="outlined">Cadastrar-se</Button> 
+                            <Button sx={{width: '100%',color: "#fff", fontWeight: 800, borderColor: '#fff',backgroundColor: '#transparent', ":hover": {border: 'none',backgroundColor:'#fff', color: '#03bb85'}}} onClick={() => navigate('/cadastrar')} variant="outlined">Cadastrar-se</Button> 
                         </div>
                     </SubscribeContainer>
                 </ContainerContent>

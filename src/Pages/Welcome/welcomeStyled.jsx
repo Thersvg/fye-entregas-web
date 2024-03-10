@@ -38,4 +38,22 @@ export const SubscribeContainer = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 2%;
+    overflow: hidden;
+
+    @media only screen and (max-width: 600px) {
+        width: 80%;
+        height: 60%; 
+        padding: 5px;
+        gap: 20px;
+
+        h1{
+            display: flex;
+            text-align: center;
+        }
+
+        p{
+            display: flex;
+            text-align: center;
+        }
+    }
 `
