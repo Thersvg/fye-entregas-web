@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 import logo from '../../images/logoazul.png';
 import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
+import { Helmet } from 'react-helmet';
 
 export function AuthenticateLogin(){
 
@@ -47,6 +48,11 @@ export function AuthenticateLogin(){
             <LoadingCylonHold />
         ):(
         <AuthContainer>
+            <Helmet>
+                <title>Login</title>
+                <meta name="description" content="Entrar agora" />
+                <meta name="keywords" content="Siteentregas, plataformaentregas, delivery, brasildelivery, empresadelivery, entregadordelivery" />
+            </Helmet>
             <Section type="Login">
                 <div style={{display: 'flex', justifyContent: 'center', alignContent:'center'}}>
                     <img src={logo} alt="Entrar" />

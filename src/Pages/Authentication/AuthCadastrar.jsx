@@ -9,6 +9,7 @@ import Cookies from "js-cookie";
 import { Link, useNavigate} from "react-router-dom";
 import LoadingCylonHold from "../../components/LoadingCylon/LoadingCylon";
 import { useState } from "react";
+import { Helmet } from 'react-helmet';
 
 export function AuthenticateCadastrar(){
 
@@ -43,6 +44,11 @@ export function AuthenticateCadastrar(){
             <LoadingCylonHold />
         ):(
         <AuthContainer>
+            <Helmet>
+                <title>Cadastre-se</title>
+                <meta name="description" content="Crie sua conta agora mesmo" />
+                <meta name="keywords" content="criarconta,Siteentregas, plataformaentregas, delivery, brasildelivery, empresadelivery, entregadordelivery" />
+            </Helmet>
             <Section type="CadastrarEmpresa">
                 <h2>CADASTRE-SE</h2>
                 <form onSubmit={handleSubmit(inHandleSubmit)}>

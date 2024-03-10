@@ -11,9 +11,9 @@ export function Welcome(){
     return(
         <>
             <Helmet>
-                <title>Bem vindo</title>
-                <meta name="description" content="Sua descrição aqui." />
-                <meta name="keywords" content="palavra-chave1, palavra-chave2, palavra-chave3" />
+                <title>For You Entregas Bem vindo</title>
+                <meta name="description" content="Faça parte da maior e mais fácil plataforma de entregas para Deliverys do Brasil" />
+                <meta name="keywords" content="Siteentregas, plataformaentregas, delivery, brasildelivery, empresadelivery, entregadordelivery" />
             </Helmet>
             <Container>
             <EntryTop>
