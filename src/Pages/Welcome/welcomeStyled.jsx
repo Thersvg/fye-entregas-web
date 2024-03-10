@@ -1,13 +1,19 @@
 import styled from "styled-components";
+import imgbackground from '../../images/usingcll.png';
+import imgbackground2 from '../../images/usingcll2.png';
 
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background: url(${imgbackground}) no-repeat center center fixed;
+    background-size: cover;
 
     @media only screen and (max-width: 600px) {
-        img{
-        }
+        background: url(${imgbackground2}) no-repeat center center fixed;
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
     }
 `
 export const EntryTop = styled.div`
