@@ -60,11 +60,13 @@ export const SubscribeContainer = styled.div`
         gap: 20px;
 
         h1{
+            font-size: 45px;
             display: flex;
             text-align: center;
         }
 
         p{
+            font-size: 10px;
             display: flex;
             text-align: center;
         }
