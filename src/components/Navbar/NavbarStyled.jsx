@@ -33,7 +33,6 @@ export const ContainerNav = styled.div`
 `
 export const ImageLogo = styled.img`
     width: 110px;
-    padding: 5px;
     cursor: pointer;
 `
 
