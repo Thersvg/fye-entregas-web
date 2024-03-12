@@ -11,7 +11,7 @@ export function Welcome(){
     return(
         <>
             <Helmet>
-                <title>For You Entregas Bem vindo</title>
+                <title>Bem vindo</title>
                 <meta name="description" content="Faça parte da maior e mais fácil plataforma de entregas para Deliverys do Brasil" />
                 <meta name="keywords" content="Siteentregas, plataformaentregas, delivery, brasildelivery, empresadelivery, entregadordelivery" />
             </Helmet>
@@ -29,7 +29,7 @@ export function Welcome(){
                 <ContainerContent> 
                     <SubscribeContainer>
                         <div>
-                            <h1>Seja bem vindo</h1>
+                            <h1>Bem vindo</h1>
                         </div>
                         <div>
                             <p style={{color: '#fff'}}>Várias pessoas mudando de vida, mude a sua agora mesmo.</p>

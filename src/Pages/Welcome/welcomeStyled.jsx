@@ -18,7 +18,7 @@ export const Container = styled.div`
 `
 export const EntryTop = styled.div`
     width: 100%;
-    height: 10%;
+    height: 50px;
     background-color: transparent;
     display: flex;
     align-items: center;
