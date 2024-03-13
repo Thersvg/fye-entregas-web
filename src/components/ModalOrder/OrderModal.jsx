@@ -91,62 +91,57 @@ export default function HandleModalOrder({ isOpen, onClose}){
 
         <FormOrder onSubmit={handleSubmit}>       
         <div>
-        <label htmlFor="nameCliente">Cliente</label>
+        <label htmlFor="nameCliente">Nome do cliente*</label>
         </div>
           <input
             type="text"
-            placeholder="Nome*"
             id="nameCliente"
             name="name_cliente"
             onChange={handleInputChange}
             required
           />
           <div>
-          <label htmlFor="endereco">Endereço</label>
+          <label htmlFor="endereco">Endereço (Rua/N°/Cidade)*</label>
           </div>
           <input
             type="text"
-            placeholder="Av/Rua + N° + Cidade*"
             id="endereco"
             name="endereco_cliente"
             onChange={handleInputChange}
             required
           />
           <div>
-          <label htmlFor="descricaoPedido">Descrição</label>
+          <label htmlFor="descricaoPedido">Descrição do pedido*</label>
           </div>
           <input
             type="text"
-            placeholder="Detalhes do pedido*"
             id="descricaoPedido"
             name="descricao_pedido"
             onChange={handleInputChange}
             required
           />
           <div>
-          <label htmlFor="telefoneCliente">Telefone</label>
+          <label htmlFor="telefoneCliente">Telefone do cliente*</label>
           </div>
           <input
             type="text"
-            placeholder="(DDD) X XXXX - XXXX*"
             id="telefoneCliente"
             name="telefone_cliente"
             onChange={handleInputChange}
             required
           />
           <div>
-          <label htmlFor="valorPedido">Valor pedido</label>
+          <label htmlFor="valorPedido">Valor pedido*</label>
           </div>
           <input
             type="text"
-            placeholder="ex. 65,00*"
             id="valorPedido"
             name="valor_pedido"
             onChange={handleInputChange}
             required
           />
           <div>
-          <label htmlFor="formaPagamento">Forma de pagamento</label>
+          <label htmlFor="formaPagamento">Forma de pagamento*</label>
           </div>
 
           <select name="forma_pagamento" id="formaPagamento"

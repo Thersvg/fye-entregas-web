@@ -61,16 +61,6 @@ export default function HandleModalProfile({ isOpen, onClose}){
             placeholder={empresa.cnpj_empresa}
           />
           <div>
-          <label htmlFor="email_empresa">Email*</label>
-          </div>
-          <input
-            type="text"
-            id="email_empresa"
-            name="email_empresa"
-            onChange={handleInputChange}
-            placeholder={empresa.email_empresa}
-          />
-          <div>
           <label htmlFor="endereco_empresa">Endereço atual*</label>
           </div>
           <input
