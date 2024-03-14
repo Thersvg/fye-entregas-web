@@ -114,7 +114,9 @@ export function AuthenticateCadastrar(){
                         text= "Criar"
                     />
                     </div> 
-                    <label>{ResponseRequest}</label>              
+                    <div style={{display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+                        <p>{ResponseRequest}</p> 
+                    </div>             
                 </form>
             </Section>
         </AuthContainer>
