@@ -23,8 +23,9 @@ export function AuthenticateCadastrar(){
 
     const [loading, setLoading] = useState(false);  
 
+    const [ResponseRequest, setResponseRequest] = useState('');
+
     async function inHandleSubmit(data){
-        console.log(data);
         try{
             setLoading(true);
             const response = await CriarContaEmpresa(data);
@@ -33,8 +34,8 @@ export function AuthenticateCadastrar(){
             navigate("/");
             location.reload();
         }catch(error){
+            setResponseRequest(error.response.data);
             setLoading(false);
-            console.log(error);
         }
     }
 
@@ -112,7 +113,8 @@ export function AuthenticateCadastrar(){
                         type= "submit"
                         text= "Criar"
                     />
-                    </div>               
+                    </div> 
+                    <label>{ResponseRequest}</label>              
                 </form>
             </Section>
         </AuthContainer>
