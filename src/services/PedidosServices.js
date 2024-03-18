@@ -107,6 +107,7 @@ export async function CreateNewOrder(DadosEntrega, taxa) {
         Authorization: `Bearer ${Cookies.get("token")}`,
       },
     });
+    axios.post(`${baseURL}/register-device/send`);
     return response;
   } catch (error) {
     console.error("Erro ao criar entrega", error);
