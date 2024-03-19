@@ -1,5 +1,5 @@
 import { FormOrder } from "./OrderModalStyled";
-import { CreateNewOrder } from "../../services/PedidosServices";
+import { CreateNewOrder, SendNotification } from "../../services/PedidosServices";
 import LogoDelete from '../../images/cross-small.png'
 import LogoSend from '../../images/box-circle-check.png'
 import React, { useContext, useState } from "react";
@@ -51,6 +51,7 @@ export default function HandleModalOrder({ isOpen, onClose}){
         }else{
         try{
           await CreateNewOrder(dadosFormulario, empresa.taxa_entrega_empresa);
+          await SendNotification();
           await 
           onClose();
           location.reload();
