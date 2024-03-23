@@ -51,8 +51,6 @@ export default function HandleModalOrder({ isOpen, onClose}){
         }else{
         try{
           await CreateNewOrder(dadosFormulario, empresa.taxa_entrega_empresa);
-          await SendNotification();
-          await 
           onClose();
           location.reload();
         }catch (error){
