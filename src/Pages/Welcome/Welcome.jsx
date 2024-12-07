@@ -37,6 +37,10 @@ export function Welcome(){
                         <div>
                             <Button sx={{width: '100%',color: "#fff", fontWeight: 800, borderColor: '#fff',backgroundColor: '#transparent', ":hover": {border: 'none',backgroundColor:'#fff', color: '#03bb85'}}} onClick={() => navigate('/cadastrar')} variant="outlined">Cadastrar-se</Button> 
                         </div>
+                        <div>
+                            <Button sx={{width: '100%',color: "#fff", fontWeight: 800, borderColor: '#fff',backgroundColor: '#transparent', ":hover": {border: 'none',backgroundColor:'#fff', color: '#03bb85'}}} onClick={() => window.open('https://www.youtube.com') } variant="outlined">ASSISTIR VIDEO</Button> 
+                        </div>
+                
                     </SubscribeContainer>
                 </ContainerContent>
             </Container>
